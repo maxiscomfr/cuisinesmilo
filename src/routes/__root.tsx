@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -16,17 +16,17 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h1 className="text-7xl font-semibold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-medium text-foreground">Page introuvable</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          Cette page n'existe pas ou a été déplacée.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Retour à l'accueil
           </Link>
         </div>
       </div>
@@ -45,10 +45,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Cette page n'a pas pu se charger
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Une erreur est survenue. Vous pouvez réessayer ou revenir à l'accueil.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -58,13 +58,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Réessayer
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
           >
-            Go home
+            Accueil
           </a>
         </div>
       </div>
@@ -77,21 +77,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Cuisines Milo — Cuisiniste sur mesure en Charente-Maritime" },
+      {
+        name: "description",
+        content:
+          "Cuisines Milo, artisan cuisiniste à Royan. Cuisines et dressings sur mesure, dessinés pour durer.",
+      },
+      { name: "author", content: "Cuisines Milo" },
+      { property: "og:title", content: "Cuisines Milo — Cuisiniste sur mesure" },
+      {
+        property: "og:description",
+        content: "Cuisines et dressings sur mesure en Charente-Maritime.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
@@ -102,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
@@ -114,13 +123,119 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const navItems = [
+  { to: "/cuisines", label: "Cuisines" },
+  { to: "/dressings", label: "Dressings" },
+  { to: "/catalogue", label: "Catalogue" },
+  { to: "/realisations", label: "Réalisations" },
+  { to: "/avis", label: "Avis" },
+  { to: "/contact", label: "Contact" },
+] as const;
+
+function Header() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
+          <span className="text-lg font-semibold tracking-tight text-foreground">
+            Cuisines Milo
+          </span>
+          <span className="hidden text-xs uppercase tracking-[0.18em] text-accent sm:inline">
+            Artisan cuisiniste
+          </span>
+        </Link>
+        <nav className="hidden items-center gap-7 md:flex">
+          {navItems.map((n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              className="text-sm text-foreground/80 transition-colors hover:text-foreground"
+              activeProps={{ className: "text-sm text-foreground font-medium" }}
+            >
+              {n.label}
+            </Link>
+          ))}
+        </nav>
+        <button
+          type="button"
+          aria-label="Menu"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md border-hairline border-border md:hidden"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="sr-only">Menu</span>
+          <div className="flex flex-col gap-1">
+            <span className="h-px w-4 bg-foreground" />
+            <span className="h-px w-4 bg-foreground" />
+            <span className="h-px w-4 bg-foreground" />
+          </div>
+        </button>
+      </div>
+      {open && (
+        <div className="border-hairline border-t border-border md:hidden">
+          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
+            {navItems.map((n) => (
+              <Link
+                key={n.to}
+                to={n.to}
+                className="py-2 text-sm text-foreground/80"
+                onClick={() => setOpen(false)}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-hairline border-t border-border">
+      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 text-sm text-muted-foreground md:grid-cols-3">
+        <div>
+          <p className="text-foreground font-medium">Cuisines Milo</p>
+          <p className="mt-2">Artisan cuisiniste — cuisines et dressings sur mesure.</p>
+          <p className="mt-1">Zone d'intervention : Royan et Charente-Maritime.</p>
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
+          <p className="mt-2">contact@cuisines-milo.fr</p>
+          <p>Du lundi au samedi, sur rendez-vous</p>
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-accent">Informations</p>
+          <Link to="/mentions-legales" className="mt-2 block hover:text-foreground">
+            Mentions légales
+          </Link>
+          <Link to="/contact" className="block hover:text-foreground">
+            Demander un devis
+          </Link>
+        </div>
+      </div>
+      <div className="border-hairline border-t border-border">
+        <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Cuisines Milo. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
