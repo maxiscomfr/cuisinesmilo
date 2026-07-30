@@ -75,6 +75,35 @@ function CuisinesPage() {
       </Section>
 
       <Section bordered>
+        <SectionLabel>Fabricant</SectionLabel>
+        <SectionTitle>Cuisines du fabricant Armony Cucine</SectionTitle>
+        <div className="mt-8 rounded-xl border-hairline border-border p-8 md:p-12">
+          <p className="text-base text-foreground">
+            En cours d'intégration, sous réserve d'autorisation du fabricant.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+            En attendant la mise en ligne des visuels Armony Cucine, nous
+            pouvons échanger sur les modèles, finitions et matériaux
+            disponibles, et vous montrer nos réalisations.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/realisations"
+              className="inline-flex items-center justify-center rounded-md border-hairline border-border px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
+            >
+              Voir les réalisations
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              Nous contacter
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      <Section bordered>
         <SectionLabel>Réalisations</SectionLabel>
         <SectionTitle>Quelques-unes de nos cuisines</SectionTitle>
         <div className="mt-10">
