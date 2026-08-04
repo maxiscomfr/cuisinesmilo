@@ -65,9 +65,14 @@ function CuisinesPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
-            <img src={cuisine1} alt="Cuisine sur mesure" width={1200} height={900} className="h-full w-full object-cover" loading="lazy" />
+          <div>
+            <CataloguePlaceholder ratio="aspect-[16/10]" />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Visuel provisoire — catalogue fabricant Armony Cucine en cours
+              d'intégration.
+            </p>
           </div>
+
         </div>
       </section>
 
