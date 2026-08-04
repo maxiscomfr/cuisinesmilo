@@ -92,12 +92,29 @@ function DressingsPage() {
       </Section>
 
       <Section bordered>
-        <SectionLabel>Réalisations</SectionLabel>
-        <SectionTitle>Nos dressings & placards</SectionTitle>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Dressings & placards du fabricant</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles issus du catalogue fabricant, et non des
+          chantiers réalisés par Cuisines Milo. Nos réalisations clients sont
+          regroupées sur la page Réalisations.
+        </p>
         <div className="mt-10">
-          <RealisationsGrid items={dressings} columns={3} />
+          <CataloguePlaceholderGrid
+            items={modelesFabricant}
+            label="Photo catalogue fabricant"
+          />
+        </div>
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
         </div>
       </Section>
+
     </>
   );
 }
