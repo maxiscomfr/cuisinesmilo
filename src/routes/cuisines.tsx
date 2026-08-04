@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
-import { RealisationsGrid } from "@/components/site/RealisationsGrid";
-import { realisations } from "@/lib/site-data";
-import cuisine1 from "@/assets/cuisine-1.jpg";
+import {
+  CataloguePlaceholder,
+  CataloguePlaceholderGrid,
+} from "@/components/site/CataloguePlaceholder";
+
 
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
