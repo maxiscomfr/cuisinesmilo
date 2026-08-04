@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
-import {
-  CataloguePlaceholder,
-  CataloguePlaceholderGrid,
-} from "@/components/site/CataloguePlaceholder";
+import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
+import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
 
 
 export const Route = createFileRoute("/cuisines")({
@@ -32,14 +30,14 @@ const etapes = [
   { n: "04", t: "Pose soignée", d: "Nous posons votre cuisine avec le même soin qu'un meuble d'ébénisterie." },
 ];
 
-const modelesFabricant = [
-  "Modèle Armony — façades bois",
-  "Modèle Armony — laque mate",
-  "Modèle Armony — îlot central",
-  "Modèle Armony — plan pierre",
-  "Modèle Armony — linéaire compact",
-  "Modèle Armony — coloris foncé",
+// Structure prête à recevoir les vraies photos : ajouter les imports d'assets
+// dans `photos` (ex: photos: [equa1, equa2, ...]) et retirer `placeholders`.
+const modelesFabricant: ModelGroup[] = [
+  { modele: "Equa + Rho", photos: [], placeholders: 3 },
+  { modele: "Quadro", photos: [], placeholders: 2 },
+  { modele: "Skyline + Yota", photos: [], placeholders: 3 },
 ];
+
 
 function CuisinesPage() {
 
@@ -124,12 +122,13 @@ function CuisinesPage() {
         <SectionTitle>Modèles Armony Cucine</SectionTitle>
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
           Ces visuels sont des modèles du fabricant Armony Cucine, et non des
-          chantiers réalisés par Cuisines Milo. Pour voir nos chantiers,
-          rendez-vous sur la page Réalisations.
+          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
+          parcourir ses photos.
         </p>
         <div className="mt-10">
-          <CataloguePlaceholderGrid items={modelesFabricant} />
+          <ModelGallery groups={modelesFabricant} />
         </div>
+
         <div className="mt-8">
           <Link
             to="/realisations"
