@@ -32,8 +32,17 @@ const etapes = [
   { n: "04", t: "Pose soignée", d: "Nous posons votre cuisine avec le même soin qu'un meuble d'ébénisterie." },
 ];
 
+const modelesFabricant = [
+  "Modèle Armony — façades bois",
+  "Modèle Armony — laque mate",
+  "Modèle Armony — îlot central",
+  "Modèle Armony — plan pierre",
+  "Modèle Armony — linéaire compact",
+  "Modèle Armony — coloris foncé",
+];
+
 function CuisinesPage() {
-  const cuisines = realisations.filter((r) => r.category === "Cuisine").slice(0, 6);
+
   return (
     <>
       <section className="border-hairline border-b border-border">
