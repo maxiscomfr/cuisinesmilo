@@ -122,12 +122,13 @@ function CuisinesPage() {
         <SectionTitle>Modèles Armony Cucine</SectionTitle>
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
           Ces visuels sont des modèles du fabricant Armony Cucine, et non des
-          chantiers réalisés par Cuisines Milo. Pour voir nos chantiers,
-          rendez-vous sur la page Réalisations.
+          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
+          parcourir ses photos.
         </p>
         <div className="mt-10">
-          <CataloguePlaceholderGrid items={modelesFabricant} />
+          <ModelGallery groups={modelesFabricant} />
         </div>
+
         <div className="mt-8">
           <Link
             to="/realisations"
