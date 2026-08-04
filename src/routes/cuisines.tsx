@@ -120,12 +120,26 @@ function CuisinesPage() {
       </Section>
 
       <Section bordered>
-        <SectionLabel>Réalisations</SectionLabel>
-        <SectionTitle>Quelques-unes de nos cuisines</SectionTitle>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Modèles Armony Cucine</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
+          chantiers réalisés par Cuisines Milo. Pour voir nos chantiers,
+          rendez-vous sur la page Réalisations.
+        </p>
         <div className="mt-10">
-          <RealisationsGrid items={cuisines} columns={3} />
+          <CataloguePlaceholderGrid items={modelesFabricant} />
+        </div>
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
         </div>
       </Section>
+
     </>
   );
 }
