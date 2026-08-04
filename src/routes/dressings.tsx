@@ -65,9 +65,16 @@ function DressingsPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
-            <img src={dressing1} alt="Dressing sur mesure" width={1200} height={900} className="h-full w-full object-cover" loading="lazy" />
+          <div>
+            <CataloguePlaceholder
+              ratio="aspect-[16/10]"
+              label="Photo catalogue fabricant"
+            />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Visuel provisoire — catalogue fabricant en cours d'intégration.
+            </p>
           </div>
+
         </div>
       </section>
 
