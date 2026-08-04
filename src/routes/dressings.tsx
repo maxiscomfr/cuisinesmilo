@@ -31,8 +31,17 @@ const points = [
   { t: "Portes & façades", d: "Battantes ou coulissantes, en bois, laquées ou avec miroir, selon vos préférences." },
 ];
 
+const modelesFabricant = [
+  "Modèle fabricant — dressing ouvert",
+  "Modèle fabricant — portes coulissantes",
+  "Modèle fabricant — placard sous pente",
+  "Modèle fabricant — façades miroir",
+  "Modèle fabricant — aménagement intérieur",
+  "Modèle fabricant — placard d'entrée",
+];
+
 function DressingsPage() {
-  const dressings = realisations.filter((r) => r.category === "Dressing");
+
   return (
     <>
       <section className="border-hairline border-b border-border">
