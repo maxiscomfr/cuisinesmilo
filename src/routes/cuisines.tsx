@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
-import { RealisationsGrid } from "@/components/site/RealisationsGrid";
-import { realisations } from "@/lib/site-data";
-import cuisine1 from "@/assets/cuisine-1.jpg";
+import {
+  CataloguePlaceholder,
+  CataloguePlaceholderGrid,
+} from "@/components/site/CataloguePlaceholder";
+
 
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
@@ -30,8 +32,17 @@ const etapes = [
   { n: "04", t: "Pose soignée", d: "Nous posons votre cuisine avec le même soin qu'un meuble d'ébénisterie." },
 ];
 
+const modelesFabricant = [
+  "Modèle Armony — façades bois",
+  "Modèle Armony — laque mate",
+  "Modèle Armony — îlot central",
+  "Modèle Armony — plan pierre",
+  "Modèle Armony — linéaire compact",
+  "Modèle Armony — coloris foncé",
+];
+
 function CuisinesPage() {
-  const cuisines = realisations.filter((r) => r.category === "Cuisine").slice(0, 6);
+
   return (
     <>
       <section className="border-hairline border-b border-border">
@@ -54,9 +65,14 @@ function CuisinesPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
-            <img src={cuisine1} alt="Cuisine sur mesure" width={1200} height={900} className="h-full w-full object-cover" loading="lazy" />
+          <div>
+            <CataloguePlaceholder ratio="aspect-[16/10]" />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Visuel provisoire — catalogue fabricant Armony Cucine en cours
+              d'intégration.
+            </p>
           </div>
+
         </div>
       </section>
 
@@ -104,12 +120,26 @@ function CuisinesPage() {
       </Section>
 
       <Section bordered>
-        <SectionLabel>Réalisations</SectionLabel>
-        <SectionTitle>Quelques-unes de nos cuisines</SectionTitle>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Modèles Armony Cucine</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
+          chantiers réalisés par Cuisines Milo. Pour voir nos chantiers,
+          rendez-vous sur la page Réalisations.
+        </p>
         <div className="mt-10">
-          <RealisationsGrid items={cuisines} columns={3} />
+          <CataloguePlaceholderGrid items={modelesFabricant} />
+        </div>
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
         </div>
       </Section>
+
     </>
   );
 }

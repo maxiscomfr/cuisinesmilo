@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
-import { RealisationsGrid } from "@/components/site/RealisationsGrid";
-import { realisations } from "@/lib/site-data";
-import dressing1 from "@/assets/dressing-1.jpg";
+import {
+  CataloguePlaceholder,
+  CataloguePlaceholderGrid,
+} from "@/components/site/CataloguePlaceholder";
+
 
 export const Route = createFileRoute("/dressings")({
   head: () => ({
@@ -29,8 +31,17 @@ const points = [
   { t: "Portes & façades", d: "Battantes ou coulissantes, en bois, laquées ou avec miroir, selon vos préférences." },
 ];
 
+const modelesFabricant = [
+  "Modèle fabricant — dressing ouvert",
+  "Modèle fabricant — portes coulissantes",
+  "Modèle fabricant — placard sous pente",
+  "Modèle fabricant — façades miroir",
+  "Modèle fabricant — aménagement intérieur",
+  "Modèle fabricant — placard d'entrée",
+];
+
 function DressingsPage() {
-  const dressings = realisations.filter((r) => r.category === "Dressing");
+
   return (
     <>
       <section className="border-hairline border-b border-border">
@@ -54,9 +65,16 @@ function DressingsPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
-            <img src={dressing1} alt="Dressing sur mesure" width={1200} height={900} className="h-full w-full object-cover" loading="lazy" />
+          <div>
+            <CataloguePlaceholder
+              ratio="aspect-[16/10]"
+              label="Photo catalogue fabricant"
+            />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Visuel provisoire — catalogue fabricant en cours d'intégration.
+            </p>
           </div>
+
         </div>
       </section>
 
@@ -74,12 +92,29 @@ function DressingsPage() {
       </Section>
 
       <Section bordered>
-        <SectionLabel>Réalisations</SectionLabel>
-        <SectionTitle>Nos dressings & placards</SectionTitle>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Dressings & placards du fabricant</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles issus du catalogue fabricant, et non des
+          chantiers réalisés par Cuisines Milo. Nos réalisations clients sont
+          regroupées sur la page Réalisations.
+        </p>
         <div className="mt-10">
-          <RealisationsGrid items={dressings} columns={3} />
+          <CataloguePlaceholderGrid
+            items={modelesFabricant}
+            label="Photo catalogue fabricant"
+          />
+        </div>
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
         </div>
       </Section>
+
     </>
   );
 }
