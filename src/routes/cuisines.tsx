@@ -209,9 +209,17 @@ import ry15_4 from "@/assets/rho-yota/rho-yota-4.jpg.asset.json";
 
 const rhoYotaPhotos = [ry15_1.url, ry15_2.url, ry15_3.url, ry15_4.url];
 
+import kr16_1 from "@/assets/kappa-rho-2/1.jpg.asset.json";
+import kr16_2 from "@/assets/kappa-rho-2/2.jpg.asset.json";
+import kr16_3 from "@/assets/kappa-rho-2/3.jpg.asset.json";
+import kr16_4 from "@/assets/kappa-rho-2/4.jpg.asset.json";
+import kr16_5 from "@/assets/kappa-rho-2/5.jpg.asset.json";
+
+const kappaRho2Photos = [kr16_1.url, kr16_2.url, kr16_3.url, kr16_4.url, kr16_5.url];
+
 const nomsModeles = [
-  "Cloe",
   "Domino",
+
   "Elica",
   "Fenice",
   "Gaia",
