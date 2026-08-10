@@ -311,9 +311,17 @@ import om25_5 from "@/assets/omicron-25/5.jpg.asset.json";
 
 const omicron25Photos = [om25_1.url, om25_2.url, om25_3.url, om25_4.url, om25_5.url];
 
+import dr26_1 from "@/assets/diamond-riga-26/1.jpg.asset.json";
+import dr26_2 from "@/assets/diamond-riga-26/2.jpg.asset.json";
+import dr26_3 from "@/assets/diamond-riga-26/3.jpg.asset.json";
+import dr26_4 from "@/assets/diamond-riga-26/4.jpg.asset.json";
+import dr26_5 from "@/assets/diamond-riga-26/5.jpg.asset.json";
+import dr26_6 from "@/assets/diamond-riga-26/6.jpg.asset.json";
+
+const diamondRiga26Photos = [dr26_1.url, dr26_2.url, dr26_3.url, dr26_4.url, dr26_5.url, dr26_6.url];
+
 const nomsModeles = [
 
-  "Nova",
   "Onda",
   "Prisma",
 ];
@@ -344,6 +352,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Omicron + Quadro + Riga", photos: omicronQuadroRiga23Photos },
   { modele: "Diamond + Yota", photos: diamondYota24Photos },
   { modele: "Omicron", photos: omicron25Photos },
+  { modele: "Diamond + Riga", photos: diamondRiga26Photos },
 
 
 
