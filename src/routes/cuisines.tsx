@@ -62,10 +62,23 @@ const systemYotaPhotos = [
   yota9.url,
 ];
 
+// Portrait 02 — photos réelles du catalogue fabricant.
+const systemPhotos = [
+  sys1.url,
+  sys2.url,
+  sys4.url,
+  sys5.url,
+  sys6.url,
+  sys7.url,
+  sys8.url,
+  sys9.url,
+  sys10.url,
+  sys11.url,
+];
+
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` et retirer `placeholders`.
 const nomsModeles = [
-  "Quadro",
   "Skyline",
   "Aria",
   "Bloom",
@@ -96,6 +109,7 @@ const nomsModeles = [
 
 const modelesFabricant: ModelGroup[] = [
   { modele: "System + Yota", photos: systemYotaPhotos },
+  { modele: "System", photos: systemPhotos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
