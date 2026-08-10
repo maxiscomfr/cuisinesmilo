@@ -107,6 +107,28 @@ function CuisinesPage() {
       </section>
 
       <Section>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Modèles Armony Cucine</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
+          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
+          parcourir ses photos.
+        </p>
+        <div className="mt-10">
+          <ModelGallery groups={modelesFabricant} />
+        </div>
+
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
+        </div>
+      </Section>
+
+      <Section bordered>
         <SectionLabel>Notre méthode</SectionLabel>
         <SectionTitle>Quatre étapes, un interlocuteur</SectionTitle>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -149,27 +171,6 @@ function CuisinesPage() {
         </div>
       </Section>
 
-      <Section bordered>
-        <SectionLabel>Catalogue fabricant</SectionLabel>
-        <SectionTitle>Modèles Armony Cucine</SectionTitle>
-        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
-          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
-          parcourir ses photos.
-        </p>
-        <div className="mt-10">
-          <ModelGallery groups={modelesFabricant} />
-        </div>
-
-        <div className="mt-8">
-          <Link
-            to="/realisations"
-            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
-          >
-            Voir nos réalisations →
-          </Link>
-        </div>
-      </Section>
 
     </>
   );
