@@ -170,6 +170,19 @@ const rhoRhoJitPhotos = [rrj1.url, rrj2.url, rrj3.url, rrj4.url, rrj5.url];
 
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` et retirer `placeholders`.
+import y3_1 from "@/assets/yota3/yota3-1.jpg.asset.json";
+import y3_2 from "@/assets/yota3/yota3-2.jpg.asset.json";
+import y3_3 from "@/assets/yota3/yota3-3.jpg.asset.json";
+import y3_4 from "@/assets/yota3/yota3-4.jpg.asset.json";
+import y3_5 from "@/assets/yota3/yota3-5.jpg.asset.json";
+import y3_6 from "@/assets/yota3/yota3-6.jpg.asset.json";
+import y3_7 from "@/assets/yota3/yota3-7.jpg.asset.json";
+import y3_8 from "@/assets/yota3/yota3-8.jpg.asset.json";
+import y3_9 from "@/assets/yota3/yota3-9.jpg.asset.json";
+import y3_10 from "@/assets/yota3/yota3-10.jpg.asset.json";
+
+const yota3Photos = [y3_1.url, y3_2.url, y3_3.url, y3_4.url, y3_5.url, y3_6.url, y3_7.url, y3_8.url, y3_9.url, y3_10.url];
+
 const nomsModeles = [
   "Cloe",
   "Domino",
@@ -187,7 +200,6 @@ const nomsModeles = [
   "Quarzo",
   "Riva",
   "Sabbia",
-  "Terra",
 ];
 
 const modelesFabricant: ModelGroup[] = [
@@ -202,6 +214,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Rho + Rho Jit", photos: rhoRhoJitPhotos },
   { modele: "Kappa", photos: kappaPhotos },
   { modele: "Tau", photos: tauPhotos },
+  { modele: "Yota 3", photos: yota3Photos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
