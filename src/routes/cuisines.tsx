@@ -152,6 +152,19 @@ import k4 from "@/assets/kappa/kappa-4.jpg.asset.json";
 // Portrait 10 — photos réelles du catalogue fabricant.
 const kappaPhotos = [k1.url, k2.url, k3.url, k4.url];
 
+import t1 from "@/assets/tau/tau-1.jpg.asset.json";
+import t2 from "@/assets/tau/tau-2.jpg.asset.json";
+import t3 from "@/assets/tau/tau-3.jpg.asset.json";
+import t4 from "@/assets/tau/tau-4.jpg.asset.json";
+import t5 from "@/assets/tau/tau-5.jpg.asset.json";
+import tv1 from "@/assets/tau/tau-v1.jpg.asset.json";
+import tv2 from "@/assets/tau/tau-v2.jpg.asset.json";
+import tv3 from "@/assets/tau/tau-v3.jpg.asset.json";
+import tv4 from "@/assets/tau/tau-v4.jpg.asset.json";
+
+// Portrait 11 — photos réelles du catalogue fabricant.
+const tauPhotos = [t1.url, t2.url, t3.url, t4.url, t5.url, tv1.url, tv2.url, tv3.url, tv4.url];
+
 // Portrait 09 — photos réelles du catalogue fabricant.
 const rhoRhoJitPhotos = [rrj1.url, rrj2.url, rrj3.url, rrj4.url, rrj5.url];
 
@@ -175,7 +188,6 @@ const nomsModeles = [
   "Riva",
   "Sabbia",
   "Terra",
-  "Urban",
 ];
 
 const modelesFabricant: ModelGroup[] = [
@@ -189,6 +201,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Rho + Riga", photos: rhoRigaPhotos },
   { modele: "Rho + Rho Jit", photos: rhoRhoJitPhotos },
   { modele: "Kappa", photos: kappaPhotos },
+  { modele: "Tau", photos: tauPhotos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
