@@ -246,11 +246,18 @@ import er19_6 from "@/assets/equa-rho-19/6.jpg.asset.json";
 
 const equaRho19Photos = [er19_1.url, er19_2.url, er19_3.url, er19_4.url, er19_5.url, er19_6.url];
 
+import ek20_1 from "@/assets/equa-kappa-20/1.jpg.asset.json";
+import ek20_2 from "@/assets/equa-kappa-20/2.jpg.asset.json";
+import ek20_3 from "@/assets/equa-kappa-20/3.jpg.asset.json";
+import ek20_4 from "@/assets/equa-kappa-20/4.jpg.asset.json";
+import ek20_5 from "@/assets/equa-kappa-20/5.jpg.asset.json";
+import ek20_6 from "@/assets/equa-kappa-20/6.jpg.asset.json";
+
+const equaKappa20Photos = [ek20_1.url, ek20_2.url, ek20_3.url, ek20_4.url, ek20_5.url, ek20_6.url];
+
 const nomsModeles = [
-
-
-  "Gaia",
   "Helios",
+
   "Iride",
   "Kubo",
   "Lumina",
