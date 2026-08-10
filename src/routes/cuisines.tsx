@@ -416,7 +416,6 @@ function CuisinesPage() {
 
   return (
 
-  return (
     <>
       <section className="border-hairline border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
