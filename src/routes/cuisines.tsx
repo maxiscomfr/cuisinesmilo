@@ -320,9 +320,17 @@ import dr26_6 from "@/assets/diamond-riga-26/6.jpg.asset.json";
 
 const diamondRiga26Photos = [dr26_1.url, dr26_2.url, dr26_3.url, dr26_4.url, dr26_5.url, dr26_6.url];
 
+import syr27_1 from "@/assets/skyline-yota-riga-27/1.jpg.asset.json";
+import syr27_2 from "@/assets/skyline-yota-riga-27/2.jpg.asset.json";
+import syr27_3 from "@/assets/skyline-yota-riga-27/3.jpg.asset.json";
+import syr27_4 from "@/assets/skyline-yota-riga-27/4.jpg.asset.json";
+import syr27_5 from "@/assets/skyline-yota-riga-27/5.jpg.asset.json";
+import syr27_6 from "@/assets/skyline-yota-riga-27/6.jpg.asset.json";
+
+const skylineYotaRiga27Photos = [syr27_1.url, syr27_2.url, syr27_3.url, syr27_4.url, syr27_5.url, syr27_6.url];
+
 const nomsModeles = [
 
-  "Onda",
   "Prisma",
 ];
 
@@ -353,6 +361,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Diamond + Yota", photos: diamondYota24Photos },
   { modele: "Omicron", photos: omicron25Photos },
   { modele: "Diamond + Riga", photos: diamondRiga26Photos },
+  { modele: "Skyline + Yota + Riga", photos: skylineYotaRiga27Photos },
 
 
 
