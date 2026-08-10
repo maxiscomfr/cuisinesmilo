@@ -340,8 +340,10 @@ import sy28_7 from "@/assets/skyline-yota-28/7.jpg.asset.json";
 const skylineYota28Photos = [sy28_1.url, sy28_2.url, sy28_3.url, sy28_4.url, sy28_5.url, sy28_6.url, sy28_7.url];
 
 const nomsModeles = [
-
+  "Ariel",
+  "Bijou",
 ];
+
 
 const modelesFabricant: ModelGroup[] = [
   { modele: "System + Yota", photos: systemYotaPhotos },
