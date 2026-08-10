@@ -144,6 +144,14 @@ import rrj5 from "@/assets/rho-rho-jit/rho-rho-jit-5.jpg.asset.json";
 // Portrait 08 — photos réelles du catalogue fabricant.
 const rhoRigaPhotos = [rr1.url, rr2.url, rr3.url, rr4.url, rr5.url, rr6.url, rr7.url];
 
+import k1 from "@/assets/kappa/kappa-1.jpg.asset.json";
+import k2 from "@/assets/kappa/kappa-2.jpg.asset.json";
+import k3 from "@/assets/kappa/kappa-3.jpg.asset.json";
+import k4 from "@/assets/kappa/kappa-4.jpg.asset.json";
+
+// Portrait 10 — photos réelles du catalogue fabricant.
+const kappaPhotos = [k1.url, k2.url, k3.url, k4.url];
+
 // Portrait 09 — photos réelles du catalogue fabricant.
 const rhoRhoJitPhotos = [rrj1.url, rrj2.url, rrj3.url, rrj4.url, rrj5.url];
 
@@ -168,7 +176,6 @@ const nomsModeles = [
   "Sabbia",
   "Terra",
   "Urban",
-  "Vela",
 ];
 
 const modelesFabricant: ModelGroup[] = [
@@ -181,6 +188,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Yota 2", photos: yota2Photos },
   { modele: "Rho + Riga", photos: rhoRigaPhotos },
   { modele: "Rho + Rho Jit", photos: rhoRhoJitPhotos },
+  { modele: "Kappa", photos: kappaPhotos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
