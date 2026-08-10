@@ -292,7 +292,6 @@ const omicronQuadroRiga23Photos = [
 
 const nomsModeles = [
 
-  "Kubo",
   "Lumina",
   "Mira",
   "Nova",
