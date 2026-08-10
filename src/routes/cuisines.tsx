@@ -2,6 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
 import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
+import yota1 from "@/assets/yota/system-yota-1.jpg.asset.json";
+import yota2 from "@/assets/yota/system-yota-2.jpg.asset.json";
+import yota3 from "@/assets/yota/system-yota-3.jpg.asset.json";
+import yota4 from "@/assets/yota/system-yota-4.jpg.asset.json";
+import yota5 from "@/assets/yota/system-yota-5.jpg.asset.json";
+import yota6 from "@/assets/yota/system-yota-6.jpg.asset.json";
+import yota7 from "@/assets/yota/system-yota-7.jpg.asset.json";
+import yota8 from "@/assets/yota/system-yota-8.jpg.asset.json";
+import yota9 from "@/assets/yota/system-yota-9.jpg.asset.json";
 
 
 export const Route = createFileRoute("/cuisines")({
@@ -30,12 +39,24 @@ const etapes = [
   { n: "04", t: "Pose soignée", d: "Nous posons votre cuisine avec le même soin qu'un meuble d'ébénisterie." },
 ];
 
+// Portrait 01 — photos réelles du catalogue fabricant.
+const systemYotaPhotos = [
+  yota1.url,
+  yota2.url,
+  yota3.url,
+  yota4.url,
+  yota5.url,
+  yota6.url,
+  yota7.url,
+  yota8.url,
+  yota9.url,
+];
+
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
-// dans `photos` (ex: photos: [equa1, equa2, ...]) et retirer `placeholders`.
+// dans `photos` et retirer `placeholders`.
 const nomsModeles = [
-  "Equa + Rho",
   "Quadro",
-  "Skyline + Yota",
+  "Skyline",
   "Aria",
   "Bloom",
   "Cloe",
@@ -63,11 +84,15 @@ const nomsModeles = [
   "Zenith",
 ];
 
-const modelesFabricant: ModelGroup[] = nomsModeles.map((modele, i) => ({
-  modele,
-  photos: [],
-  placeholders: 2 + (i % 3),
-}));
+const modelesFabricant: ModelGroup[] = [
+  { modele: "System + Yota", photos: systemYotaPhotos },
+  ...nomsModeles.map((modele, i) => ({
+    modele,
+    photos: [],
+    placeholders: 2 + (i % 3),
+  })),
+];
+
 
 
 
