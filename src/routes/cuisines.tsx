@@ -183,6 +183,15 @@ import y3_10 from "@/assets/yota3/yota3-10.jpg.asset.json";
 
 const yota3Photos = [y3_1.url, y3_2.url, y3_3.url, y3_4.url, y3_5.url, y3_6.url, y3_7.url, y3_8.url, y3_9.url, y3_10.url];
 
+import y4_1 from "@/assets/yota4/yota4-1.jpg.asset.json";
+import y4_2 from "@/assets/yota4/yota4-2.jpg.asset.json";
+import y4_3 from "@/assets/yota4/yota4-3.jpg.asset.json";
+import y4_4 from "@/assets/yota4/yota4-4.jpg.asset.json";
+import y4_5 from "@/assets/yota4/yota4-5.jpg.asset.json";
+import y4_6 from "@/assets/yota4/yota4-6.jpg.asset.json";
+
+const yota4Photos = [y4_1.url, y4_2.url, y4_3.url, y4_4.url, y4_5.url, y4_6.url];
+
 const nomsModeles = [
   "Cloe",
   "Domino",
@@ -199,7 +208,6 @@ const nomsModeles = [
   "Prisma",
   "Quarzo",
   "Riva",
-  "Sabbia",
 ];
 
 const modelesFabricant: ModelGroup[] = [
@@ -215,6 +223,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Kappa", photos: kappaPhotos },
   { modele: "Tau", photos: tauPhotos },
   { modele: "Yota 3", photos: yota3Photos },
+  { modele: "Yota 4", photos: yota4Photos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
