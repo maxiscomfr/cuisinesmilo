@@ -135,13 +135,21 @@ import rr7 from "@/assets/rho-riga/rho-riga-7.jpg.asset.json";
 // Portrait 07 — photos réelles du catalogue fabricant.
 const yota2Photos = [y7_1.url, y7_2.url, y7_4.url, y7_5.url, y7_6.url, y7_7.url];
 
+import rrj1 from "@/assets/rho-rho-jit/rho-rho-jit-1.jpg.asset.json";
+import rrj2 from "@/assets/rho-rho-jit/rho-rho-jit-2.jpg.asset.json";
+import rrj3 from "@/assets/rho-rho-jit/rho-rho-jit-3.jpg.asset.json";
+import rrj4 from "@/assets/rho-rho-jit/rho-rho-jit-4.jpg.asset.json";
+import rrj5 from "@/assets/rho-rho-jit/rho-rho-jit-5.jpg.asset.json";
+
 // Portrait 08 — photos réelles du catalogue fabricant.
 const rhoRigaPhotos = [rr1.url, rr2.url, rr3.url, rr4.url, rr5.url, rr6.url, rr7.url];
+
+// Portrait 09 — photos réelles du catalogue fabricant.
+const rhoRhoJitPhotos = [rrj1.url, rrj2.url, rrj3.url, rrj4.url, rrj5.url];
 
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` et retirer `placeholders`.
 const nomsModeles = [
-  "Bloom",
   "Cloe",
   "Domino",
   "Elica",
@@ -172,6 +180,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Yota", photos: yotaPhotos },
   { modele: "Yota 2", photos: yota2Photos },
   { modele: "Rho + Riga", photos: rhoRigaPhotos },
+  { modele: "Rho + Rho Jit", photos: rhoRhoJitPhotos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
