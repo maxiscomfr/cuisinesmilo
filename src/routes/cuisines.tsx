@@ -382,6 +382,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Diamond + Riga", photos: diamondRiga26Photos },
   { modele: "Skyline + Yota + Riga", photos: skylineYotaRiga27Photos },
   { modele: "Skyline + Yota", photos: skylineYota28Photos },
+  { modele: "Etro", photos: etro29Photos },
 
 
 
