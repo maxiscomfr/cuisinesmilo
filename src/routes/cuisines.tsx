@@ -200,7 +200,6 @@ const nomsModeles = [
   "Quarzo",
   "Riva",
   "Sabbia",
-  "Terra",
 ];
 
 const modelesFabricant: ModelGroup[] = [
