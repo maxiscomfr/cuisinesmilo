@@ -32,11 +32,43 @@ const etapes = [
 
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` (ex: photos: [equa1, equa2, ...]) et retirer `placeholders`.
-const modelesFabricant: ModelGroup[] = [
-  { modele: "Equa + Rho", photos: [], placeholders: 3 },
-  { modele: "Quadro", photos: [], placeholders: 2 },
-  { modele: "Skyline + Yota", photos: [], placeholders: 3 },
+const nomsModeles = [
+  "Equa + Rho",
+  "Quadro",
+  "Skyline + Yota",
+  "Aria",
+  "Bloom",
+  "Cloe",
+  "Domino",
+  "Elica",
+  "Fenice",
+  "Gaia",
+  "Helios",
+  "Iride",
+  "Kubo",
+  "Lumina",
+  "Mira",
+  "Nova",
+  "Onda",
+  "Prisma",
+  "Quarzo",
+  "Riva",
+  "Sabbia",
+  "Terra",
+  "Urban",
+  "Vela",
+  "Wood",
+  "Xilo",
+  "Yuma",
+  "Zenith",
 ];
+
+const modelesFabricant: ModelGroup[] = nomsModeles.map((modele, i) => ({
+  modele,
+  photos: [],
+  placeholders: 2 + (i % 3),
+}));
+
 
 
 function CuisinesPage() {
@@ -75,6 +107,28 @@ function CuisinesPage() {
       </section>
 
       <Section>
+        <SectionLabel>Catalogue fabricant</SectionLabel>
+        <SectionTitle>Modèles Armony Cucine</SectionTitle>
+        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
+          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
+          parcourir ses photos.
+        </p>
+        <div className="mt-10">
+          <ModelGallery groups={modelesFabricant} />
+        </div>
+
+        <div className="mt-8">
+          <Link
+            to="/realisations"
+            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Voir nos réalisations →
+          </Link>
+        </div>
+      </Section>
+
+      <Section bordered>
         <SectionLabel>Notre méthode</SectionLabel>
         <SectionTitle>Quatre étapes, un interlocuteur</SectionTitle>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -117,27 +171,6 @@ function CuisinesPage() {
         </div>
       </Section>
 
-      <Section bordered>
-        <SectionLabel>Catalogue fabricant</SectionLabel>
-        <SectionTitle>Modèles Armony Cucine</SectionTitle>
-        <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
-          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
-          parcourir ses photos.
-        </p>
-        <div className="mt-10">
-          <ModelGallery groups={modelesFabricant} />
-        </div>
-
-        <div className="mt-8">
-          <Link
-            to="/realisations"
-            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
-          >
-            Voir nos réalisations →
-          </Link>
-        </div>
-      </Section>
 
     </>
   );
