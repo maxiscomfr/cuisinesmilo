@@ -39,14 +39,13 @@ function ContactPage() {
           Parlons de votre projet
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Deux formulaires à votre disposition : un devis détaillé pour lancer
-          votre projet, ou un simple message pour toute autre demande.
+          Envoyez-nous un message pour toute question ou demande d'information.
+          Nous vous recontactons rapidement.
         </p>
       </Section>
 
       <Section bordered>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <DevisForm />
+        <div className="mx-auto max-w-2xl">
           <ContactSimpleForm />
         </div>
       </Section>
