@@ -303,9 +303,16 @@ const diamondYota24Photos = [
   dy24_1.url, dy24_2.url, dy24_3.url, dy24_4.url, dy24_5.url, dy24_6.url, dy24_7.url, dy24_8.url,
 ];
 
+import om25_1 from "@/assets/omicron-25/1.jpg.asset.json";
+import om25_2 from "@/assets/omicron-25/2.jpg.asset.json";
+import om25_3 from "@/assets/omicron-25/3.jpg.asset.json";
+import om25_4 from "@/assets/omicron-25/4.jpg.asset.json";
+import om25_5 from "@/assets/omicron-25/5.jpg.asset.json";
+
+const omicron25Photos = [om25_1.url, om25_2.url, om25_3.url, om25_4.url, om25_5.url];
+
 const nomsModeles = [
 
-  "Mira",
   "Nova",
   "Onda",
   "Prisma",
@@ -336,6 +343,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Quadro + Skyline + Yota", photos: quadroSkylineYota22Photos },
   { modele: "Omicron + Quadro + Riga", photos: omicronQuadroRiga23Photos },
   { modele: "Diamond + Yota", photos: diamondYota24Photos },
+  { modele: "Omicron", photos: omicron25Photos },
 
 
 
