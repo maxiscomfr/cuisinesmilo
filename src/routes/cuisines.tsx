@@ -62,6 +62,13 @@ const systemYotaPhotos = [
   yota9.url,
 ];
 
+import rk1 from "@/assets/rho-kappa/rho-kappa-1.jpg.asset.json";
+import rk2 from "@/assets/rho-kappa/rho-kappa-2.jpg.asset.json";
+import rk3 from "@/assets/rho-kappa/rho-kappa-3.jpg.asset.json";
+import rk4 from "@/assets/rho-kappa/rho-kappa-4.jpg.asset.json";
+import rk5 from "@/assets/rho-kappa/rho-kappa-5.jpg.asset.json";
+import rk6 from "@/assets/rho-kappa/rho-kappa-6.jpg.asset.json";
+
 // Portrait 02 — photos réelles du catalogue fabricant.
 const systemPhotos = [
   sys1.url,
@@ -75,6 +82,9 @@ const systemPhotos = [
   sys10.url,
   sys11.url,
 ];
+
+// Portrait 03 — photos réelles du catalogue fabricant.
+const rhoKappaPhotos = [rk1.url, rk2.url, rk3.url, rk4.url, rk5.url, rk6.url];
 
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` et retirer `placeholders`.
@@ -104,12 +114,12 @@ const nomsModeles = [
   "Wood",
   "Xilo",
   "Yuma",
-  "Zenith",
 ];
 
 const modelesFabricant: ModelGroup[] = [
   { modele: "System + Yota", photos: systemYotaPhotos },
   { modele: "System", photos: systemPhotos },
+  { modele: "Rho + Kappa", photos: rhoKappaPhotos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
