@@ -192,6 +192,16 @@ import y4_6 from "@/assets/yota4/yota4-6.jpg.asset.json";
 
 const yota4Photos = [y4_1.url, y4_2.url, y4_3.url, y4_4.url, y4_5.url, y4_6.url];
 
+import kr14_1 from "@/assets/kappa-rho/kappa-rho-1.jpg.asset.json";
+import kr14_2 from "@/assets/kappa-rho/kappa-rho-2.jpg.asset.json";
+import kr14_3 from "@/assets/kappa-rho/kappa-rho-3.jpg.asset.json";
+import kr14_4 from "@/assets/kappa-rho/kappa-rho-4.jpg.asset.json";
+import kr14_5 from "@/assets/kappa-rho/kappa-rho-5.jpg.asset.json";
+import kr14_6 from "@/assets/kappa-rho/kappa-rho-6.jpg.asset.json";
+import kr14_7 from "@/assets/kappa-rho/kappa-rho-7.jpg.asset.json";
+
+const kappaRho14Photos = [kr14_1.url, kr14_2.url, kr14_3.url, kr14_4.url, kr14_5.url, kr14_6.url, kr14_7.url];
+
 const nomsModeles = [
   "Cloe",
   "Domino",
@@ -207,7 +217,6 @@ const nomsModeles = [
   "Onda",
   "Prisma",
   "Quarzo",
-  "Riva",
 ];
 
 const modelesFabricant: ModelGroup[] = [
@@ -224,6 +233,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Tau", photos: tauPhotos },
   { modele: "Yota 3", photos: yota3Photos },
   { modele: "Yota 4", photos: yota4Photos },
+  { modele: "Kappa + Rho", photos: kappaRho14Photos },
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
