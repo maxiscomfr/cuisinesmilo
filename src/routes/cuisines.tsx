@@ -339,10 +339,18 @@ import sy28_7 from "@/assets/skyline-yota-28/7.jpg.asset.json";
 
 const skylineYota28Photos = [sy28_1.url, sy28_2.url, sy28_3.url, sy28_4.url, sy28_5.url, sy28_6.url, sy28_7.url];
 
+import etro29_1 from "@/assets/etro-29/1.jpg.asset.json";
+import etro29_2 from "@/assets/etro-29/2.jpg.asset.json";
+import etro29_3 from "@/assets/etro-29/3.jpg.asset.json";
+import etro29_4 from "@/assets/etro-29/4.jpg.asset.json";
+import etro29_5 from "@/assets/etro-29/5.jpg.asset.json";
+
+const etro29Photos = [etro29_1.url, etro29_2.url, etro29_3.url, etro29_4.url, etro29_5.url];
+
 const nomsModeles = [
-  "Ariel",
   "Bijou",
 ];
+
 
 
 const modelesFabricant: ModelGroup[] = [
