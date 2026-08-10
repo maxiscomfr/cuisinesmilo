@@ -30,12 +30,24 @@ const etapes = [
   { n: "04", t: "Pose soignée", d: "Nous posons votre cuisine avec le même soin qu'un meuble d'ébénisterie." },
 ];
 
+// Portrait 01 — photos réelles du catalogue fabricant.
+const systemYotaPhotos = [
+  yota1.url,
+  yota2.url,
+  yota3.url,
+  yota4.url,
+  yota5.url,
+  yota6.url,
+  yota7.url,
+  yota8.url,
+  yota9.url,
+];
+
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
-// dans `photos` (ex: photos: [equa1, equa2, ...]) et retirer `placeholders`.
+// dans `photos` et retirer `placeholders`.
 const nomsModeles = [
-  "Equa + Rho",
   "Quadro",
-  "Skyline + Yota",
+  "Skyline",
   "Aria",
   "Bloom",
   "Cloe",
@@ -63,11 +75,15 @@ const nomsModeles = [
   "Zenith",
 ];
 
-const modelesFabricant: ModelGroup[] = nomsModeles.map((modele, i) => ({
-  modele,
-  photos: [],
-  placeholders: 2 + (i % 3),
-}));
+const modelesFabricant: ModelGroup[] = [
+  { modele: "System + Yota", photos: systemYotaPhotos },
+  ...nomsModeles.map((modele, i) => ({
+    modele,
+    photos: [],
+    placeholders: 2 + (i % 3),
+  })),
+];
+
 
 
 
