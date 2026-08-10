@@ -263,10 +263,24 @@ import q21_5 from "@/assets/quadro-21/5.jpg.asset.json";
 
 const quadro21Photos = [q21_1.url, q21_2.url, q21_3.url, q21_4.url, q21_5.url];
 
+import qsy22_1 from "@/assets/quadro-skyline-yota-22/1.jpg.asset.json";
+import qsy22_2 from "@/assets/quadro-skyline-yota-22/2.jpg.asset.json";
+import qsy22_3 from "@/assets/quadro-skyline-yota-22/3.jpg.asset.json";
+import qsy22_4 from "@/assets/quadro-skyline-yota-22/4.jpg.asset.json";
+import qsy22_5 from "@/assets/quadro-skyline-yota-22/5.jpg.asset.json";
+import qsy22_6 from "@/assets/quadro-skyline-yota-22/6.jpg.asset.json";
+import qsy22_7 from "@/assets/quadro-skyline-yota-22/7.jpg.asset.json";
+import qsy22_8 from "@/assets/quadro-skyline-yota-22/8.jpg.asset.json";
+import qsy22_9 from "@/assets/quadro-skyline-yota-22/9.jpg.asset.json";
+
+const quadroSkylineYota22Photos = [
+  qsy22_1.url, qsy22_2.url, qsy22_3.url, qsy22_4.url, qsy22_5.url,
+  qsy22_6.url, qsy22_7.url, qsy22_8.url, qsy22_9.url,
+];
+
 const nomsModeles = [
+  "Kubo",
 
-
-  "Iride",
   "Kubo",
   "Lumina",
   "Mira",
@@ -297,6 +311,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Equa + Rho", photos: equaRho19Photos },
   { modele: "Equa + Kappa", photos: equaKappa20Photos },
   { modele: "Quadro", photos: quadro21Photos },
+  { modele: "Quadro + Skyline + Yota", photos: quadroSkylineYota22Photos },
 
 
 
