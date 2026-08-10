@@ -255,8 +255,16 @@ import ek20_6 from "@/assets/equa-kappa-20/6.jpg.asset.json";
 
 const equaKappa20Photos = [ek20_1.url, ek20_2.url, ek20_3.url, ek20_4.url, ek20_5.url, ek20_6.url];
 
+import q21_1 from "@/assets/quadro-21/1.jpg.asset.json";
+import q21_2 from "@/assets/quadro-21/2.jpg.asset.json";
+import q21_3 from "@/assets/quadro-21/3.jpg.asset.json";
+import q21_4 from "@/assets/quadro-21/4.jpg.asset.json";
+import q21_5 from "@/assets/quadro-21/5.jpg.asset.json";
+
+const quadro21Photos = [q21_1.url, q21_2.url, q21_3.url, q21_4.url, q21_5.url];
+
 const nomsModeles = [
-  "Helios",
+
 
   "Iride",
   "Kubo",
@@ -288,6 +296,8 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Rho", photos: rho18Photos },
   { modele: "Equa + Rho", photos: equaRho19Photos },
   { modele: "Equa + Kappa", photos: equaKappa20Photos },
+  { modele: "Quadro", photos: quadro21Photos },
+
 
 
 
