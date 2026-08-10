@@ -296,6 +296,8 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Rho", photos: rho18Photos },
   { modele: "Equa + Rho", photos: equaRho19Photos },
   { modele: "Equa + Kappa", photos: equaKappa20Photos },
+  { modele: "Quadro", photos: quadro21Photos },
+
 
 
 
