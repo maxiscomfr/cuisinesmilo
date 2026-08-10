@@ -228,11 +228,18 @@ import k17_8 from "@/assets/kappa-17/8.jpg.asset.json";
 
 const kappa17Photos = [k17_1.url, k17_2.url, k17_3.url, k17_4.url, k17_5.url, k17_6.url, k17_7.url, k17_8.url];
 
+import r18_1 from "@/assets/rho-18/1.jpg.asset.json";
+import r18_2 from "@/assets/rho-18/2.jpg.asset.json";
+import r18_3 from "@/assets/rho-18/3.jpg.asset.json";
+import r18_4 from "@/assets/rho-18/4.jpg.asset.json";
+import r18_5 from "@/assets/rho-18/5.jpg.asset.json";
+import r18_6 from "@/assets/rho-18/6.jpg.asset.json";
+
+const rho18Photos = [r18_1.url, r18_2.url, r18_3.url, r18_4.url, r18_5.url, r18_6.url];
+
 const nomsModeles = [
-
-
-  "Elica",
   "Fenice",
+
   "Gaia",
   "Helios",
   "Iride",
