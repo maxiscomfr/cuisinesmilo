@@ -403,10 +403,18 @@ const modelesFabricant: ModelGroup[] = [
   })),
 ];
 
-
-
+const modelesTries = [...modelesFabricant].sort((a, b) =>
+  a.modele.localeCompare(b.modele, "fr", { sensitivity: "base" }),
+);
 
 function CuisinesPage() {
+  const [modeleSelectionne, setModeleSelectionne] = useState<string>("Tous");
+  const groupesAffiches =
+    modeleSelectionne === "Tous"
+      ? modelesTries
+      : modelesTries.filter((g) => g.modele === modeleSelectionne);
+
+  return (
 
   return (
     <>
