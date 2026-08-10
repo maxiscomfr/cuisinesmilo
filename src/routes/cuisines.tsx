@@ -2,6 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
 import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
+import yota1 from "@/assets/yota/system-yota-1.jpg.asset.json";
+import yota2 from "@/assets/yota/system-yota-2.jpg.asset.json";
+import yota3 from "@/assets/yota/system-yota-3.jpg.asset.json";
+import yota4 from "@/assets/yota/system-yota-4.jpg.asset.json";
+import yota5 from "@/assets/yota/system-yota-5.jpg.asset.json";
+import yota6 from "@/assets/yota/system-yota-6.jpg.asset.json";
+import yota7 from "@/assets/yota/system-yota-7.jpg.asset.json";
+import yota8 from "@/assets/yota/system-yota-8.jpg.asset.json";
+import yota9 from "@/assets/yota/system-yota-9.jpg.asset.json";
 
 
 export const Route = createFileRoute("/cuisines")({
