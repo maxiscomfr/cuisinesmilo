@@ -347,9 +347,15 @@ import etro29_5 from "@/assets/etro-29/5.jpg.asset.json";
 
 const etro29Photos = [etro29_1.url, etro29_2.url, etro29_3.url, etro29_4.url, etro29_5.url];
 
-const nomsModeles = [
-  "Bijou",
-];
+import etro30_1 from "@/assets/etro-30/1.jpg.asset.json";
+import etro30_2 from "@/assets/etro-30/2.jpg.asset.json";
+import etro30_3 from "@/assets/etro-30/3.jpg.asset.json";
+import etro30_4 from "@/assets/etro-30/4.jpg.asset.json";
+
+const etro30Photos = [etro30_1.url, etro30_2.url, etro30_3.url, etro30_4.url];
+
+const nomsModeles: string[] = [];
+
 
 
 
