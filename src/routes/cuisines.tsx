@@ -217,8 +217,19 @@ import kr16_5 from "@/assets/kappa-rho-2/5.jpg.asset.json";
 
 const kappaRho2Photos = [kr16_1.url, kr16_2.url, kr16_3.url, kr16_4.url, kr16_5.url];
 
+import k17_1 from "@/assets/kappa-17/1.jpg.asset.json";
+import k17_2 from "@/assets/kappa-17/2.jpg.asset.json";
+import k17_3 from "@/assets/kappa-17/3.jpg.asset.json";
+import k17_4 from "@/assets/kappa-17/4.jpg.asset.json";
+import k17_5 from "@/assets/kappa-17/5.jpg.asset.json";
+import k17_6 from "@/assets/kappa-17/6.jpg.asset.json";
+import k17_7 from "@/assets/kappa-17/7.jpg.asset.json";
+import k17_8 from "@/assets/kappa-17/8.jpg.asset.json";
+
+const kappa17Photos = [k17_1.url, k17_2.url, k17_3.url, k17_4.url, k17_5.url, k17_6.url, k17_7.url, k17_8.url];
+
 const nomsModeles = [
-  "Domino",
+
 
   "Elica",
   "Fenice",
