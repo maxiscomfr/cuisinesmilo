@@ -32,11 +32,43 @@ const etapes = [
 
 // Structure prête à recevoir les vraies photos : ajouter les imports d'assets
 // dans `photos` (ex: photos: [equa1, equa2, ...]) et retirer `placeholders`.
-const modelesFabricant: ModelGroup[] = [
-  { modele: "Equa + Rho", photos: [], placeholders: 3 },
-  { modele: "Quadro", photos: [], placeholders: 2 },
-  { modele: "Skyline + Yota", photos: [], placeholders: 3 },
+const nomsModeles = [
+  "Equa + Rho",
+  "Quadro",
+  "Skyline + Yota",
+  "Aria",
+  "Bloom",
+  "Cloe",
+  "Domino",
+  "Elica",
+  "Fenice",
+  "Gaia",
+  "Helios",
+  "Iride",
+  "Kubo",
+  "Lumina",
+  "Mira",
+  "Nova",
+  "Onda",
+  "Prisma",
+  "Quarzo",
+  "Riva",
+  "Sabbia",
+  "Terra",
+  "Urban",
+  "Vela",
+  "Wood",
+  "Xilo",
+  "Yuma",
+  "Zenith",
 ];
+
+const modelesFabricant: ModelGroup[] = nomsModeles.map((modele, i) => ({
+  modele,
+  photos: [],
+  placeholders: 2 + (i % 3),
+}));
+
 
 
 function CuisinesPage() {
