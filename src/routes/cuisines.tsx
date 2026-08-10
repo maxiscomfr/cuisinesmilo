@@ -11,6 +11,16 @@ import yota6 from "@/assets/yota/system-yota-6.jpg.asset.json";
 import yota7 from "@/assets/yota/system-yota-7.jpg.asset.json";
 import yota8 from "@/assets/yota/system-yota-8.jpg.asset.json";
 import yota9 from "@/assets/yota/system-yota-9.jpg.asset.json";
+import sys1 from "@/assets/system/system-1.jpg.asset.json";
+import sys2 from "@/assets/system/system-2.jpg.asset.json";
+import sys4 from "@/assets/system/system-4.jpg.asset.json";
+import sys5 from "@/assets/system/system-5.jpg.asset.json";
+import sys6 from "@/assets/system/system-6.jpg.asset.json";
+import sys7 from "@/assets/system/system-7.jpg.asset.json";
+import sys8 from "@/assets/system/system-8.jpg.asset.json";
+import sys9 from "@/assets/system/system-9.jpg.asset.json";
+import sys10 from "@/assets/system/system-10.jpg.asset.json";
+import sys11 from "@/assets/system/system-11.jpg.asset.json";
 
 
 export const Route = createFileRoute("/cuisines")({
