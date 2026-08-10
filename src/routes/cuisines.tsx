@@ -249,6 +249,8 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Yota 4", photos: yota4Photos },
   { modele: "Kappa + Rho", photos: kappaRho14Photos },
   { modele: "Rho + Yota", photos: rhoYotaPhotos },
+  { modele: "Kappa + Rho 2", photos: kappaRho2Photos },
+
   ...nomsModeles.map((modele, i) => ({
     modele,
     photos: [],
