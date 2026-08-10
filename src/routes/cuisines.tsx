@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
 import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
