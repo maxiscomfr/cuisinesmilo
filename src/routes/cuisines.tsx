@@ -237,8 +237,17 @@ import r18_6 from "@/assets/rho-18/6.jpg.asset.json";
 
 const rho18Photos = [r18_1.url, r18_2.url, r18_3.url, r18_4.url, r18_5.url, r18_6.url];
 
+import er19_1 from "@/assets/equa-rho-19/1.jpg.asset.json";
+import er19_2 from "@/assets/equa-rho-19/2.jpg.asset.json";
+import er19_3 from "@/assets/equa-rho-19/3.jpg.asset.json";
+import er19_4 from "@/assets/equa-rho-19/4.jpg.asset.json";
+import er19_5 from "@/assets/equa-rho-19/5.jpg.asset.json";
+import er19_6 from "@/assets/equa-rho-19/6.jpg.asset.json";
+
+const equaRho19Photos = [er19_1.url, er19_2.url, er19_3.url, er19_4.url, er19_5.url, er19_6.url];
+
 const nomsModeles = [
-  "Fenice",
+
 
   "Gaia",
   "Helios",
