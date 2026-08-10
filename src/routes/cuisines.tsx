@@ -278,10 +278,20 @@ const quadroSkylineYota22Photos = [
   qsy22_6.url, qsy22_7.url, qsy22_8.url, qsy22_9.url,
 ];
 
-const nomsModeles = [
-  "Kubo",
+import oqr23_1 from "@/assets/omicron-quadro-riga-23/1.jpg.asset.json";
+import oqr23_2 from "@/assets/omicron-quadro-riga-23/2.jpg.asset.json";
+import oqr23_3 from "@/assets/omicron-quadro-riga-23/3.jpg.asset.json";
+import oqr23_4 from "@/assets/omicron-quadro-riga-23/4.jpg.asset.json";
+import oqr23_5 from "@/assets/omicron-quadro-riga-23/5.jpg.asset.json";
+import oqr23_6 from "@/assets/omicron-quadro-riga-23/6.jpg.asset.json";
+import oqr23_7 from "@/assets/omicron-quadro-riga-23/7.jpg.asset.json";
 
-  "Kubo",
+const omicronQuadroRiga23Photos = [
+  oqr23_1.url, oqr23_2.url, oqr23_3.url, oqr23_4.url, oqr23_5.url, oqr23_6.url, oqr23_7.url,
+];
+
+const nomsModeles = [
+
   "Lumina",
   "Mira",
   "Nova",
@@ -312,6 +322,7 @@ const modelesFabricant: ModelGroup[] = [
   { modele: "Equa + Kappa", photos: equaKappa20Photos },
   { modele: "Quadro", photos: quadro21Photos },
   { modele: "Quadro + Skyline + Yota", photos: quadroSkylineYota22Photos },
+  { modele: "Omicron + Quadro + Riga", photos: omicronQuadroRiga23Photos },
 
 
 
