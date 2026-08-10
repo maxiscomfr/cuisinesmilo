@@ -5,14 +5,14 @@ import { Section, SectionLabel } from "@/components/site/Section";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & devis — Cuisines Milo" },
+      { title: "Contact — Cuisines Milo" },
       {
         name: "description",
         content:
-          "Demandez votre devis pour une cuisine ou un dressing sur mesure à Royan et en Charente-Maritime.",
+          "Contactez Cuisines Milo pour toute question sur une cuisine ou un dressing sur mesure à Royan et en Charente-Maritime.",
       },
-      { property: "og:title", content: "Contact & devis — Cuisines Milo" },
-      { property: "og:description", content: "Formulaires de devis et de contact." },
+      { property: "og:title", content: "Contact — Cuisines Milo" },
+      { property: "og:description", content: "Formulaire de contact." },
     ],
   }),
   component: ContactPage,
