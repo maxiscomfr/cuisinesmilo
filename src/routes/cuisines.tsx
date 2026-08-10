@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
 import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
@@ -403,12 +404,19 @@ const modelesFabricant: ModelGroup[] = [
   })),
 ];
 
-
-
+const modelesTries = [...modelesFabricant].sort((a, b) =>
+  a.modele.localeCompare(b.modele, "fr", { sensitivity: "base" }),
+);
 
 function CuisinesPage() {
+  const [modeleSelectionne, setModeleSelectionne] = useState<string>("Tous");
+  const groupesAffiches =
+    modeleSelectionne === "Tous"
+      ? modelesTries
+      : modelesTries.filter((g) => g.modele === modeleSelectionne);
 
   return (
+
     <>
       <section className="border-hairline border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
@@ -449,8 +457,32 @@ function CuisinesPage() {
           chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
           parcourir ses photos.
         </p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+
+          <label
+            htmlFor="filtre-modele"
+            className="text-xs uppercase tracking-[0.18em] text-accent"
+          >
+            Modèle
+          </label>
+          <select
+            id="filtre-modele"
+            value={modeleSelectionne}
+            onChange={(e) => setModeleSelectionne(e.target.value)}
+            className="rounded-md border-hairline border-border bg-background px-3 py-2 text-sm text-foreground"
+          >
+            <option value="Tous">Tous les modèles ({modelesTries.length})</option>
+            {modelesTries.map((g) => (
+              <option key={g.modele} value={g.modele}>
+                {g.modele}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="mt-10">
-          <ModelGallery groups={modelesFabricant} />
+          <ModelGallery groups={groupesAffiches} />
+
         </div>
 
         <div className="mt-8">
