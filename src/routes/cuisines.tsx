@@ -458,7 +458,31 @@ function CuisinesPage() {
           parcourir ses photos.
         </p>
         <div className="mt-10">
-          <ModelGallery groups={modelesFabricant} />
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <label
+            htmlFor="filtre-modele"
+            className="text-xs uppercase tracking-[0.18em] text-accent"
+          >
+            Modèle
+          </label>
+          <select
+            id="filtre-modele"
+            value={modeleSelectionne}
+            onChange={(e) => setModeleSelectionne(e.target.value)}
+            className="rounded-md border-hairline border-border bg-background px-3 py-2 text-sm text-foreground"
+          >
+            <option value="Tous">Tous les modèles ({modelesTries.length})</option>
+            {modelesTries.map((g) => (
+              <option key={g.modele} value={g.modele}>
+                {g.modele}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mt-10">
+          <ModelGallery groups={groupesAffiches} />
+
         </div>
 
         <div className="mt-8">
