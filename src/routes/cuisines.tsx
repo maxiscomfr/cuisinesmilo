@@ -418,37 +418,6 @@ function CuisinesPage() {
   return (
 
     <>
-      <section className="border-hairline border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
-          <div>
-            <SectionLabel>Cuisines sur mesure</SectionLabel>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Une cuisine dessinée autour de votre quotidien.
-            </h1>
-            <p className="mt-5 max-w-lg text-muted-foreground">
-              Nous concevons des cuisines qui vieillissent bien : matériaux
-              nobles, finitions maîtrisées, agencements pensés pour durer.
-            </p>
-            <div className="mt-8">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-              >
-                Demander mon devis
-              </Link>
-            </div>
-          </div>
-          <div>
-            <CataloguePlaceholder ratio="aspect-[16/10]" />
-            <p className="mt-3 text-xs text-muted-foreground">
-              Visuel provisoire — catalogue fabricant Armony Cucine en cours
-              d'intégration.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
       <Section>
         <SectionLabel>Catalogue fabricant</SectionLabel>
         <SectionTitle>Modèles Armony Cucine</SectionTitle>
@@ -494,6 +463,37 @@ function CuisinesPage() {
           </Link>
         </div>
       </Section>
+
+      <section className="border-hairline border-b border-border">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
+          <div>
+            <SectionLabel>Cuisines sur mesure</SectionLabel>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+              Une cuisine dessinée autour de votre quotidien.
+            </h1>
+            <p className="mt-5 max-w-lg text-muted-foreground">
+              Nous concevons des cuisines qui vieillissent bien : matériaux
+              nobles, finitions maîtrisées, agencements pensés pour durer.
+            </p>
+            <div className="mt-8">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Demander mon devis
+              </Link>
+            </div>
+          </div>
+          <div>
+            <CataloguePlaceholder ratio="aspect-[16/10]" />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Visuel provisoire — catalogue fabricant Armony Cucine en cours
+              d'intégration.
+            </p>
+          </div>
+
+        </div>
+      </section>
 
       <Section bordered>
         <SectionLabel>Notre méthode</SectionLabel>
