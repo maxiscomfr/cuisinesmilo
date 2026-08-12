@@ -1,8 +1,5 @@
-import cuisine1 from "@/assets/cuisine-1.jpg";
-import cuisine2 from "@/assets/cuisine-2.jpg";
-import cuisine3 from "@/assets/cuisine-3.jpg";
-import dressing1 from "@/assets/dressing-1.jpg";
-import dressing2 from "@/assets/dressing-2.jpg";
+import realisation011 from "@/assets/realisation-01/1.jpg.asset.json";
+import realisation012 from "@/assets/realisation-01/2.jpg.asset.json";
 
 export type Realisation = {
   id: string;
@@ -13,14 +10,20 @@ export type Realisation = {
 };
 
 export const realisations: Realisation[] = [
-  { id: "r1", title: "Cuisine chêne et pierre", location: "Royan", category: "Cuisine", image: cuisine1 },
-  { id: "r2", title: "Cuisine noyer & marbre", location: "Saint-Palais-sur-Mer", category: "Cuisine", image: cuisine2 },
-  { id: "r3", title: "Dressing chêne clair", location: "Saujon", category: "Dressing", image: dressing1 },
-  { id: "r4", title: "Placards coulissants", location: "Vaux-sur-Mer", category: "Dressing", image: dressing2 },
-  { id: "r5", title: "Cuisine linéaire beige", location: "La Tremblade", category: "Cuisine", image: cuisine3 },
-  { id: "r6", title: "Cuisine bois & blanc", location: "Meschers", category: "Cuisine", image: cuisine1 },
-  { id: "r7", title: "Dressing sur mesure", location: "Royan", category: "Dressing", image: dressing2 },
-  { id: "r8", title: "Cuisine ouverte", location: "Saint-Georges-de-Didonne", category: "Cuisine", image: cuisine3 },
+  {
+    id: "r1-1",
+    title: "Première réalisation",
+    location: "Charente-Maritime",
+    category: "Cuisine",
+    image: realisation011.url,
+  },
+  {
+    id: "r1-2",
+    title: "Première réalisation",
+    location: "Charente-Maritime",
+    category: "Cuisine",
+    image: realisation012.url,
+  },
 ];
 
 export type Avis = {
