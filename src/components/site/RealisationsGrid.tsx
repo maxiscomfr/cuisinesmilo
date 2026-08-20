@@ -53,7 +53,7 @@ export function RealisationsGrid({
             key={r.id}
             type="button"
             onClick={() => setOpenIndex(i)}
-            className="group overflow-hidden rounded-xl border-hairline border-border bg-card text-left transition-colors hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className={`group overflow-hidden bg-card text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${framed ? "rounded-xl border-hairline border-border hover:border-accent" : ""}`}
             aria-label={`Voir la réalisation ${r.title}`}
           >
             <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
