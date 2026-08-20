@@ -76,7 +76,7 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
+          <div className="overflow-hidden">
             <img
               src={heroKitchen}
               alt="Cuisine sur mesure en bois — Cuisines Milo"
