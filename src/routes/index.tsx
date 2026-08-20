@@ -76,7 +76,7 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden rounded-xl border-hairline border-border">
             <img
               src={heroKitchen}
               alt="Cuisine sur mesure en bois — Cuisines Milo"
@@ -90,9 +90,12 @@ function Home() {
 
       {/* RÉASSURANCES */}
       <Section>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3">
           {reassurances.map((r) => (
-            <div key={r.label} className="py-2">
+            <div
+              key={r.label}
+              className="rounded-xl border-hairline border-border p-6"
+            >
               <p className="text-xs uppercase tracking-[0.22em] text-accent">
                 {r.label}
               </p>
@@ -106,7 +109,7 @@ function Home() {
       </Section>
 
       {/* APERÇU RÉALISATIONS */}
-      <Section>
+      <Section bordered>
         <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
           <div>
             <SectionLabel>Réalisations récentes</SectionLabel>
@@ -120,12 +123,12 @@ function Home() {
           </Link>
         </div>
         <div className="mt-10">
-          <RealisationsGrid items={highlights} columns={3} framed={false} />
+          <RealisationsGrid items={highlights} columns={3} />
         </div>
       </Section>
 
       {/* AVIS */}
-      <Section>
+      <Section bordered>
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Ils nous ont fait confiance</SectionLabel>
           <blockquote className="mt-6 text-xl font-medium leading-relaxed text-foreground md:text-2xl">
@@ -146,8 +149,8 @@ function Home() {
       </Section>
 
       {/* CTA final */}
-      <Section>
-        <div className="py-8 text-center md:py-12">
+      <Section bordered>
+        <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
           <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
             Parlons de votre projet
           </h2>
