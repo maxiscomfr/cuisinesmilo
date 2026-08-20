@@ -144,9 +144,6 @@ function Header() {
             alt="Cuisines Milo"
             className="h-8 w-auto object-contain sm:h-10"
           />
-          <span className="hidden text-xs uppercase tracking-[0.18em] text-accent sm:inline">
-            Artisan cuisiniste
-          </span>
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((n) => (
