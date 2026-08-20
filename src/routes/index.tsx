@@ -120,7 +120,7 @@ function Home() {
           </Link>
         </div>
         <div className="mt-10">
-          <RealisationsGrid items={highlights} columns={3} />
+          <RealisationsGrid items={highlights} columns={3} framed={false} />
         </div>
       </Section>
 
