@@ -5,6 +5,9 @@ import realisation03 from "@/assets/realisation-03/1.jpg.asset.json";
 import realisation04 from "@/assets/realisation-04/1.jpg.asset.json";
 import realisation05 from "@/assets/realisation-05/1.jpg.asset.json";
 import realisation06 from "@/assets/realisation-06/1.jpg.asset.json";
+import dressing071 from "@/assets/realisation-07/1.jpg.asset.json";
+import dressing072 from "@/assets/realisation-07/2.jpg.asset.json";
+import dressing073 from "@/assets/realisation-07/3.jpg.asset.json";
 
 export type Realisation = {
   id: string;
@@ -63,6 +66,27 @@ export const realisations: Realisation[] = [
     location: "Charente-Maritime",
     category: "Cuisine",
     image: realisation06.url,
+  },
+  {
+    id: "d1-1",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing071.url,
+  },
+  {
+    id: "d1-2",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing072.url,
+  },
+  {
+    id: "d1-3",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing073.url,
   },
 ];
 
