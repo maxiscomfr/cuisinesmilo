@@ -5,9 +5,11 @@ import type { Realisation } from "@/lib/site-data";
 export function RealisationsGrid({
   items,
   columns = 3,
+  framed = true,
 }: {
   items: Realisation[];
   columns?: 2 | 3 | 4;
+  framed?: boolean;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
