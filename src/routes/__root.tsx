@@ -10,6 +10,7 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoAsset from "../assets/logo-cuisines-milo.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -94,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -137,10 +138,12 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="text-lg font-semibold tracking-tight text-foreground">
-            Cuisines Milo
-          </span>
+        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <img
+            src={logoAsset.url}
+            alt="Cuisines Milo"
+            className="h-8 w-auto object-contain sm:h-10"
+          />
           <span className="hidden text-xs uppercase tracking-[0.18em] text-accent sm:inline">
             Artisan cuisiniste
           </span>
