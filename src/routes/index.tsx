@@ -139,10 +139,10 @@ function Home() {
           </p>
           <div className="mt-8">
             <Link
-              to="/avis"
+              to="/a-propos"
               className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
-              Lire tous les avis →
+              En savoir plus sur Cuisines Milo →
             </Link>
           </div>
         </div>
