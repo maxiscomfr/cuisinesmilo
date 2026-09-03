@@ -456,7 +456,7 @@ function CuisinesPage() {
 
         <div className="mt-8">
           <Link
-            to="/realisations"
+            to="/realisations/cuisines"
             className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Voir nos réalisations →
@@ -523,7 +523,7 @@ function CuisinesPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/realisations"
+              to="/realisations/cuisines"
               className="inline-flex items-center justify-center rounded-md border-hairline border-border px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
             >
               Voir les réalisations
