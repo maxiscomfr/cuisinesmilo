@@ -163,7 +163,7 @@ function Header() {
                   type="button"
                   aria-expanded={dropdown}
                   aria-haspopup="true"
-                  onClick={() => setDropdown((v) => !v)}
+                  onClick={() => setDropdown(true)}
                   className="flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
                 >
                   {n.label}
