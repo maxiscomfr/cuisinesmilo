@@ -69,7 +69,7 @@ function Home() {
                 Demander mon devis gratuit
               </Link>
               <Link
-                to="/realisations"
+                to="/realisations/cuisines"
                 className="inline-flex items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
               >
                 Voir les réalisations
@@ -116,7 +116,7 @@ function Home() {
             <SectionTitle>Quelques projets menés en Charente-Maritime</SectionTitle>
           </div>
           <Link
-            to="/realisations"
+            to="/realisations/cuisines"
             className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
           >
             Voir toute la galerie →
