@@ -19,6 +19,9 @@ import { Route as CatalogueRouteImport } from './routes/catalogue'
 import { Route as AvisRouteImport } from './routes/avis'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RealisationsIndexRouteImport } from './routes/realisations.index'
+import { Route as RealisationsDressingsRouteImport } from './routes/realisations.dressings'
+import { Route as RealisationsCuisinesRouteImport } from './routes/realisations.cuisines'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -70,6 +73,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RealisationsIndexRoute = RealisationsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => RealisationsRoute,
+} as any)
+const RealisationsDressingsRoute = RealisationsDressingsRouteImport.update({
+  id: '/dressings',
+  path: '/dressings',
+  getParentRoute: () => RealisationsRoute,
+} as any)
+const RealisationsCuisinesRoute = RealisationsCuisinesRouteImport.update({
+  id: '/cuisines',
+  path: '/cuisines',
+  getParentRoute: () => RealisationsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -80,8 +98,11 @@ export interface FileRoutesByFullPath {
   '/cuisines': typeof CuisinesRoute
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
-  '/realisations': typeof RealisationsRoute
+  '/realisations': typeof RealisationsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/realisations/cuisines': typeof RealisationsCuisinesRoute
+  '/realisations/dressings': typeof RealisationsDressingsRoute
+  '/realisations/': typeof RealisationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -92,8 +113,10 @@ export interface FileRoutesByTo {
   '/cuisines': typeof CuisinesRoute
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
-  '/realisations': typeof RealisationsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/realisations/cuisines': typeof RealisationsCuisinesRoute
+  '/realisations/dressings': typeof RealisationsDressingsRoute
+  '/realisations': typeof RealisationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -105,8 +128,11 @@ export interface FileRoutesById {
   '/cuisines': typeof CuisinesRoute
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
-  '/realisations': typeof RealisationsRoute
+  '/realisations': typeof RealisationsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/realisations/cuisines': typeof RealisationsCuisinesRoute
+  '/realisations/dressings': typeof RealisationsDressingsRoute
+  '/realisations/': typeof RealisationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +147,9 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/realisations'
     | '/sitemap.xml'
+    | '/realisations/cuisines'
+    | '/realisations/dressings'
+    | '/realisations/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -131,8 +160,10 @@ export interface FileRouteTypes {
     | '/cuisines'
     | '/dressings'
     | '/mentions-legales'
-    | '/realisations'
     | '/sitemap.xml'
+    | '/realisations/cuisines'
+    | '/realisations/dressings'
+    | '/realisations'
   id:
     | '__root__'
     | '/'
@@ -145,6 +176,9 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/realisations'
     | '/sitemap.xml'
+    | '/realisations/cuisines'
+    | '/realisations/dressings'
+    | '/realisations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -156,7 +190,7 @@ export interface RootRouteChildren {
   CuisinesRoute: typeof CuisinesRoute
   DressingsRoute: typeof DressingsRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
-  RealisationsRoute: typeof RealisationsRoute
+  RealisationsRoute: typeof RealisationsRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -232,8 +266,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/realisations/': {
+      id: '/realisations/'
+      path: '/'
+      fullPath: '/realisations/'
+      preLoaderRoute: typeof RealisationsIndexRouteImport
+      parentRoute: typeof RealisationsRoute
+    }
+    '/realisations/dressings': {
+      id: '/realisations/dressings'
+      path: '/dressings'
+      fullPath: '/realisations/dressings'
+      preLoaderRoute: typeof RealisationsDressingsRouteImport
+      parentRoute: typeof RealisationsRoute
+    }
+    '/realisations/cuisines': {
+      id: '/realisations/cuisines'
+      path: '/cuisines'
+      fullPath: '/realisations/cuisines'
+      preLoaderRoute: typeof RealisationsCuisinesRouteImport
+      parentRoute: typeof RealisationsRoute
+    }
   }
 }
+
+interface RealisationsRouteChildren {
+  RealisationsCuisinesRoute: typeof RealisationsCuisinesRoute
+  RealisationsDressingsRoute: typeof RealisationsDressingsRoute
+  RealisationsIndexRoute: typeof RealisationsIndexRoute
+}
+
+const RealisationsRouteChildren: RealisationsRouteChildren = {
+  RealisationsCuisinesRoute: RealisationsCuisinesRoute,
+  RealisationsDressingsRoute: RealisationsDressingsRoute,
+  RealisationsIndexRoute: RealisationsIndexRoute,
+}
+
+const RealisationsRouteWithChildren = RealisationsRoute._addFileChildren(
+  RealisationsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -244,7 +315,7 @@ const rootRouteChildren: RootRouteChildren = {
   CuisinesRoute: CuisinesRoute,
   DressingsRoute: DressingsRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
-  RealisationsRoute: RealisationsRoute,
+  RealisationsRoute: RealisationsRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
