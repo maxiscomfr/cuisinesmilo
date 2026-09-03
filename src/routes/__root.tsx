@@ -124,19 +124,22 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-const navItems = [
-  { to: "/cuisines", label: "Cuisines" },
-  { to: "/a-propos", label: "À propos" },
-  { to: "/contact", label: "Contact" },
-] as const;
-
 const realisationsItems = [
   { to: "/realisations/cuisines", label: "Cuisines" },
   { to: "/realisations/dressings", label: "Dressings" },
 ] as const;
 
+const navItems = [
+  { to: "/cuisines", label: "Cuisines" },
+  { to: "/realisations", label: "Réalisations", children: realisationsItems },
+  { to: "/a-propos", label: "À propos" },
+  { to: "/contact", label: "Contact" },
+] as const;
+
 function Header() {
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
@@ -148,16 +151,56 @@ function Header() {
           />
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
-          {navItems.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="text-sm text-foreground/80 transition-colors hover:text-foreground"
-              activeProps={{ className: "text-sm text-foreground font-medium" }}
-            >
-              {n.label}
-            </Link>
-          ))}
+          {navItems.map((n) =>
+            "children" in n ? (
+              <div
+                key={n.to}
+                className="relative"
+                onMouseEnter={() => setDropdown(true)}
+                onMouseLeave={() => setDropdown(false)}
+              >
+                <button
+                  type="button"
+                  aria-expanded={dropdown}
+                  aria-haspopup="true"
+                  onClick={() => setDropdown((v) => !v)}
+                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {n.label}
+                  <span aria-hidden className="text-[10px]">
+                    ▾
+                  </span>
+                </button>
+                {dropdown && (
+                  <div className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1">
+                    {n.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        onClick={() => setDropdown(false)}
+                        className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                        activeProps={{
+                          className:
+                            "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
+                        }}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={n.to}
+                to={n.to}
+                className="text-sm text-foreground/80 transition-colors hover:text-foreground"
+                activeProps={{ className: "text-sm text-foreground font-medium" }}
+              >
+                {n.label}
+              </Link>
+            ),
+          )}
         </nav>
         <button
           type="button"
@@ -176,16 +219,34 @@ function Header() {
       {open && (
         <div className="border-hairline border-t border-border md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
-            {navItems.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="py-2 text-sm text-foreground/80"
-                onClick={() => setOpen(false)}
-              >
-                {n.label}
-              </Link>
-            ))}
+            {navItems.map((n) =>
+              "children" in n ? (
+                <div key={n.to} className="py-2">
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent">
+                    {n.label}
+                  </p>
+                  {n.children.map((c) => (
+                    <Link
+                      key={c.to}
+                      to={c.to}
+                      className="block py-2 pl-3 text-sm text-foreground/80"
+                      onClick={() => setOpen(false)}
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  className="py-2 text-sm text-foreground/80"
+                  onClick={() => setOpen(false)}
+                >
+                  {n.label}
+                </Link>
+              ),
+            )}
           </nav>
         </div>
       )}
