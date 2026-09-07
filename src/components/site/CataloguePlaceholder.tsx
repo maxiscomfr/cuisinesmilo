@@ -1,5 +1,5 @@
 export function CataloguePlaceholder({
-  label = "Photo catalogue fabricant Armony Cucine",
+  label = "Photo catalogue fabricant",
   caption,
   ratio = "aspect-[4/3]",
 }: {

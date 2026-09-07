@@ -10,7 +10,7 @@ export type ModelGroup = {
 };
 
 function PlaceholderVisual({
-  label = "Photo catalogue fabricant Armony Cucine",
+  label = "Photo catalogue fabricant",
   index,
   total,
 }: {

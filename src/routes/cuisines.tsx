@@ -420,11 +420,11 @@ function CuisinesPage() {
     <>
       <Section>
         <SectionLabel>Catalogue fabricant</SectionLabel>
-        <SectionTitle>Modèles Armony Cucine</SectionTitle>
+        <SectionTitle>Nos modèles de cuisines</SectionTitle>
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-          Ces visuels sont des modèles du fabricant Armony Cucine, et non des
-          chantiers réalisés par Cuisines Milo. Cliquez sur un modèle pour
-          parcourir ses photos.
+          Ces visuels sont des modèles de fabricant, et non des chantiers
+          réalisés par Cuisines Milo. Cliquez sur un modèle pour parcourir ses
+          photos.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
 
@@ -487,8 +487,7 @@ function CuisinesPage() {
           <div>
             <CataloguePlaceholder ratio="aspect-[16/10]" />
             <p className="mt-3 text-xs text-muted-foreground">
-              Visuel provisoire — catalogue fabricant Armony Cucine en cours
-              d'intégration.
+              Visuel provisoire — catalogue fabricant en cours d'intégration.
             </p>
           </div>
 
@@ -510,16 +509,16 @@ function CuisinesPage() {
       </Section>
 
       <Section bordered>
-        <SectionLabel>Fabricant</SectionLabel>
-        <SectionTitle>Cuisines du fabricant Armony Cucine</SectionTitle>
+        <SectionLabel>Cuisines sur mesure</SectionLabel>
+        <SectionTitle>Des finitions et matériaux à votre goût</SectionTitle>
         <div className="mt-8 rounded-xl border-hairline border-border p-8 md:p-12">
           <p className="text-base text-foreground">
-            En cours d'intégration, sous réserve d'autorisation du fabricant.
+            Chaque projet est conçu sur mesure, autour de vos volumes et de vos
+            envies.
           </p>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            En attendant la mise en ligne des visuels Armony Cucine, nous
-            pouvons échanger sur les modèles, finitions et matériaux
-            disponibles, et vous montrer nos réalisations.
+            Nous pouvons échanger ensemble sur les modèles, finitions et
+            matériaux disponibles, et vous montrer nos réalisations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
