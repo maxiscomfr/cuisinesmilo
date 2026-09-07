@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroKitchen from "@/assets/hero-kitchen.jpg";
+import heroKitchenAsset from "@/assets/hero-cuisine.jpg.asset.json";
+
+const heroKitchen = heroKitchenAsset.url;
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { RealisationsGrid } from "@/components/site/RealisationsGrid";
 import { realisations, avisList } from "@/lib/site-data";
