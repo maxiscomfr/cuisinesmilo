@@ -57,6 +57,16 @@ import cuisine56 from "@/assets/cuisines/56.jpg.asset.json";
 import cuisine57 from "@/assets/cuisines/57.jpg.asset.json";
 import cuisine58 from "@/assets/cuisines/58.jpg.asset.json";
 import cuisine59 from "@/assets/cuisines/59.jpg.asset.json";
+import cuisine60 from "@/assets/cuisines/60.jpg.asset.json";
+import cuisine61 from "@/assets/cuisines/61.jpg.asset.json";
+import cuisine62 from "@/assets/cuisines/62.jpg.asset.json";
+import cuisine63 from "@/assets/cuisines/63.jpg.asset.json";
+import cuisine64 from "@/assets/cuisines/64.jpg.asset.json";
+import cuisine65 from "@/assets/cuisines/65.jpg.asset.json";
+import cuisine66 from "@/assets/cuisines/66.jpg.asset.json";
+import cuisine67 from "@/assets/cuisines/67.jpg.asset.json";
+import cuisine68 from "@/assets/cuisines/68.jpg.asset.json";
+import cuisine69 from "@/assets/cuisines/69.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -177,6 +187,16 @@ export const realisations: Realisation[] = [
   { id: "c57", title: "Cuisine noir et blanc avec verrière atelier", location: "Charente-Maritime", category: "Cuisine", image: cuisine57.url },
   { id: "c58", title: "Façades effet bois et four Miele encastré", location: "Charente-Maritime", category: "Cuisine", image: cuisine58.url },
   { id: "c59", title: "Îlot anthracite, colonnes beige sable sans poignées", location: "Charente-Maritime", category: "Cuisine", image: cuisine59.url },
+  { id: "c60", title: "Cuisine blanche, fresque murale tropicale", location: "Charente-Maritime", category: "Cuisine", image: cuisine60.url },
+  { id: "c61", title: "Îlot taupe et plan blanc, ouverture sur l'extérieur", location: "Charente-Maritime", category: "Cuisine", image: cuisine61.url },
+  { id: "c62", title: "Cuisine blanche brillante, plan gris anthracite", location: "Charente-Maritime", category: "Cuisine", image: cuisine62.url },
+  { id: "c63", title: "Meubles blancs et mur noir mat, design minimaliste", location: "Charente-Maritime", category: "Cuisine", image: cuisine63.url },
+  { id: "c64", title: "Cuisine grise et blanche, îlot à plan sombre", location: "Charente-Maritime", category: "Cuisine", image: cuisine64.url },
+  { id: "c65", title: "Façades bois, plan noir et crédence hexagonale bleue", location: "Charente-Maritime", category: "Cuisine", image: cuisine65.url },
+  { id: "c66", title: "Cuisine blanche laquée, immense îlot repas", location: "Charente-Maritime", category: "Cuisine", image: cuisine66.url },
+  { id: "c67", title: "Cuisine blanche, long îlot à robinetterie noire", location: "Charente-Maritime", category: "Cuisine", image: cuisine67.url },
+  { id: "c68", title: "Rangement effet bois grisé et plan blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine68.url },
+  { id: "c69", title: "Façades bois, murs bleu canard et crédence hexagonale", location: "Charente-Maritime", category: "Cuisine", image: cuisine69.url },
 
   {
     id: "d1",
