@@ -32,6 +32,8 @@ import cuisine31 from "@/assets/cuisines/31.jpg.asset.json";
 import cuisine32 from "@/assets/cuisines/32.jpg.asset.json";
 import cuisine33 from "@/assets/cuisines/33.jpg.asset.json";
 import cuisine34 from "@/assets/cuisines/34.jpg.asset.json";
+import cuisine35 from "@/assets/cuisines/35.jpg.asset.json";
+import cuisine36 from "@/assets/cuisines/36.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -127,6 +129,8 @@ export const realisations: Realisation[] = [
   { id: "c32", title: "Cuisine bois noyer, crédence marbre noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine32.url },
   { id: "c33", title: "Cuisine blanche et bleu nuit, îlot bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine33.url },
   { id: "c34", title: "Cuisine blanche et grande table marbre", location: "Charente-Maritime", category: "Cuisine", image: cuisine34.url },
+  { id: "c35", title: "Cuisine blanche, plan marbre veiné et four encastré", location: "Charente-Maritime", category: "Cuisine", image: cuisine35.url },
+  { id: "c36", title: "Cuisine bois noyer et plan de travail noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine36.url },
 
   {
     id: "d1",
