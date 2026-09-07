@@ -29,8 +29,8 @@ const valeurs = [
   },
   {
     label: "Artisanat",
-    title: "Des matériaux choisis avec soin",
-    text: "Nous sélectionnons des fabricants réputés pour la qualité de leurs finitions et la durabilité de leurs matériaux. Le résultat : des installations solides, belles et pensées pour durer.",
+    title: "Un partenaire unique : Armony Cucine",
+    text: "Cuisines Milo travaille exclusivement avec le fabricant italien Armony Cucine, réputé pour la qualité de ses finitions et la durabilité de ses matériaux. Le résultat : des installations solides, belles et pensées pour durer.",
   },
   {
     label: "Accompagnement",
@@ -54,10 +54,10 @@ function AProposPage() {
           solution technique et esthétique qui vous ressemble.
         </p>
         <p className="mt-4 max-w-3xl text-muted-foreground">
-          Nous travaillons avec des fabricants reconnus, dont Armony Cucine,
-          pour vous offrir un large choix de finitions, de matériaux et de
-          configurations. Chaque projet est ensuite adapté à vos volumes et à
-          votre budget.
+          Nous travaillons en exclusivité avec le fabricant italien Armony
+          Cucine, ce qui nous permet de vous offrir un large choix de
+          finitions, de matériaux et de configurations. Chaque projet est ensuite
+          adapté à vos volumes et à votre budget.
         </p>
       </Section>
 
