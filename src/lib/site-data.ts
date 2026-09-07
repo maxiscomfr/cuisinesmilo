@@ -42,6 +42,11 @@ import cuisine41 from "@/assets/cuisines/41.jpg.asset.json";
 import cuisine42 from "@/assets/cuisines/42.jpg.asset.json";
 import cuisine43 from "@/assets/cuisines/43.jpg.asset.json";
 import cuisine44 from "@/assets/cuisines/44.jpg.asset.json";
+import cuisine45 from "@/assets/cuisines/45.jpg.asset.json";
+import cuisine46 from "@/assets/cuisines/46.jpg.asset.json";
+import cuisine47 from "@/assets/cuisines/47.jpg.asset.json";
+import cuisine48 from "@/assets/cuisines/48.jpg.asset.json";
+import cuisine49 from "@/assets/cuisines/49.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -147,6 +152,11 @@ export const realisations: Realisation[] = [
   { id: "c42", title: "Cuisine blanche, plan beige et évier intégré", location: "Charente-Maritime", category: "Cuisine", image: cuisine42.url },
   { id: "c43", title: "Cuisine noire mate encastrée, four et micro-ondes intégrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine43.url },
   { id: "c44", title: "Placards hauts blancs sans poignées et hotte plate encastrée", location: "Charente-Maritime", category: "Cuisine", image: cuisine44.url },
+  { id: "c45", title: "Réfrigérateur encastré dans une colonne blanche", location: "Charente-Maritime", category: "Cuisine", image: cuisine45.url },
+  { id: "c46", title: "Évier inox intégré, crédence carreaux vert forêt", location: "Charente-Maritime", category: "Cuisine", image: cuisine46.url },
+  { id: "c47", title: "Plaque gaz Smeg sur plan sombre, meubles bois clair", location: "Charente-Maritime", category: "Cuisine", image: cuisine47.url },
+  { id: "c48", title: "Buffet suspendu blanc à niches colorées, mur en pierre", location: "Charente-Maritime", category: "Cuisine", image: cuisine48.url },
+  { id: "c49", title: "Cuisine pierre apparente, îlot bois et finitions anthracite", location: "Charente-Maritime", category: "Cuisine", image: cuisine49.url },
 
   {
     id: "d1",
