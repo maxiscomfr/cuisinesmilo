@@ -417,12 +417,27 @@ const modelesTries = [...modelesFabricant].sort((a, b) =>
   a.modele.localeCompare(b.modele, "fr", { sensitivity: "base" }),
 );
 
+// Grandes familles : on retire le numéro de variante ("Yota 2" → "Yota")
+// et on éclate les combinaisons ("Rho + Kappa" → Rho, Kappa).
+function famillesDuModele(modele: string): string[] {
+  return modele
+    .split("+")
+    .map((p) => p.trim().replace(/\s+\d+$/, ""))
+    .filter(Boolean);
+}
+
+const familles = Array.from(
+  new Set(modelesTries.flatMap((g) => famillesDuModele(g.modele))),
+).sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+
 function CuisinesPage() {
-  const [modeleSelectionne, setModeleSelectionne] = useState<string>("Tous");
+  const [familleSelectionnee, setFamilleSelectionnee] = useState<string>("Tous");
   const groupesAffiches =
-    modeleSelectionne === "Tous"
+    familleSelectionnee === "Tous"
       ? modelesTries
-      : modelesTries.filter((g) => g.modele === modeleSelectionne);
+      : modelesTries.filter((g) =>
+          famillesDuModele(g.modele).includes(familleSelectionnee),
+        );
 
   return (
 
@@ -441,18 +456,18 @@ function CuisinesPage() {
             htmlFor="filtre-modele"
             className="text-xs uppercase tracking-[0.18em] text-accent"
           >
-            Modèle
+            Famille
           </label>
           <select
             id="filtre-modele"
-            value={modeleSelectionne}
-            onChange={(e) => setModeleSelectionne(e.target.value)}
+            value={familleSelectionnee}
+            onChange={(e) => setFamilleSelectionnee(e.target.value)}
             className="rounded-md border-hairline border-border bg-background px-3 py-2 text-sm text-foreground"
           >
-            <option value="Tous">Tous les modèles ({modelesTries.length})</option>
-            {modelesTries.map((g) => (
-              <option key={g.modele} value={g.modele}>
-                {g.modele}
+            <option value="Tous">Toutes les familles ({modelesTries.length})</option>
+            {familles.map((f) => (
+              <option key={f} value={f}>
+                {f}
               </option>
             ))}
           </select>
