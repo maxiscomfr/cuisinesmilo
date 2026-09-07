@@ -1,10 +1,13 @@
-import realisation011 from "@/assets/realisation-01/1.jpg.asset.json";
-import realisation012 from "@/assets/realisation-01/2.jpg.asset.json";
-import realisation02 from "@/assets/realisation-02/1.jpg.asset.json";
-import realisation03 from "@/assets/realisation-03/1.jpg.asset.json";
-import realisation04 from "@/assets/realisation-04/1.jpg.asset.json";
-import realisation05 from "@/assets/realisation-05/1.jpg.asset.json";
-import realisation06 from "@/assets/realisation-06/1.jpg.asset.json";
+import cuisine01 from "@/assets/cuisines/1.jpg.asset.json";
+import cuisine02 from "@/assets/cuisines/2.jpg.asset.json";
+import cuisine03 from "@/assets/cuisines/3.jpg.asset.json";
+import cuisine04 from "@/assets/cuisines/4.jpg.asset.json";
+import cuisine05 from "@/assets/cuisines/5.jpg.asset.json";
+import cuisine06 from "@/assets/cuisines/6.jpg.asset.json";
+import cuisine07 from "@/assets/cuisines/7.jpg.asset.json";
+import cuisine08 from "@/assets/cuisines/8.jpg.asset.json";
+import cuisine09 from "@/assets/cuisines/9.jpg.asset.json";
+import cuisine10 from "@/assets/cuisines/10.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -66,55 +69,17 @@ export type Realisation = {
 };
 
 export const realisations: Realisation[] = [
-  {
-    id: "r1-1",
-    title: "Première réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation011.url,
-  },
-  {
-    id: "r1-2",
-    title: "Première réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation012.url,
-  },
-  {
-    id: "r2",
-    title: "Cuisine laquée blanche, plan marbre noir",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation02.url,
-  },
-  {
-    id: "r3",
-    title: "Réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation03.url,
-  },
-  {
-    id: "r4",
-    title: "Cuisine noyer, crédence marbre noir",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation04.url,
-  },
-  {
-    id: "r5",
-    title: "Cuisine bois clair avec grande table",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation05.url,
-  },
-  {
-    id: "r6",
-    title: "Cuisine bois et noir avec cave à vin",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation06.url,
-  },
+  { id: "c1", title: "Cuisine noire, plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine01.url },
+  { id: "c2", title: "Îlot noir et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine02.url },
+  { id: "c3", title: "Grande table plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine03.url },
+  { id: "c4", title: "Cuisine blanche et grise, îlot bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine04.url },
+  { id: "c5", title: "Cuisine bois, îlot blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine05.url },
+  { id: "c6", title: "Cuisine blanche laquée", location: "Charente-Maritime", category: "Cuisine", image: cuisine06.url },
+  { id: "c7", title: "Îlot bar blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine07.url },
+  { id: "c8", title: "Cuisine blanche, îlot repas", location: "Charente-Maritime", category: "Cuisine", image: cuisine08.url },
+  { id: "c9", title: "Cuisine blanche brillante", location: "Charente-Maritime", category: "Cuisine", image: cuisine09.url },
+  { id: "c10", title: "Cuisine bois clair, grande table", location: "Charente-Maritime", category: "Cuisine", image: cuisine10.url },
+
   {
     id: "d1",
     title: "Dressing sur mesure",
