@@ -47,6 +47,16 @@ import cuisine46 from "@/assets/cuisines/46.jpg.asset.json";
 import cuisine47 from "@/assets/cuisines/47.jpg.asset.json";
 import cuisine48 from "@/assets/cuisines/48.jpg.asset.json";
 import cuisine49 from "@/assets/cuisines/49.jpg.asset.json";
+import cuisine50 from "@/assets/cuisines/50.jpg.asset.json";
+import cuisine51 from "@/assets/cuisines/51.jpg.asset.json";
+import cuisine52 from "@/assets/cuisines/52.jpg.asset.json";
+import cuisine53 from "@/assets/cuisines/53.jpg.asset.json";
+import cuisine54 from "@/assets/cuisines/54.jpg.asset.json";
+import cuisine55 from "@/assets/cuisines/55.jpg.asset.json";
+import cuisine56 from "@/assets/cuisines/56.jpg.asset.json";
+import cuisine57 from "@/assets/cuisines/57.jpg.asset.json";
+import cuisine58 from "@/assets/cuisines/58.jpg.asset.json";
+import cuisine59 from "@/assets/cuisines/59.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -157,6 +167,16 @@ export const realisations: Realisation[] = [
   { id: "c47", title: "Plaque gaz Smeg sur plan sombre, meubles bois clair", location: "Charente-Maritime", category: "Cuisine", image: cuisine47.url },
   { id: "c48", title: "Buffet suspendu blanc à niches colorées, mur en pierre", location: "Charente-Maritime", category: "Cuisine", image: cuisine48.url },
   { id: "c49", title: "Cuisine pierre apparente, îlot bois et finitions anthracite", location: "Charente-Maritime", category: "Cuisine", image: cuisine49.url },
+  { id: "c50", title: "Duo de fours Smeg encastrés, colonnes bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine50.url },
+  { id: "c51", title: "Coin buanderie compact, façades grises et plan blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine51.url },
+  { id: "c52", title: "Coin évier, crédence vert forêt et robinetterie noire", location: "Charente-Maritime", category: "Cuisine", image: cuisine52.url },
+  { id: "c53", title: "Cuisine spacieuse, îlot bois avec cave à vin", location: "Charente-Maritime", category: "Cuisine", image: cuisine53.url },
+  { id: "c54", title: "Cuisine pop, plan vert pistache et façades rose fuchsia", location: "Charente-Maritime", category: "Cuisine", image: cuisine54.url },
+  { id: "c55", title: "Meubles bas bois et grand îlot blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine55.url },
+  { id: "c56", title: "Îlot bois avec cave à vin vitrée, carrelage vert forêt", location: "Charente-Maritime", category: "Cuisine", image: cuisine56.url },
+  { id: "c57", title: "Cuisine noir et blanc avec verrière atelier", location: "Charente-Maritime", category: "Cuisine", image: cuisine57.url },
+  { id: "c58", title: "Façades effet bois et four Miele encastré", location: "Charente-Maritime", category: "Cuisine", image: cuisine58.url },
+  { id: "c59", title: "Îlot anthracite, colonnes beige sable sans poignées", location: "Charente-Maritime", category: "Cuisine", image: cuisine59.url },
 
   {
     id: "d1",
