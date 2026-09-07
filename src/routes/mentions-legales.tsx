@@ -10,6 +10,12 @@ export const Route = createFileRoute("/mentions-legales")({
       { property: "og:title", content: "Mentions légales — Cuisines Milo" },
       { property: "og:description", content: "Informations légales du site." },
     ],
+    links: [
+        {
+          rel: "canonical",
+          href: "https://cuisinesmilo.com/mentions-legales",
+        },
+      ],
   }),
   component: MentionsPage,
 });

@@ -39,6 +39,9 @@ export const Route = createFileRoute("/cuisines")({
         content: "Cuisines sur mesure à Royan et en Charente-Maritime.",
       },
     ],
+    links: [
+        { rel: "canonical", href: "https://cuisinesmilo.com/cuisines" },
+      ],
   }),
   component: CuisinesPage,
 });

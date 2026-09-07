@@ -21,6 +21,7 @@ export const Route = createFileRoute("/")({
         content: "Cuisines et dressings sur mesure à Royan et en Charente-Maritime.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://cuisinesmilo.com/" }],
   }),
   component: Home,
 });

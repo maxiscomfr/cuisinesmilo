@@ -14,6 +14,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Cuisines Milo" },
       { property: "og:description", content: "Formulaire de contact." },
     ],
+    links: [{ rel: "canonical", href: "https://cuisinesmilo.com/contact" }],
   }),
   component: ContactPage,
 });

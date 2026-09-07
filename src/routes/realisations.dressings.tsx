@@ -15,6 +15,12 @@ export const Route = createFileRoute("/realisations/dressings")({
       { property: "og:title", content: "Réalisations de dressings — Cuisines Milo" },
       { property: "og:description", content: "Dressings sur mesure récemment posés." },
     ],
+    links: [
+        {
+          rel: "canonical",
+          href: "https://cuisinesmilo.com/realisations/dressings",
+        },
+      ],
   }),
   component: RealisationsDressingsPage,
 });
