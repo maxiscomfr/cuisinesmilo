@@ -69,55 +69,17 @@ export type Realisation = {
 };
 
 export const realisations: Realisation[] = [
-  {
-    id: "r1-1",
-    title: "Première réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation011.url,
-  },
-  {
-    id: "r1-2",
-    title: "Première réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation012.url,
-  },
-  {
-    id: "r2",
-    title: "Cuisine laquée blanche, plan marbre noir",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation02.url,
-  },
-  {
-    id: "r3",
-    title: "Réalisation",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation03.url,
-  },
-  {
-    id: "r4",
-    title: "Cuisine noyer, crédence marbre noir",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation04.url,
-  },
-  {
-    id: "r5",
-    title: "Cuisine bois clair avec grande table",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation05.url,
-  },
-  {
-    id: "r6",
-    title: "Cuisine bois et noir avec cave à vin",
-    location: "Charente-Maritime",
-    category: "Cuisine",
-    image: realisation06.url,
-  },
+  { id: "c1", title: "Cuisine noire, plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine01.url },
+  { id: "c2", title: "Îlot noir et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine02.url },
+  { id: "c3", title: "Grande table plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine03.url },
+  { id: "c4", title: "Cuisine blanche et grise, îlot bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine04.url },
+  { id: "c5", title: "Cuisine bois, îlot blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine05.url },
+  { id: "c6", title: "Cuisine blanche laquée", location: "Charente-Maritime", category: "Cuisine", image: cuisine06.url },
+  { id: "c7", title: "Îlot bar blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine07.url },
+  { id: "c8", title: "Cuisine blanche, îlot repas", location: "Charente-Maritime", category: "Cuisine", image: cuisine08.url },
+  { id: "c9", title: "Cuisine blanche brillante", location: "Charente-Maritime", category: "Cuisine", image: cuisine09.url },
+  { id: "c10", title: "Cuisine bois clair, grande table", location: "Charente-Maritime", category: "Cuisine", image: cuisine10.url },
+
   {
     id: "d1",
     title: "Dressing sur mesure",
