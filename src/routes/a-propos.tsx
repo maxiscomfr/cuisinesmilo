@@ -66,7 +66,7 @@ function AProposPage() {
           {valeurs.map((v) => (
             <div
               key={v.label}
-              className="rounded-xl border-hairline border-border p-6"
+              className="p-6"
             >
               <p className="text-xs uppercase tracking-[0.22em] text-accent">
                 {v.label}
