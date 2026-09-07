@@ -205,7 +205,7 @@ function Header() {
         <button
           type="button"
           aria-label="Menu"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border-hairline border-border md:hidden"
+          className="ml-3 inline-flex h-9 w-9 items-center justify-center rounded-md border-hairline border-border md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Menu</span>
