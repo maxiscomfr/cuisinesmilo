@@ -111,7 +111,7 @@ function Home() {
       </Section>
 
       {/* APERÇU RÉALISATIONS */}
-      <Section>
+      <Section bordered>
         <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
           <div>
             <SectionLabel>Réalisations récentes</SectionLabel>

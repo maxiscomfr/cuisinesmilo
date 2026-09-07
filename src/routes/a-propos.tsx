@@ -28,9 +28,9 @@ const valeurs = [
     text: "Choisir un cuisiniste local est la garantie d'un accompagnement personnalisé. Notre objectif est de créer une cuisine esthétique, pratique et durable.",
   },
   {
-    label: "SUR MESURE",
-    title: "Dessiné pour votre pièce",
-    text: "Chez Cuisines Milo, nous concevons chaque cuisine sur mesure en tenant compte de votre espace, de vos habitudes et de votre style de vie.",
+    label: "Artisanat",
+    title: "Un partenaire unique : Armony Cucine",
+    text: "Cuisines Milo travaille exclusivement avec le fabricant italien Armony Cucine, réputé pour la qualité de ses finitions et la durabilité de ses matériaux. Le résultat : des installations solides, belles et pensées pour durer.",
   },
   {
     label: "Accompagnement",
@@ -66,7 +66,7 @@ function AProposPage() {
           {valeurs.map((v) => (
             <div
               key={v.label}
-              className="flex h-full flex-col rounded-xl border-hairline border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="rounded-xl border-hairline border-border p-6"
             >
               <p className="text-xs uppercase tracking-[0.22em] text-accent">
                 {v.label}
