@@ -25,19 +25,19 @@ export const Route = createFileRoute("/")({
 
 const reassurances = [
   {
-    label: "Sur mesure",
-    title: "Dessiné pour votre pièce",
-    text: "Chaque projet est conçu à partir de vos volumes, de vos habitudes et de vos matériaux préférés.",
-  },
-  {
-    label: "Artisanat",
+    label: "POURQUOI NOUS ?",
     title: "Fabrication maîtrisée",
-    text: "Nous travaillons avec des fabricants sélectionnés pour la qualité de leurs finitions et la durabilité de leurs matériaux.",
+    text: "Choisir un cuisiniste local est la garantie d'un accompagnement personnalisé. Notre objectif est de créer une cuisine esthétique, pratique et durable.",
   },
   {
-    label: "Accompagnement",
+    label: "SUR MESURE.",
+    title: "Dessiné pour votre pièce",
+    text: "Chez Cuisines Milo, nous concevons chaque cuisine sur mesure en tenant compte de votre espace, de vos habitudes et de votre style de vie.",
+  },
+  {
+    label: "NOS RÉALISATION",
     title: "Du croquis à la pose",
-    text: "Un interlocuteur unique, du premier rendez-vous à la mise en service de votre cuisine.",
+    text: "Découvrez quelques exemples de cuisines et de dressings installés récemment à Royan et d'autres communes du département de la Charente-Maritime.",
   },
 ];
 
