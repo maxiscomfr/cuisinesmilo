@@ -6,7 +6,6 @@ export const Route = createFileRoute("/mentions-legales")({
     meta: [
       { title: "Mentions légales — Cuisines Milo" },
       { name: "description", content: "Mentions légales du site Cuisines Milo." },
-      { name: "robots", content: "noindex" },
       { property: "og:title", content: "Mentions légales — Cuisines Milo" },
       { property: "og:description", content: "Informations légales du site." },
     ],
