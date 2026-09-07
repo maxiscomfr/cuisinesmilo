@@ -29,7 +29,7 @@ const valeurs = [
   },
   {
     label: "Artisanat",
-    title: "Un partenaire unique : Armony Cucine",
+    title: "Partenaire unique : Armony Cucine",
     text: "Cuisines Milo travaille exclusivement avec le fabricant italien Armony Cucine, réputé pour la qualité de ses finitions et la durabilité de ses matériaux. Le résultat : des installations solides, belles et pensées pour durer.",
   },
   {
