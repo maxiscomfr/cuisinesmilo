@@ -28,6 +28,34 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://cuisinesmilo.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Cuisines Milo",
+          description:
+            "Artisan cuisiniste à Royan : cuisines et dressings sur mesure, conçus, fabriqués et posés en Charente-Maritime.",
+          url: "https://cuisinesmilo.com/",
+          image:
+            "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Royan",
+            addressRegion: "Charente-Maritime",
+            postalCode: "17200",
+            addressCountry: "FR",
+          },
+          areaServed: {
+            "@type": "AdministrativeArea",
+            name: "Charente-Maritime (17)",
+          },
+          email: "maxiscomfr@gmail.com",
+          priceRange: "€€",
+        }),
+      },
+    ],
   }),
   component: Home,
 });
