@@ -25,9 +25,9 @@ function MentionsPage() {
       <div className="mt-10 space-y-8 text-sm text-muted-foreground">
         <div>
           <h2 className="text-base font-medium text-foreground">Éditeur du site</h2>
-          <p className="mt-2">Cuisines Milo — Artisan cuisiniste</p>
-          <p>Zone d'activité : Charente-Maritime (17), secteur Royan</p>
-          <p>Email : contact@cuisines-milo.fr</p>
+          <p className="mt-2">MAXIScom</p>
+          <p>Zone d'activité : France</p>
+          <p>Email : maxiscomfr@gmail.com</p>
         </div>
 
         <div>
@@ -52,17 +52,13 @@ function MentionsPage() {
             Les données transmises via les formulaires de contact sont utilisées
             uniquement pour répondre à votre demande. Vous disposez d'un droit
             d'accès, de rectification et de suppression, en écrivant à
-            contact@cuisines-milo.fr.
+             contact@cuisines-milo.fr .
           </p>
         </div>
 
         <div>
-          <h2 className="text-base font-medium text-foreground">Crédits</h2>
-          <p className="mt-2">
-            Photographies et visuels : Cuisines Milo. Certaines images sont
-            présentées à titre illustratif en attendant l'intégration des
-            visuels définitifs.
-          </p>
+          <h2 className="text-base font-medium text-foreground"></h2>
+          <p className="mt-2"></p>
         </div>
       </div>
     </Section>
