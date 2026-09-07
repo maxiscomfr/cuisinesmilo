@@ -24,6 +24,29 @@ export const Route = createFileRoute("/realisations")({
     links: [
         { rel: "canonical", href: "https://cuisinesmilo.com/realisations/cuisines" },
       ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          name: "Réalisations — Cuisines Milo",
+          description:
+            "Galerie des réalisations de Cuisines Milo : cuisines et dressings sur mesure conçus et posés en Charente-Maritime, secteur Royan.",
+          url: "https://cuisinesmilo.com/realisations/cuisines",
+          author: {
+            "@type": "LocalBusiness",
+            name: "Cuisines Milo",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Royan",
+              addressRegion: "Charente-Maritime",
+              addressCountry: "FR",
+            },
+          },
+        }),
+      },
+    ],
   }),
   component: () => <Outlet />,
 });
