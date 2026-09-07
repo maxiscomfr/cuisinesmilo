@@ -13,7 +13,16 @@ export const Route = createFileRoute("/realisations/cuisines")({
           "Cuisines sur mesure réalisées par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
       },
       { property: "og:title", content: "Réalisations de cuisines — Cuisines Milo" },
-      { property: "og:description", content: "Cuisines sur mesure récemment posées." },
+      {
+        property: "og:description",
+        content:
+          "Galerie de cuisines sur mesure réalisées par Cuisines Milo : chantiers livrés en Charente-Maritime, du croquis à la pose finale.",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://cuisinesmilo.com/realisations/cuisines" },
+      { property: "og:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [
         {
