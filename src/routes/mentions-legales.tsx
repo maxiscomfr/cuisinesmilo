@@ -9,7 +9,6 @@ export const Route = createFileRoute("/mentions-legales")({
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Mentions légales — Cuisines Milo" },
       { property: "og:description", content: "Informations légales du site." },
-      ],
       links: [
         {
           rel: "canonical",
