@@ -8,6 +8,16 @@ import cuisine07 from "@/assets/cuisines/7.jpg.asset.json";
 import cuisine08 from "@/assets/cuisines/8.jpg.asset.json";
 import cuisine09 from "@/assets/cuisines/9.jpg.asset.json";
 import cuisine10 from "@/assets/cuisines/10.jpg.asset.json";
+import cuisine11 from "@/assets/cuisines/11.jpg.asset.json";
+import cuisine12 from "@/assets/cuisines/12.jpg.asset.json";
+import cuisine13 from "@/assets/cuisines/13.jpg.asset.json";
+import cuisine14 from "@/assets/cuisines/14.jpg.asset.json";
+import cuisine15 from "@/assets/cuisines/15.jpg.asset.json";
+import cuisine16 from "@/assets/cuisines/16.jpg.asset.json";
+import cuisine17 from "@/assets/cuisines/17.jpg.asset.json";
+import cuisine18 from "@/assets/cuisines/18.jpg.asset.json";
+import cuisine19 from "@/assets/cuisines/19.jpg.asset.json";
+import cuisine20 from "@/assets/cuisines/20.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -79,6 +89,16 @@ export const realisations: Realisation[] = [
   { id: "c8", title: "Cuisine blanche, îlot repas", location: "Charente-Maritime", category: "Cuisine", image: cuisine08.url },
   { id: "c9", title: "Cuisine blanche brillante", location: "Charente-Maritime", category: "Cuisine", image: cuisine09.url },
   { id: "c10", title: "Cuisine bois clair, grande table", location: "Charente-Maritime", category: "Cuisine", image: cuisine10.url },
+  { id: "c11", title: "Cuisine bois clair, buffet minimaliste", location: "Charente-Maritime", category: "Cuisine", image: cuisine11.url },
+  { id: "c12", title: "Cuisine bois, grande table bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine12.url },
+  { id: "c13", title: "Cuisine bois sombre, îlot noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine13.url },
+  { id: "c14", title: "Cuisine noire, carreaux de ciment", location: "Charente-Maritime", category: "Cuisine", image: cuisine14.url },
+  { id: "c15", title: "Cuisine blanche, îlot bois massif", location: "Charente-Maritime", category: "Cuisine", image: cuisine15.url },
+  { id: "c16", title: "Cuisine anthracite, plan de travail bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine16.url },
+  { id: "c17", title: "Cuisine bois clair, verrière atelier", location: "Charente-Maritime", category: "Cuisine", image: cuisine17.url },
+  { id: "c18", title: "Kitchenette blanche, crédence bleue foncée", location: "Charente-Maritime", category: "Cuisine", image: cuisine18.url },
+  { id: "c19", title: "Enfilade de rangements, cuisine ouverte", location: "Charente-Maritime", category: "Cuisine", image: cuisine19.url },
+  { id: "c20", title: "Cuisine bois sombre, évier noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine20.url },
 
   {
     id: "d1",
