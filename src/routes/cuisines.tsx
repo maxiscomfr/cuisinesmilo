@@ -36,8 +36,14 @@ export const Route = createFileRoute("/cuisines")({
       { property: "og:title", content: "Cuisines sur mesure — Cuisines Milo" },
       {
         property: "og:description",
-        content: "Cuisines sur mesure à Royan et en Charente-Maritime.",
+        content:
+          "Cuisines sur mesure à Royan et en Charente-Maritime : conception personnalisée, matériaux durables et pose soignée par un artisan local.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://cuisinesmilo.com/cuisines" },
+      { property: "og:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [
         { rel: "canonical", href: "https://cuisinesmilo.com/cuisines" },

@@ -16,6 +16,11 @@ export const Route = createFileRoute("/a-propos")({
         content:
           "Artisan cuisiniste en Charente-Maritime : savoir-faire, accompagnement sur mesure et finitions soignées.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://cuisinesmilo.com/a-propos" },
+      { property: "og:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://cuisinesmilo.com/a-propos" }],
   }),

@@ -13,7 +13,16 @@ export const Route = createFileRoute("/realisations/dressings")({
           "Dressings et placards sur mesure réalisés par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
       },
       { property: "og:title", content: "Réalisations de dressings — Cuisines Milo" },
-      { property: "og:description", content: "Dressings sur mesure récemment posés." },
+      {
+        property: "og:description",
+        content:
+          "Galerie de dressings et placards sur mesure réalisés par Cuisines Milo : rangements optimisés livrés en Charente-Maritime.",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://cuisinesmilo.com/realisations/dressings" },
+      { property: "og:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [
         {

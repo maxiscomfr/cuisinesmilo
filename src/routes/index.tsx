@@ -18,8 +18,14 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Cuisines Milo — Cuisiniste sur mesure" },
       {
         property: "og:description",
-        content: "Cuisines et dressings sur mesure à Royan et en Charente-Maritime.",
+        content:
+          "Artisan cuisiniste à Royan : cuisines et dressings sur mesure, conçus, fabriqués et posés en Charente-Maritime. Devis gratuit.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://cuisinesmilo.com/" },
+      { property: "og:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://cuisinesmilo.com/" }],
   }),
