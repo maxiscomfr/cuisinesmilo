@@ -34,6 +34,9 @@ import cuisine33 from "@/assets/cuisines/33.jpg.asset.json";
 import cuisine34 from "@/assets/cuisines/34.jpg.asset.json";
 import cuisine35 from "@/assets/cuisines/35.jpg.asset.json";
 import cuisine36 from "@/assets/cuisines/36.jpg.asset.json";
+import cuisine37 from "@/assets/cuisines/37.jpg.asset.json";
+import cuisine38 from "@/assets/cuisines/38.jpg.asset.json";
+import cuisine39 from "@/assets/cuisines/39.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -131,6 +134,9 @@ export const realisations: Realisation[] = [
   { id: "c34", title: "Cuisine blanche et grande table marbre", location: "Charente-Maritime", category: "Cuisine", image: cuisine34.url },
   { id: "c35", title: "Cuisine blanche, plan marbre veiné et four encastré", location: "Charente-Maritime", category: "Cuisine", image: cuisine35.url },
   { id: "c36", title: "Cuisine bois noyer et plan de travail noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine36.url },
+  { id: "c37", title: "Cuisine bois noyer, crédence marbre noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine37.url },
+  { id: "c38", title: "Cuisine gris anthracite, plan marbre noir veiné", location: "Charente-Maritime", category: "Cuisine", image: cuisine38.url },
+  { id: "c39", title: "Îlot bois noyer et plan noir, plaque gaz", location: "Charente-Maritime", category: "Cuisine", image: cuisine39.url },
 
   {
     id: "d1",
