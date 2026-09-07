@@ -18,6 +18,12 @@ import cuisine17 from "@/assets/cuisines/17.jpg.asset.json";
 import cuisine18 from "@/assets/cuisines/18.jpg.asset.json";
 import cuisine19 from "@/assets/cuisines/19.jpg.asset.json";
 import cuisine20 from "@/assets/cuisines/20.jpg.asset.json";
+import cuisine21 from "@/assets/cuisines/21.jpg.asset.json";
+import cuisine22 from "@/assets/cuisines/22.jpg.asset.json";
+import cuisine23 from "@/assets/cuisines/23.jpg.asset.json";
+import cuisine24 from "@/assets/cuisines/24.jpg.asset.json";
+import cuisine25 from "@/assets/cuisines/25.jpg.asset.json";
+import cuisine26 from "@/assets/cuisines/26.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -99,6 +105,12 @@ export const realisations: Realisation[] = [
   { id: "c18", title: "Kitchenette blanche, crédence bleue foncée", location: "Charente-Maritime", category: "Cuisine", image: cuisine18.url },
   { id: "c19", title: "Enfilade de rangements, cuisine ouverte", location: "Charente-Maritime", category: "Cuisine", image: cuisine19.url },
   { id: "c20", title: "Cuisine bois sombre, évier noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine20.url },
+  { id: "c21", title: "Cuisine anthracite avec niches sur mesure", location: "Charente-Maritime", category: "Cuisine", image: cuisine21.url },
+  { id: "c22", title: "Cuisine grise, plan et crédence marbre noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine22.url },
+  { id: "c23", title: "Îlot blanc avec table repas intégrée", location: "Charente-Maritime", category: "Cuisine", image: cuisine23.url },
+  { id: "c24", title: "Cuisine noire mate et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine24.url },
+  { id: "c25", title: "Cuisine blanche laquée et volume noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine25.url },
+  { id: "c26", title: "Cuisine bois et îlot central", location: "Charente-Maritime", category: "Cuisine", image: cuisine26.url },
 
   {
     id: "d1",
