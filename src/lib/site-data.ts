@@ -15,6 +15,16 @@ import dressing07 from "@/assets/dressings/7.jpg.asset.json";
 import dressing08 from "@/assets/dressings/8.jpg.asset.json";
 import dressing09 from "@/assets/dressings/9.jpg.asset.json";
 import dressing10 from "@/assets/dressings/10.jpg.asset.json";
+import dressing11 from "@/assets/dressings/11.jpg.asset.json";
+import dressing12 from "@/assets/dressings/12.jpg.asset.json";
+import dressing13 from "@/assets/dressings/13.jpg.asset.json";
+import dressing14 from "@/assets/dressings/14.jpg.asset.json";
+import dressing15 from "@/assets/dressings/15.jpg.asset.json";
+import dressing16 from "@/assets/dressings/16.jpg.asset.json";
+import dressing17 from "@/assets/dressings/17.jpg.asset.json";
+import dressing18 from "@/assets/dressings/18.jpg.asset.json";
+import dressing19 from "@/assets/dressings/19.jpg.asset.json";
+import dressing20 from "@/assets/dressings/20.jpg.asset.json";
 
 export type Realisation = {
   id: string;
@@ -143,6 +153,76 @@ export const realisations: Realisation[] = [
     location: "Charente-Maritime",
     category: "Dressing",
     image: dressing10.url,
+  },
+  {
+    id: "d11",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing11.url,
+  },
+  {
+    id: "d12",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing12.url,
+  },
+  {
+    id: "d13",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing13.url,
+  },
+  {
+    id: "d14",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing14.url,
+  },
+  {
+    id: "d15",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing15.url,
+  },
+  {
+    id: "d16",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing16.url,
+  },
+  {
+    id: "d17",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing17.url,
+  },
+  {
+    id: "d18",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing18.url,
+  },
+  {
+    id: "d19",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing19.url,
+  },
+  {
+    id: "d20",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing20.url,
   },
 ];
 
