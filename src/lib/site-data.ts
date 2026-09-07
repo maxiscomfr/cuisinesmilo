@@ -24,6 +24,14 @@ import cuisine23 from "@/assets/cuisines/23.jpg.asset.json";
 import cuisine24 from "@/assets/cuisines/24.jpg.asset.json";
 import cuisine25 from "@/assets/cuisines/25.jpg.asset.json";
 import cuisine26 from "@/assets/cuisines/26.jpg.asset.json";
+import cuisine27 from "@/assets/cuisines/27.jpg.asset.json";
+import cuisine28 from "@/assets/cuisines/28.jpg.asset.json";
+import cuisine29 from "@/assets/cuisines/29.jpg.asset.json";
+import cuisine30 from "@/assets/cuisines/30.jpg.asset.json";
+import cuisine31 from "@/assets/cuisines/31.jpg.asset.json";
+import cuisine32 from "@/assets/cuisines/32.jpg.asset.json";
+import cuisine33 from "@/assets/cuisines/33.jpg.asset.json";
+import cuisine34 from "@/assets/cuisines/34.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -111,6 +119,14 @@ export const realisations: Realisation[] = [
   { id: "c24", title: "Cuisine noire mate et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine24.url },
   { id: "c25", title: "Cuisine blanche laquée et volume noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine25.url },
   { id: "c26", title: "Cuisine bois et îlot central", location: "Charente-Maritime", category: "Cuisine", image: cuisine26.url },
+  { id: "c27", title: "Évier intégré et plan marbre veiné", location: "Charente-Maritime", category: "Cuisine", image: cuisine27.url },
+  { id: "c28", title: "Plan de travail marbre veiné, évier blanc", location: "Charente-Maritime", category: "Cuisine", image: cuisine28.url },
+  { id: "c29", title: "Cuisine blanche, crédence graphique dorée", location: "Charente-Maritime", category: "Cuisine", image: cuisine29.url },
+  { id: "c30", title: "Plan marbre veiné sur mesure", location: "Charente-Maritime", category: "Cuisine", image: cuisine30.url },
+  { id: "c31", title: "Plaque induction blanche sur plan marbre", location: "Charente-Maritime", category: "Cuisine", image: cuisine31.url },
+  { id: "c32", title: "Cuisine bois noyer, crédence marbre noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine32.url },
+  { id: "c33", title: "Cuisine blanche et bleu nuit, îlot bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine33.url },
+  { id: "c34", title: "Cuisine blanche et grande table marbre", location: "Charente-Maritime", category: "Cuisine", image: cuisine34.url },
 
   {
     id: "d1",
