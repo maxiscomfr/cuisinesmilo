@@ -55,6 +55,7 @@ import dressing47 from "@/assets/dressings/47.jpg.asset.json";
 import dressing48 from "@/assets/dressings/48.jpg.asset.json";
 import dressing49 from "@/assets/dressings/49.jpg.asset.json";
 import dressing50 from "@/assets/dressings/50.jpg.asset.json";
+import dressing51 from "@/assets/dressings/51.jpg.asset.json";
 
 export type Realisation = {
   id: string;
@@ -463,6 +464,13 @@ export const realisations: Realisation[] = [
     location: "Charente-Maritime",
     category: "Dressing",
     image: dressing50.url,
+  },
+  {
+    id: "d51",
+    title: "Dressing sur mesure",
+    location: "Charente-Maritime",
+    category: "Dressing",
+    image: dressing51.url,
   },
 ];
 
