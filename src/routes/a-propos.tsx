@@ -23,9 +23,9 @@ export const Route = createFileRoute("/a-propos")({
 
 const valeurs = [
   {
-    label: "Sur mesure",
-    title: "Un projet à votre image",
-    text: "Chaque cuisine et chaque dressing sont pensés autour de votre pièce, de vos habitudes et de vos envies esthétiques. Pas de catalogue imposé, mais une solution adaptée à votre quotidien.",
+    label: "POURQUOI NOUS ?",
+    title: "Fabrication maîtrisée",
+    text: "Choisir un cuisiniste local est la garantie d'un accompagnement personnalisé. Notre objectif est de créer une cuisine esthétique, pratique et durable.",
   },
   {
     label: "Artisanat",
