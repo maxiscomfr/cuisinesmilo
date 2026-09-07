@@ -40,6 +40,8 @@ import cuisine39 from "@/assets/cuisines/39.jpg.asset.json";
 import cuisine40 from "@/assets/cuisines/40.jpg.asset.json";
 import cuisine41 from "@/assets/cuisines/41.jpg.asset.json";
 import cuisine42 from "@/assets/cuisines/42.jpg.asset.json";
+import cuisine43 from "@/assets/cuisines/43.jpg.asset.json";
+import cuisine44 from "@/assets/cuisines/44.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -143,6 +145,8 @@ export const realisations: Realisation[] = [
   { id: "c40", title: "Cuisine bois noyer et crédence marbre noir, robinet cuivre", location: "Charente-Maritime", category: "Cuisine", image: cuisine40.url },
   { id: "c41", title: "Cuisine blanche en angle, four encastré", location: "Charente-Maritime", category: "Cuisine", image: cuisine41.url },
   { id: "c42", title: "Cuisine blanche, plan beige et évier intégré", location: "Charente-Maritime", category: "Cuisine", image: cuisine42.url },
+  { id: "c43", title: "Cuisine noire mate encastrée, four et micro-ondes intégrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine43.url },
+  { id: "c44", title: "Placards hauts blancs sans poignées et hotte plate encastrée", location: "Charente-Maritime", category: "Cuisine", image: cuisine44.url },
 
   {
     id: "d1",
