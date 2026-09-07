@@ -16,6 +16,8 @@ export const Route = createFileRoute("/a-propos")({
         content:
           "Artisan cuisiniste en Charente-Maritime : savoir-faire, accompagnement sur mesure et finitions soignées.",
       },
+      ],
+      links: [{ rel: "canonical", href: "https://cuisinesmilo.com/a-propos" }],
     ],
   }),
   component: AProposPage,
