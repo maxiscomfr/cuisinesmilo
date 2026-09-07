@@ -14,13 +14,13 @@ export const Route = createFileRoute("/realisations/cuisines")({
       },
       { property: "og:title", content: "Réalisations de cuisines — Cuisines Milo" },
       { property: "og:description", content: "Cuisines sur mesure récemment posées." },
-      links: [
+    ],
+    links: [
         {
           rel: "canonical",
           href: "https://cuisinesmilo.com/realisations/cuisines",
         },
       ],
-    ],
   }),
   component: RealisationsCuisinesPage,
 });
