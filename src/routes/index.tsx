@@ -50,42 +50,42 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="border-hairline border-b border-border">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-accent">
-              Cuisiniste à Royan · Charente-Maritime
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Des cuisines pensées pour durer, dessinées pour vous.
-            </h1>
-            <p className="mt-5 max-w-lg text-base text-muted-foreground">
-              Cuisines Milo conçoit et pose des cuisines et dressings sur mesure,
-              en travaillant les matériaux nobles et les finitions soignées.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Demander mon devis gratuit
-              </Link>
-              <Link
-                to="/realisations/cuisines"
-                className="inline-flex items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-              >
-                Voir les réalisations
-              </Link>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-xl border-hairline border-border">
-            <img
-              src={heroKitchen}
-              alt="Cuisine sur mesure en bois — Cuisines Milo"
-              width={1600}
-              height={1000}
-              className="h-full w-full object-cover"
-            />
+      <section className="relative border-hairline border-b border-border">
+        <img
+          src={heroKitchen}
+          alt="Cuisine sur mesure en bois — Cuisines Milo"
+          width={1600}
+          height={1000}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-primary/55"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-24 md:py-36">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/90">
+            Cuisiniste à Royan · Charente-Maritime
+          </p>
+          <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
+            Des cuisines pensées pour durer, dessinées pour vous.
+          </h1>
+          <p className="mt-5 max-w-lg text-base text-primary-foreground/90">
+            Cuisines Milo conçoit et pose des cuisines et dressings sur mesure,
+            en travaillant les matériaux nobles et les finitions soignées.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground ring-1 ring-primary-foreground/60 transition-colors hover:bg-primary/90"
+            >
+              Demander mon devis gratuit
+            </Link>
+            <Link
+              to="/realisations/cuisines"
+              className="inline-flex items-center justify-center rounded-md border-hairline border-primary-foreground/60 px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/40"
+            >
+              Voir les réalisations
+            </Link>
           </div>
         </div>
       </section>
