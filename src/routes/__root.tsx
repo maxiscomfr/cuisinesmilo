@@ -78,19 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cuisines Milo — Cuisiniste sur mesure en Charente-Maritime" },
-      {
-        name: "description",
-        content:
-          "Cuisines Milo, artisan cuisiniste à Royan. Cuisines et dressings sur mesure, dessinés pour durer.",
-      },
       { name: "author", content: "Cuisines Milo" },
-      { property: "og:title", content: "Cuisines Milo — Cuisiniste sur mesure" },
-      {
-        property: "og:description",
-        content: "Cuisines et dressings sur mesure en Charente-Maritime.",
-      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Cuisines Milo" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
