@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
+
 import { Section, SectionLabel } from "@/components/site/Section";
+import { submitContact } from "@/lib/contact.functions";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -66,21 +69,38 @@ function ContactPage() {
 function ContactSimpleForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+  const sendContact = useServerFn(submitContact);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setServerError(null);
     const fd = new FormData(e.currentTarget);
     const errs: Errors = {};
-    if (!String(fd.get("nom") ?? "").trim()) errs.nom = "Ce champ est requis";
-    const email = String(fd.get("email") ?? "");
-    if (!email.trim()) errs.email = "Ce champ est requis";
+    const name = String(fd.get("nom") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+
+    if (!name) errs.nom = "Ce champ est requis";
+    if (!email) errs.email = "Ce champ est requis";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Adresse email invalide";
-    if (!String(fd.get("message") ?? "").trim()) errs.message = "Ce champ est requis";
+    if (!message) errs.message = "Ce champ est requis";
 
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
+    if (Object.keys(errs).length > 0) return;
+
+    setLoading(true);
+    try {
+      await sendContact({ data: { name, email, message } });
       setSubmitted(true);
       e.currentTarget.reset();
+    } catch (err) {
+      setServerError(
+        err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.",
+      );
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -96,6 +116,12 @@ function ContactSimpleForm() {
       {submitted && (
         <div className="mt-6 rounded-md border-hairline border-accent bg-accent/10 p-4 text-sm text-foreground">
           Merci pour votre message, nous vous répondons au plus vite.
+        </div>
+      )}
+
+      {serverError && (
+        <div className="mt-6 rounded-md border-hairline border-destructive bg-destructive/10 p-4 text-sm text-destructive">
+          {serverError}
         </div>
       )}
 
@@ -116,9 +142,10 @@ function ContactSimpleForm() {
 
       <button
         type="submit"
-        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+        disabled={loading}
+        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
       >
-        Envoyer
+        {loading ? "Envoi en cours..." : "Envoyer"}
       </button>
 
       <div className="mt-8 border-hairline border-t border-border pt-6 text-sm text-muted-foreground">
