@@ -17,11 +17,14 @@ import { Route as CuisinesRouteImport } from './routes/cuisines'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CatalogueRouteImport } from './routes/catalogue'
 import { Route as AvisRouteImport } from './routes/avis'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RealisationsIndexRouteImport } from './routes/realisations.index'
 import { Route as RealisationsDressingsRouteImport } from './routes/realisations.dressings'
 import { Route as RealisationsCuisinesRouteImport } from './routes/realisations.cuisines'
+import { Route as AuthenticatedAdminMessagesRouteImport } from './routes/_authenticated/admin.messages'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -63,9 +66,18 @@ const AvisRoute = AvisRouteImport.update({
   path: '/avis',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AProposRoute = AProposRouteImport.update({
   id: '/a-propos',
   path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -88,10 +100,17 @@ const RealisationsCuisinesRoute = RealisationsCuisinesRouteImport.update({
   path: '/cuisines',
   getParentRoute: () => RealisationsRoute,
 } as any)
+const AuthenticatedAdminMessagesRoute =
+  AuthenticatedAdminMessagesRouteImport.update({
+    id: '/admin/messages',
+    path: '/admin/messages',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
@@ -103,10 +122,12 @@ export interface FileRoutesByFullPath {
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
   '/realisations/': typeof RealisationsIndexRoute
+  '/admin/messages': typeof AuthenticatedAdminMessagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
@@ -117,11 +138,14 @@ export interface FileRoutesByTo {
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
   '/realisations': typeof RealisationsIndexRoute
+  '/admin/messages': typeof AuthenticatedAdminMessagesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/a-propos': typeof AProposRoute
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
@@ -133,12 +157,14 @@ export interface FileRoutesById {
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
   '/realisations/': typeof RealisationsIndexRoute
+  '/_authenticated/admin/messages': typeof AuthenticatedAdminMessagesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/a-propos'
+    | '/auth'
     | '/avis'
     | '/catalogue'
     | '/contact'
@@ -150,10 +176,12 @@ export interface FileRouteTypes {
     | '/realisations/cuisines'
     | '/realisations/dressings'
     | '/realisations/'
+    | '/admin/messages'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/a-propos'
+    | '/auth'
     | '/avis'
     | '/catalogue'
     | '/contact'
@@ -164,10 +192,13 @@ export interface FileRouteTypes {
     | '/realisations/cuisines'
     | '/realisations/dressings'
     | '/realisations'
+    | '/admin/messages'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/a-propos'
+    | '/auth'
     | '/avis'
     | '/catalogue'
     | '/contact'
@@ -179,11 +210,14 @@ export interface FileRouteTypes {
     | '/realisations/cuisines'
     | '/realisations/dressings'
     | '/realisations/'
+    | '/_authenticated/admin/messages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AProposRoute: typeof AProposRoute
+  AuthRoute: typeof AuthRoute
   AvisRoute: typeof AvisRoute
   CatalogueRoute: typeof CatalogueRoute
   ContactRoute: typeof ContactRoute
@@ -252,11 +286,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AvisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/a-propos': {
       id: '/a-propos'
       path: '/a-propos'
       fullPath: '/a-propos'
       preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -287,8 +335,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RealisationsCuisinesRouteImport
       parentRoute: typeof RealisationsRoute
     }
+    '/_authenticated/admin/messages': {
+      id: '/_authenticated/admin/messages'
+      path: '/admin/messages'
+      fullPath: '/admin/messages'
+      preLoaderRoute: typeof AuthenticatedAdminMessagesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminMessagesRoute: typeof AuthenticatedAdminMessagesRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminMessagesRoute: AuthenticatedAdminMessagesRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface RealisationsRouteChildren {
   RealisationsCuisinesRoute: typeof RealisationsCuisinesRoute
@@ -308,7 +374,9 @@ const RealisationsRouteWithChildren = RealisationsRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AProposRoute: AProposRoute,
+  AuthRoute: AuthRoute,
   AvisRoute: AvisRoute,
   CatalogueRoute: CatalogueRoute,
   ContactRoute: ContactRoute,
