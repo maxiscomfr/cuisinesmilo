@@ -76,7 +76,8 @@ function ContactSimpleForm() {
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setServerError(null);
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const errs: Errors = {};
     const name = String(fd.get("nom") ?? "").trim();
     const email = String(fd.get("email") ?? "").trim();
@@ -94,7 +95,7 @@ function ContactSimpleForm() {
     try {
       await sendContact({ data: { name, email, message } });
       setSubmitted(true);
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setServerError(
         err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.",
