@@ -4,6 +4,8 @@ import { z } from "zod";
 import { createServerSupabaseClient } from "./supabase.server";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
+const NOTIFICATION_RECIPIENT = "mb.society@hotmail.com";
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Le nom est requis").max(100),
   email: z.string().trim().email("Adresse email invalide").max(255),
@@ -14,19 +16,44 @@ export const submitContact = createServerFn({ method: "POST" })
   .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     const supabase = createServerSupabaseClient();
-    const { error } = await supabase.from("contact_submissions").insert({
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    });
+    const { data: inserted, error } = await supabase
+      .from("contact_submissions")
+      .insert({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      })
+      .select("id, created_at")
+      .single();
 
     if (error) {
       console.error("Contact submission error:", error);
       throw new Error("Impossible d'enregistrer votre message. Veuillez réessayer.");
     }
 
+    try {
+      const { sendTemplateEmail } = await import("./email-templates/send-email");
+      await sendTemplateEmail("contact-notification", NOTIFICATION_RECIPIENT, {
+        templateData: {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          receivedAt: new Intl.DateTimeFormat("fr-FR", {
+            dateStyle: "short",
+            timeStyle: "short",
+            timeZone: "Europe/Paris",
+          }).format(inserted?.created_at ? new Date(inserted.created_at) : new Date()),
+        },
+        idempotencyKey: `contact-notification-${inserted?.id ?? crypto.randomUUID()}`,
+        replyTo: data.email,
+      });
+    } catch (mailError) {
+      console.error("Contact notification email error:", mailError);
+    }
+
     return { ok: true };
   });
+
 
 const updateContactSchema = z.object({
   id: z.string().uuid(),
