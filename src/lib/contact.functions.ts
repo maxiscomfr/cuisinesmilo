@@ -16,20 +16,17 @@ export const submitContact = createServerFn({ method: "POST" })
   .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     const supabase = createServerSupabaseClient();
-    const { data: inserted, error } = await supabase
-      .from("contact_submissions")
-      .insert({
-        name: data.name,
-        email: data.email,
-        message: data.message,
-      })
-      .select("id, created_at")
-      .single();
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    });
 
     if (error) {
       console.error("Contact submission error:", error);
       throw new Error("Impossible d'enregistrer votre message. Veuillez réessayer.");
     }
+
 
     try {
       const { sendTemplateEmail } = await import("./email-templates/send-email");
