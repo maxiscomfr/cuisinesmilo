@@ -9,13 +9,13 @@ import { realisations, avisList } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cuisines Milo — Cuisines et dressings sur mesure à Royan" },
+      { title: "Cuisiniste à Royan — Cuisines et dressings sur mesure | Milo" },
       {
         name: "description",
         content:
-          "Artisan cuisiniste en Charente-Maritime. Des cuisines pensées pour durer, dessinées pour vous. Demandez votre devis gratuit.",
+          "Cuisines Milo, cuisiniste à Royan : cuisines et dressings sur mesure conçus et posés en Charente-Maritime. Devis gratuit.",
       },
-      { property: "og:title", content: "Cuisines Milo — Cuisiniste sur mesure" },
+      { property: "og:title", content: "Cuisiniste à Royan — Cuisines et dressings sur mesure" },
       {
         property: "og:description",
         content:
@@ -70,18 +70,18 @@ export const Route = createFileRoute("/")({
 const reassurances = [
   {
     label: "POURQUOI NOUS ?",
-    title: "Fabrication maîtrisée",
-    text: "Choisir un cuisiniste local est la garantie d'un accompagnement personnalisé. Notre objectif est de créer une cuisine esthétique, pratique et durable.",
+    title: "Cuisiniste local à Royan",
+    text: "Choisir un cuisiniste à Royan, c'est l'assurance d'un accompagnement personnalisé, d'un interlocuteur unique et d'une cuisine esthétique, pratique et durable.",
   },
   {
     label: "SUR MESURE.",
-    title: "Dessiné pour votre pièce",
-    text: "Chez Cuisines Milo, nous concevons chaque cuisine sur mesure en tenant compte de votre espace, de vos habitudes et de votre style de vie.",
+    title: "Cuisines et dressings sur mesure",
+    text: "Chez Cuisines Milo, chaque cuisine et chaque dressing sur mesure est dessiné selon votre espace, vos habitudes et votre style de vie.",
   },
   {
-    label: "NOS RÉALISATION",
-    title: "Du croquis à la pose",
-    text: "Découvrez quelques exemples de cuisines et de dressings installés récemment à Royan et d'autres communes du département de la Charente-Maritime.",
+    label: "NOS RÉALISATIONS",
+    title: "Du croquis à la pose en Charente-Maritime",
+    text: "Découvrez des exemples de cuisines et de dressings installés récemment à Royan et dans les communes voisines de Charente-Maritime (17).",
   },
 ];
 
@@ -109,11 +109,12 @@ function Home() {
             Cuisiniste à Royan · Charente-Maritime
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
-            Des cuisines pensées pour durer, dessinées pour vous.
+            Cuisines et dressings sur mesure à Royan, pensés pour durer.
           </h1>
           <p className="mt-5 max-w-lg text-base text-primary-foreground/90">
-            Cuisines Milo conçoit et pose des cuisines et dressings sur mesure,
-            en travaillant les matériaux nobles et les finitions soignées.
+            Cuisines Milo, artisan cuisiniste à Royan, conçoit et pose vos
+            cuisines et dressings sur mesure partout en Charente-Maritime :
+            matériaux nobles et finitions soignées.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -157,7 +158,9 @@ function Home() {
         <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
           <div>
             <SectionLabel>Réalisations récentes</SectionLabel>
-            <SectionTitle>Quelques projets menés en Charente-Maritime</SectionTitle>
+            <SectionTitle>
+              Cuisines et dressings posés à Royan et en Charente-Maritime
+            </SectionTitle>
           </div>
           <Link
             to="/realisations/cuisines"
@@ -196,11 +199,12 @@ function Home() {
       <Section bordered>
         <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
           <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Parlons de votre projet
+            Parlons de votre projet de cuisine ou de dressing
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-            Décrivez-nous votre espace et vos envies : nous vous rappelons
-            pour affiner votre devis sur mesure.
+            Décrivez-nous votre espace et vos envies : votre cuisiniste à Royan
+            vous rappelle pour affiner votre devis sur mesure, partout en
+            Charente-Maritime.
           </p>
           <div className="mt-6">
             <Link

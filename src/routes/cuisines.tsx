@@ -27,13 +27,13 @@ import sys11 from "@/assets/system/system-11.jpg.asset.json";
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
     meta: [
-      { title: "Cuisines sur mesure — Cuisines Milo" },
+      { title: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
       {
         name: "description",
         content:
-          "Cuisines sur mesure conçues et posées par Cuisines Milo, artisan cuisiniste à Royan. Bois, pierre, finitions durables.",
+          "Modèles de cuisines sur mesure de votre cuisiniste à Royan : finitions, matériaux et agencements posés partout en Charente-Maritime.",
       },
-      { property: "og:title", content: "Cuisines sur mesure — Cuisines Milo" },
+      { property: "og:title", content: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
       {
         property: "og:description",
         content:
@@ -444,11 +444,14 @@ function CuisinesPage() {
     <>
       <Section>
         <SectionLabel>Catalogue fabricant</SectionLabel>
-        <SectionTitle>Nos modèles de cuisines</SectionTitle>
+        <SectionTitle>
+          Nos modèles de cuisines sur mesure à Royan
+        </SectionTitle>
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-          Ces visuels sont des modèles de fabricant, et non des chantiers
-          réalisés par Cuisines Milo. Cliquez sur un modèle pour parcourir ses
-          photos.
+          Parcourez les modèles de cuisines que nous adaptons à votre pièce, à
+          Royan et partout en Charente-Maritime. Ces visuels sont des modèles de
+          fabricant, et non des chantiers réalisés par Cuisines Milo. Cliquez
+          sur un modèle pour voir ses photos.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
 
@@ -493,11 +496,12 @@ function CuisinesPage() {
           <div>
             <SectionLabel>Cuisines sur mesure</SectionLabel>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Une cuisine dessinée autour de votre quotidien.
+              Cuisines sur mesure à Royan, dessinées autour de votre quotidien.
             </h1>
             <p className="mt-5 max-w-lg text-muted-foreground">
-              Nous concevons des cuisines qui vieillissent bien : matériaux
-              nobles, finitions maîtrisées, agencements pensés pour durer.
+              Artisan cuisiniste en Charente-Maritime, nous concevons des
+              cuisines qui vieillissent bien : matériaux nobles, finitions
+              maîtrisées, agencements pensés pour durer.
             </p>
             <div className="mt-8">
               <Link
@@ -537,12 +541,13 @@ function CuisinesPage() {
         <SectionTitle>Des finitions et matériaux à votre goût</SectionTitle>
         <div className="mt-8 rounded-xl border-hairline border-border p-8 md:p-12">
           <p className="text-base text-foreground">
-            Chaque projet est conçu sur mesure, autour de vos volumes et de vos
-            envies.
+            Chaque cuisine, comme chaque dressing sur mesure, est conçue autour
+            de vos volumes et de vos envies.
           </p>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            Nous pouvons échanger ensemble sur les modèles, finitions et
-            matériaux disponibles, et vous montrer nos réalisations.
+            Rencontrons-nous à Royan ou chez vous en Charente-Maritime (17) pour
+            échanger sur les modèles, les finitions et les matériaux
+            disponibles, et voir nos réalisations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
