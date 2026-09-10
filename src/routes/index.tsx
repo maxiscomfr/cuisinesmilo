@@ -51,8 +51,15 @@ export const Route = createFileRoute("/")({
             "@type": "AdministrativeArea",
             name: "Charente-Maritime (17)",
           },
-          email: "maxiscomfr@gmail.com",
+          email: "contact@cuisines-milo.fr",
           priceRange: "€€",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              description: "Du lundi au samedi, sur rendez-vous",
+            },
+          ],
         }),
       },
     ],
