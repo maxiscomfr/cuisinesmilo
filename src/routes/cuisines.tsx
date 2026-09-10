@@ -541,12 +541,13 @@ function CuisinesPage() {
         <SectionTitle>Des finitions et matériaux à votre goût</SectionTitle>
         <div className="mt-8 rounded-xl border-hairline border-border p-8 md:p-12">
           <p className="text-base text-foreground">
-            Chaque projet est conçu sur mesure, autour de vos volumes et de vos
-            envies.
+            Chaque cuisine, comme chaque dressing sur mesure, est conçue autour
+            de vos volumes et de vos envies.
           </p>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            Nous pouvons échanger ensemble sur les modèles, finitions et
-            matériaux disponibles, et vous montrer nos réalisations.
+            Rencontrons-nous à Royan ou chez vous en Charente-Maritime (17) pour
+            échanger sur les modèles, les finitions et les matériaux
+            disponibles, et voir nos réalisations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
