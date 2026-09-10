@@ -27,13 +27,13 @@ import sys11 from "@/assets/system/system-11.jpg.asset.json";
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
     meta: [
-      { title: "Cuisines sur mesure — Cuisines Milo" },
+      { title: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
       {
         name: "description",
         content:
-          "Cuisines sur mesure conçues et posées par Cuisines Milo, artisan cuisiniste à Royan. Bois, pierre, finitions durables.",
+          "Modèles de cuisines sur mesure de votre cuisiniste à Royan : finitions, matériaux et agencements posés partout en Charente-Maritime.",
       },
-      { property: "og:title", content: "Cuisines sur mesure — Cuisines Milo" },
+      { property: "og:title", content: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
       {
         property: "og:description",
         content:
