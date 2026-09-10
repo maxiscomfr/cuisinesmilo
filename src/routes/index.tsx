@@ -9,13 +9,13 @@ import { realisations, avisList } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cuisines Milo — Cuisines et dressings sur mesure à Royan" },
+      { title: "Cuisiniste à Royan — Cuisines et dressings sur mesure | Milo" },
       {
         name: "description",
         content:
-          "Artisan cuisiniste en Charente-Maritime. Des cuisines pensées pour durer, dessinées pour vous. Demandez votre devis gratuit.",
+          "Cuisines Milo, cuisiniste à Royan : cuisines et dressings sur mesure conçus et posés en Charente-Maritime. Devis gratuit.",
       },
-      { property: "og:title", content: "Cuisines Milo — Cuisiniste sur mesure" },
+      { property: "og:title", content: "Cuisiniste à Royan — Cuisines et dressings sur mesure" },
       {
         property: "og:description",
         content:
@@ -70,18 +70,18 @@ export const Route = createFileRoute("/")({
 const reassurances = [
   {
     label: "POURQUOI NOUS ?",
-    title: "Fabrication maîtrisée",
-    text: "Choisir un cuisiniste local est la garantie d'un accompagnement personnalisé. Notre objectif est de créer une cuisine esthétique, pratique et durable.",
+    title: "Cuisiniste local à Royan",
+    text: "Choisir un cuisiniste à Royan, c'est l'assurance d'un accompagnement personnalisé, d'un interlocuteur unique et d'une cuisine esthétique, pratique et durable.",
   },
   {
     label: "SUR MESURE.",
-    title: "Dessiné pour votre pièce",
-    text: "Chez Cuisines Milo, nous concevons chaque cuisine sur mesure en tenant compte de votre espace, de vos habitudes et de votre style de vie.",
+    title: "Cuisines et dressings sur mesure",
+    text: "Chez Cuisines Milo, chaque cuisine et chaque dressing sur mesure est dessiné selon votre espace, vos habitudes et votre style de vie.",
   },
   {
-    label: "NOS RÉALISATION",
-    title: "Du croquis à la pose",
-    text: "Découvrez quelques exemples de cuisines et de dressings installés récemment à Royan et d'autres communes du département de la Charente-Maritime.",
+    label: "NOS RÉALISATIONS",
+    title: "Du croquis à la pose en Charente-Maritime",
+    text: "Découvrez des exemples de cuisines et de dressings installés récemment à Royan, Saint-Palais-sur-Mer, Vaux-sur-Mer et ailleurs en Charente-Maritime (17).",
   },
 ];
 
