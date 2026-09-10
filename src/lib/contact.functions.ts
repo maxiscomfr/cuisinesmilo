@@ -11,7 +11,7 @@ const contactSchema = z.object({
 });
 
 export const submitContact = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     const supabase = createServerSupabaseClient();
     const { error } = await supabase.from("contact_submissions").insert({
@@ -52,7 +52,7 @@ export const getContactSubmissions = createServerFn({ method: "GET" })
 
 export const updateContactSubmission = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((data: unknown) => updateContactSchema.parse(data))
+  .validator((data: unknown) => updateContactSchema.parse(data))
   .handler(async ({ data, context }) => {
     const { error } = await context.supabase
       .from("contact_submissions")
