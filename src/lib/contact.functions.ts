@@ -39,9 +39,9 @@ export const submitContact = createServerFn({ method: "POST" })
             dateStyle: "short",
             timeStyle: "short",
             timeZone: "Europe/Paris",
-          }).format(inserted?.created_at ? new Date(inserted.created_at) : new Date()),
+          }).format(new Date()),
         },
-        idempotencyKey: `contact-notification-${inserted?.id ?? crypto.randomUUID()}`,
+        idempotencyKey: `contact-notification-${crypto.randomUUID()}`,
         replyTo: data.email,
       });
     } catch (mailError) {
