@@ -81,7 +81,7 @@ const reassurances = [
   {
     label: "NOS RÉALISATIONS",
     title: "Du croquis à la pose en Charente-Maritime",
-    text: "Découvrez des exemples de cuisines et de dressings installés récemment à Royan, Saint-Palais-sur-Mer, Vaux-sur-Mer et ailleurs en Charente-Maritime (17).",
+    text: "Découvrez des exemples de cuisines et de dressings installés récemment à Royan et dans les communes voisines de Charente-Maritime (17).",
   },
 ];
 
@@ -109,11 +109,12 @@ function Home() {
             Cuisiniste à Royan · Charente-Maritime
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
-            Des cuisines pensées pour durer, dessinées pour vous.
+            Cuisines et dressings sur mesure à Royan, pensés pour durer.
           </h1>
           <p className="mt-5 max-w-lg text-base text-primary-foreground/90">
-            Cuisines Milo conçoit et pose des cuisines et dressings sur mesure,
-            en travaillant les matériaux nobles et les finitions soignées.
+            Cuisines Milo, artisan cuisiniste à Royan, conçoit et pose vos
+            cuisines et dressings sur mesure partout en Charente-Maritime :
+            matériaux nobles et finitions soignées.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
