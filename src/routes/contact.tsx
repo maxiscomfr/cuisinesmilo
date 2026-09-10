@@ -95,7 +95,7 @@ function ContactSimpleForm() {
     try {
       await sendContact({ data: { name, email, message } });
       setSubmitted(true);
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setServerError(
         err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.",
