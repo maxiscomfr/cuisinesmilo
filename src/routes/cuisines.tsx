@@ -444,11 +444,14 @@ function CuisinesPage() {
     <>
       <Section>
         <SectionLabel>Catalogue fabricant</SectionLabel>
-        <SectionTitle>Nos modèles de cuisines</SectionTitle>
+        <SectionTitle>
+          Nos modèles de cuisines sur mesure à Royan
+        </SectionTitle>
         <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-          Ces visuels sont des modèles de fabricant, et non des chantiers
-          réalisés par Cuisines Milo. Cliquez sur un modèle pour parcourir ses
-          photos.
+          Parcourez les modèles de cuisines que nous adaptons à votre pièce, à
+          Royan et partout en Charente-Maritime. Ces visuels sont des modèles de
+          fabricant, et non des chantiers réalisés par Cuisines Milo. Cliquez
+          sur un modèle pour voir ses photos.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
 
@@ -493,11 +496,12 @@ function CuisinesPage() {
           <div>
             <SectionLabel>Cuisines sur mesure</SectionLabel>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Une cuisine dessinée autour de votre quotidien.
+              Cuisines sur mesure à Royan, dessinées autour de votre quotidien.
             </h1>
             <p className="mt-5 max-w-lg text-muted-foreground">
-              Nous concevons des cuisines qui vieillissent bien : matériaux
-              nobles, finitions maîtrisées, agencements pensés pour durer.
+              Artisan cuisiniste en Charente-Maritime, nous concevons des
+              cuisines qui vieillissent bien : matériaux nobles, finitions
+              maîtrisées, agencements pensés pour durer.
             </p>
             <div className="mt-8">
               <Link
