@@ -158,7 +158,9 @@ function Home() {
         <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
           <div>
             <SectionLabel>Réalisations récentes</SectionLabel>
-            <SectionTitle>Quelques projets menés en Charente-Maritime</SectionTitle>
+            <SectionTitle>
+              Cuisines et dressings posés à Royan et en Charente-Maritime
+            </SectionTitle>
           </div>
           <Link
             to="/realisations/cuisines"
@@ -197,11 +199,12 @@ function Home() {
       <Section bordered>
         <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
           <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Parlons de votre projet
+            Parlons de votre projet de cuisine ou de dressing
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-            Décrivez-nous votre espace et vos envies : nous vous rappelons
-            pour affiner votre devis sur mesure.
+            Décrivez-nous votre espace et vos envies : votre cuisiniste à Royan
+            vous rappelle pour affiner votre devis sur mesure, partout en
+            Charente-Maritime.
           </p>
           <div className="mt-6">
             <Link
