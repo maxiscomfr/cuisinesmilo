@@ -1,4 +1,4 @@
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -40,7 +41,7 @@ function AuthPage() {
       return;
     }
 
-    throw redirect({ to: "/admin/messages" });
+    navigate({ to: "/admin/messages" });
   }
 
   return (
