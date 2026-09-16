@@ -4,7 +4,7 @@ import { z } from "zod";
 import { createServerSupabaseClient } from "./supabase.server";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-const NOTIFICATION_RECIPIENT = "mb.society@hotmail.com";
+const NOTIFICATION_RECIPIENT = "contact@cuisinesmilo.com";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Le nom est requis").max(100),
