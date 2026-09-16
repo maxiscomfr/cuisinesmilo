@@ -41,7 +41,7 @@ function MentionsPage() {
           <h2 className="text-base font-medium text-foreground">Éditeur du site</h2>
           <p className="mt-2">MAXIScom</p>
           <p>Zone d'activité : France</p>
-          <p>Email : maxiscomfr@gmail.com</p>
+          <p>Email : contact@cuisinesmilo.com</p>
         </div>
 
         <div>
@@ -66,7 +66,7 @@ function MentionsPage() {
             Les données transmises via les formulaires de contact sont utilisées
             uniquement pour répondre à votre demande. Vous disposez d'un droit
             d'accès, de rectification et de suppression, en écrivant à
-             contact@cuisines-milo.fr .
+             contact@cuisinesmilo.com.
           </p>
         </div>
 

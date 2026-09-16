@@ -257,7 +257,7 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-          <p className="mt-2">contact@cuisines-milo.fr</p>
+          <p className="mt-2">contact@cuisinesmilo.com</p>
           <p>Du lundi au samedi, sur rendez-vous</p>
         </div>
         <div>
