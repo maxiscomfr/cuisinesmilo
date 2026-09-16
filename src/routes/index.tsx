@@ -51,7 +51,7 @@ export const Route = createFileRoute("/")({
             "@type": "AdministrativeArea",
             name: "Charente-Maritime (17)",
           },
-          email: "contact@cuisines-milo.fr",
+          email: "contact@cuisinesmilo.com",
           priceRange: "€€",
           openingHoursSpecification: [
             {
