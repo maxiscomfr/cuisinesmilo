@@ -94,6 +94,7 @@ const valeurs = [
 ];
 
 function AProposPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <>
       <Section>
