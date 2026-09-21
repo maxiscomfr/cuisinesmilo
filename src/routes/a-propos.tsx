@@ -1,5 +1,39 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
+
+const faqItems = [
+  {
+    question: "Intervenez-vous uniquement sur Royan ?",
+    answer:
+      "Nous intervenons principalement à Royan et dans toute la Charente-Maritime : Saint-Palais-sur-Mer, Vaux-sur-Mer, Saujon, Meschers-sur-Gironde, La Tremblade et environs. Un projet en dehors de cette zone ? Contactez-nous pour en discuter.",
+  },
+  {
+    question: "Faites-vous uniquement des cuisines ?",
+    answer:
+      "Non. En plus des cuisines sur mesure, nous concevons et posons des dressings et placards sur mesure. Nous ne réalisons pas de salles de bains : c'est notre spécialité de cuisiniste.",
+  },
+  {
+    question: "Travaillez-vous avec quel fabricant ?",
+    answer:
+      "Nos cuisines sont fabriquées par un partenaire italien reconnu, puis adaptées et posées sur mesure par nos soins. Vous bénéficiez ainsi de la qualité d'une fabrication italienne et du suivi d'un artisan local.",
+  },
+  {
+    question: "Comment se déroule un projet, du premier contact à la pose ?",
+    answer:
+      "Nous commençons par un échange pour comprendre votre projet. Nous nous déplaçons ensuite chez vous pour prendre les mesures, puis nous vous proposons un plan détaillé, un choix de matériaux et un devis clair. Après validation, vos éléments sont fabriqués sur mesure puis posés avec soin.",
+  },
+  {
+    question: "Le premier rendez-vous et le devis sont-ils payants ?",
+    answer:
+      "Le premier échange et l'étude de votre projet sont gratuits et sans engagement. Nous nous déplaçons sur rendez-vous, du lundi au samedi.",
+  },
+  {
+    question: "Quel est le délai moyen pour une cuisine sur mesure ?",
+    answer:
+      "Le délai dépend de la configuration, des matériaux choisis et de la période de l'année. Le délai précis de fabrication et de pose vous est annoncé dès le devis, pour que vous puissiez organiser votre chantier sereinement.",
+  },
+];
 
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
@@ -23,6 +57,20 @@ export const Route = createFileRoute("/a-propos")({
       { name: "twitter:image", content: "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://cuisinesmilo.com/a-propos" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }),
+      },
+    ],
   }),
   component: AProposPage,
 });
@@ -46,6 +94,7 @@ const valeurs = [
 ];
 
 function AProposPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <>
       <Section>
@@ -157,6 +206,41 @@ function AProposPage() {
               Un projet en dehors de cette zone ? Contactez-nous pour en
               discuter.
             </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section bordered>
+        <div className="mx-auto max-w-3xl">
+          <SectionTitle>Questions fréquentes</SectionTitle>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Tout savoir sur nos cuisines et dressings sur mesure, autour de Royan
+            et en Charente-Maritime.
+          </p>
+          <div className="mt-8 space-y-3">
+            {faqItems.map((item, i) => (
+              <div
+                key={item.question}
+                className="rounded-xl border-hairline border-border"
+              >
+                <button
+                  type="button"
+                  aria-expanded={openFaq === i}
+                  onClick={() => setOpenFaq((v) => (v === i ? null : i))}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-foreground md:text-base"
+                >
+                  {item.question}
+                  <span aria-hidden className="shrink-0 text-muted-foreground">
+                    {openFaq === i ? "–" : "+"}
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
+                    {item.answer}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </Section>
