@@ -210,6 +210,41 @@ function AProposPage() {
       </Section>
 
       <Section bordered>
+        <div className="mx-auto max-w-3xl">
+          <SectionTitle>Questions fréquentes</SectionTitle>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Tout savoir sur nos cuisines et dressings sur mesure, autour de Royan
+            et en Charente-Maritime.
+          </p>
+          <div className="mt-8 space-y-3">
+            {faqItems.map((item, i) => (
+              <div
+                key={item.question}
+                className="rounded-xl border-hairline border-border"
+              >
+                <button
+                  type="button"
+                  aria-expanded={openFaq === i}
+                  onClick={() => setOpenFaq((v) => (v === i ? null : i))}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-foreground md:text-base"
+                >
+                  {item.question}
+                  <span aria-hidden className="shrink-0 text-muted-foreground">
+                    {openFaq === i ? "–" : "+"}
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
+                    {item.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section bordered>
         <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
           <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
             Parlons de votre projet
