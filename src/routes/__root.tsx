@@ -81,6 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Cuisines Milo" },
+      { name: "google-site-verification", content: "lsJ5TtqhPR38t6PH3ilJeUttPThEKxwPSBaGsPTw6ng" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Cuisines Milo" },
       { name: "twitter:card", content: "summary_large_image" },
