@@ -19,7 +19,7 @@ Questions proposées (orientées SEO local) :
    → Cuisines et dressings/placards sur mesure. Pas de salles de bains.
 3. Travaillez-vous avec quel fabricant ?
    → Nos cuisines sont fabriquées par un partenaire italien, adaptées sur
-   mesure par nos soins (sans nommer Armony Cucine).
+   mesure par nos soins — sans nommer le fabricant.
 4. Comment se déroule un projet, du premier contact à la pose ?
    → Contact → visite et mesures → conception et devis → fabrication et pose.
 5. Le premier rendez-vous et le devis sont-ils payants ?
