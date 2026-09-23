@@ -197,6 +197,7 @@ function AProposPage() {
                 </div>
               </li>
             </ol>
+            </div>
           </Reveal>
           <Reveal delay={0.15}>
             <div className="rounded-xl border-hairline border-border p-6">
