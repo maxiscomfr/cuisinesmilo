@@ -4,9 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
@@ -133,6 +135,7 @@ const navItems = [
 function Header() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const reduce = useReducedMotion();
 
   return (
     <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
@@ -165,24 +168,33 @@ function Header() {
                     ▾
                   </span>
                 </button>
-                {dropdown && (
-                  <div className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1">
-                    {n.children.map((c) => (
-                      <Link
-                        key={c.to}
-                        to={c.to}
-                        onClick={() => setDropdown(false)}
-                        className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
-                        activeProps={{
-                          className:
-                            "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
-                        }}
-                      >
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {dropdown ? (
+                  <AnimatePresence>
+                    <motion.div
+                      key="dropdown"
+                      initial={reduce ? false : { opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                      className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1"
+                    >
+                      {n.children.map((c) => (
+                        <Link
+                          key={c.to}
+                          to={c.to}
+                          onClick={() => setDropdown(false)}
+                          className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                          activeProps={{
+                            className:
+                              "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
+                          }}
+                        >
+                          {c.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
+                ) : null}
               </div>
             ) : (
               <Link
@@ -210,9 +222,17 @@ function Header() {
           </div>
         </button>
       </div>
-      {open && (
-        <div className="border-hairline border-t border-border md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            key="menu-mobile"
+            initial={reduce ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="overflow-hidden border-hairline border-t border-border md:hidden"
+          >
+            <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
             {navItems.map((n) =>
               "children" in n ? (
                 <div key={n.to} className="py-2">
