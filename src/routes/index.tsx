@@ -95,65 +95,78 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative border-hairline border-b border-border">
-        <img
-          src={heroKitchen}
-          alt="Cuisine sur mesure en bois — Cuisines Milo"
-          width={1600}
-          height={1000}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <section className="relative overflow-hidden border-hairline border-b border-border">
+        <ParallaxImage className="absolute inset-0" kenBurns speed={0.12}>
+          <img
+            src={heroKitchen}
+            alt="Cuisine sur mesure en bois — Cuisines Milo"
+            width={1600}
+            height={1000}
+            className="h-full w-full object-cover"
+          />
+        </ParallaxImage>
         <div
           aria-hidden
           className="absolute inset-0 bg-primary/55"
         />
         <div className="relative mx-auto max-w-6xl px-5 py-24 md:py-36">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/90">
-            Cuisiniste à Royan · Charente-Maritime
-          </p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
-            Cuisines et dressings sur mesure à Royan, pensés pour durer.
-          </h1>
-          <p className="mt-5 max-w-lg text-base text-primary-foreground/90">
-            Cuisines Milo, artisan cuisiniste à Royan, conçoit et pose vos
-            cuisines et dressings sur mesure partout en Charente-Maritime :
-            matériaux nobles et finitions soignées.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground ring-1 ring-primary-foreground/60 transition-colors hover:bg-primary/90"
-            >
-              Demander mon devis gratuit
-            </Link>
-            <Link
-              to="/realisations/cuisines"
-              className="inline-flex items-center justify-center rounded-md border-hairline border-primary-foreground/60 px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/40"
-            >
-              Voir les réalisations
-            </Link>
-          </div>
+          <Stagger stagger={0.12}>
+            <StaggerItem y={16}>
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/90">
+                Cuisiniste à Royan · Charente-Maritime
+              </p>
+            </StaggerItem>
+            <StaggerItem y={20}>
+              <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
+                Cuisines et dressings sur mesure à Royan, pensés pour durer.
+              </h1>
+            </StaggerItem>
+            <StaggerItem y={20}>
+              <p className="mt-5 max-w-lg text-base text-primary-foreground/90">
+                Cuisines Milo, artisan cuisiniste à Royan, conçoit et pose vos
+                cuisines et dressings sur mesure partout en Charente-Maritime :
+                matériaux nobles et finitions soignées.
+              </p>
+            </StaggerItem>
+            <StaggerItem y={20}>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground ring-1 ring-primary-foreground/60 transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+                >
+                  Demander mon devis gratuit
+                </Link>
+                <Link
+                  to="/realisations/cuisines"
+                  className="inline-flex items-center justify-center rounded-md border-hairline border-primary-foreground/60 px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/40"
+                >
+                  Voir les réalisations
+                </Link>
+              </div>
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
       {/* RÉASSURANCES */}
       <Section>
-        <div className="grid gap-5 md:grid-cols-3">
+        <Stagger className="grid gap-5 md:grid-cols-3" stagger={0.12}>
           {reassurances.map((r) => (
-            <div
-              key={r.label}
-              className="rounded-xl border-hairline border-border p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.22em] text-accent">
-                {r.label}
-              </p>
-              <h3 className="mt-3 text-lg font-medium text-foreground">
-                {r.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{r.text}</p>
-            </div>
+            <StaggerItem key={r.label} className="h-full">
+              <div
+                className="h-full rounded-xl border-hairline border-border p-6"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-accent">
+                  {r.label}
+                </p>
+                <h3 className="mt-3 text-lg font-medium text-foreground">
+                  {r.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">{r.text}</p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </Section>
 
       {/* APERÇU RÉALISATIONS */}
@@ -181,16 +194,18 @@ function Home() {
       <Section bordered>
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Ils nous ont fait confiance</SectionLabel>
-          <blockquote className="mt-6 text-xl font-medium leading-relaxed text-foreground md:text-2xl">
-            « {featuredAvis.text} »
-          </blockquote>
-          <p className="mt-6 text-sm text-muted-foreground">
-            {featuredAvis.name} — {featuredAvis.location}
-          </p>
+          <Reveal>
+            <blockquote className="mt-6 text-xl font-medium leading-relaxed text-foreground md:text-2xl">
+              « {featuredAvis.text} »
+            </blockquote>
+            <p className="mt-6 text-sm text-muted-foreground">
+              {featuredAvis.name} — {featuredAvis.location}
+            </p>
+          </Reveal>
           <div className="mt-8">
             <Link
               to="/a-propos"
-              className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              className="story-link text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
               En savoir plus sur Cuisines Milo →
             </Link>
@@ -200,24 +215,26 @@ function Home() {
 
       {/* CTA final */}
       <Section bordered>
-        <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Parlons de votre projet de cuisine ou de dressing
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-            Décrivez-nous votre espace et vos envies : votre cuisiniste à Royan
-            vous rappelle pour affiner votre devis sur mesure, partout en
-            Charente-Maritime.
-          </p>
-          <div className="mt-6">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-            >
-              Demander mon devis gratuit
-            </Link>
+        <Reveal>
+          <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
+            <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+              Parlons de votre projet de cuisine ou de dressing
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
+              Décrivez-nous votre espace et vos envies : votre cuisiniste à Royan
+              vous rappelle pour affiner votre devis sur mesure, partout en
+              Charente-Maritime.
+            </p>
+            <div className="mt-6">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+              >
+                Demander mon devis gratuit
+              </Link>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );
