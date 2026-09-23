@@ -263,7 +263,7 @@ function Header() {
             )}
           </nav>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </header>
   );
@@ -305,6 +305,8 @@ function Footer() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
+  const reduce = useReducedMotion();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const { data: subscription } = supabase.auth.onAuthStateChange((event) => {
@@ -324,7 +326,17 @@ function RootComponent() {
       <div className="flex min-h-screen flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">
-          <Outlet />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={pathname}
+              initial={reduce ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduce ? undefined : { opacity: 0, y: -10 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+            >
+              <Outlet />
+            </motion.div>
+          </AnimatePresence>
         </main>
         <Footer />
       </div>
