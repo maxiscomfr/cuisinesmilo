@@ -572,7 +572,8 @@ function CuisinesPage() {
               Nous contacter
             </Link>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </Section>
 
 
