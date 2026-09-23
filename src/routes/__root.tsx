@@ -4,9 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
@@ -133,6 +135,7 @@ const navItems = [
 function Header() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const reduce = useReducedMotion();
 
   return (
     <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
@@ -158,31 +161,44 @@ function Header() {
                   aria-expanded={dropdown}
                   aria-haspopup="true"
                   onClick={() => setDropdown(true)}
-                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors duration-200 hover:text-foreground"
                 >
                   {n.label}
-                  <span aria-hidden className="text-[10px]">
+                  <span
+                    aria-hidden
+                    className="text-[10px] transition-transform duration-200"
+                    style={{ transform: dropdown ? "rotate(180deg)" : "none" }}
+                  >
                     ▾
                   </span>
                 </button>
-                {dropdown && (
-                  <div className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1">
-                    {n.children.map((c) => (
-                      <Link
-                        key={c.to}
-                        to={c.to}
-                        onClick={() => setDropdown(false)}
-                        className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
-                        activeProps={{
-                          className:
-                            "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
-                        }}
-                      >
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {dropdown ? (
+                  <AnimatePresence>
+                    <motion.div
+                      key="dropdown"
+                      initial={reduce ? false : { opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                      className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1"
+                    >
+                      {n.children.map((c) => (
+                        <Link
+                          key={c.to}
+                          to={c.to}
+                          onClick={() => setDropdown(false)}
+                          className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                          activeProps={{
+                            className:
+                              "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
+                          }}
+                        >
+                          {c.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
+                ) : null}
               </div>
             ) : (
               <Link
@@ -210,9 +226,17 @@ function Header() {
           </div>
         </button>
       </div>
-      {open && (
-        <div className="border-hairline border-t border-border md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            key="menu-mobile"
+            initial={reduce ? false : { height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="overflow-hidden border-hairline border-t border-border md:hidden"
+          >
+            <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
             {navItems.map((n) =>
               "children" in n ? (
                 <div key={n.to} className="py-2">
@@ -242,8 +266,9 @@ function Header() {
               ),
             )}
           </nav>
-        </div>
-      )}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
@@ -264,10 +289,10 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Informations</p>
-          <Link to="/mentions-legales" className="mt-2 block hover:text-foreground">
+          <Link to="/mentions-legales" className="story-link mt-2 block w-fit hover:text-foreground">
             Mentions légales
           </Link>
-          <Link to="/contact" className="block hover:text-foreground">
+          <Link to="/contact" className="story-link block w-fit hover:text-foreground">
             Demander un devis
           </Link>
         </div>
@@ -284,6 +309,8 @@ function Footer() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
+  const reduce = useReducedMotion();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const { data: subscription } = supabase.auth.onAuthStateChange((event) => {
@@ -303,7 +330,17 @@ function RootComponent() {
       <div className="flex min-h-screen flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">
-          <Outlet />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={pathname}
+              initial={reduce ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduce ? undefined : { opacity: 0, y: -10 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+            >
+              <Outlet />
+            </motion.div>
+          </AnimatePresence>
         </main>
         <Footer />
       </div>

@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 
 import { Section, SectionLabel } from "@/components/site/Section";
+import { Reveal } from "@/components/site/motion/Reveal";
 import { submitContact } from "@/lib/contact.functions";
 
 export const Route = createFileRoute("/contact")({
@@ -38,7 +39,7 @@ function labelClass() {
 }
 
 function inputClass(error?: string) {
-  return `mt-2 w-full rounded-md border-hairline bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring ${
+  return `mt-2 w-full rounded-md border-hairline bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-ring ${
     error ? "border-destructive" : "border-border"
   }`;
 }
@@ -58,9 +59,9 @@ function ContactPage() {
       </Section>
 
       <Section bordered>
-        <div className="mx-auto max-w-2xl">
+        <Reveal className="mx-auto max-w-2xl">
           <ContactSimpleForm />
-        </div>
+        </Reveal>
       </Section>
     </>
   );
@@ -144,7 +145,7 @@ function ContactSimpleForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
+        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90 disabled:opacity-60 disabled:hover:scale-100"
       >
         {loading ? "Envoi en cours..." : "Envoyer"}
       </button>

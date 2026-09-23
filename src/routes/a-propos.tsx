@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
+import { Reveal } from "@/components/site/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/site/motion/Stagger";
 
 const faqItems = [
   {
@@ -116,27 +119,29 @@ function AProposPage() {
       </Section>
 
       <Section bordered>
-        <div className="grid gap-5 md:grid-cols-3">
+        <Stagger className="grid gap-5 md:grid-cols-3" stagger={0.12}>
           {valeurs.map((v) => (
-            <div
-              key={v.label}
-              className="rounded-xl border-hairline border-border p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.22em] text-accent">
-                {v.label}
-              </p>
-              <h3 className="mt-3 text-lg font-medium text-foreground">
-                {v.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{v.text}</p>
-            </div>
+            <StaggerItem key={v.label} className="h-full">
+              <div
+                className="h-full rounded-xl border-hairline border-border p-6"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-accent">
+                  {v.label}
+                </p>
+                <h3 className="mt-3 text-lg font-medium text-foreground">
+                  {v.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">{v.text}</p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </Section>
 
       <Section bordered>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
+          <Reveal>
+            <div>
             <SectionTitle>Notre méthode</SectionTitle>
             <ol className="mt-6 space-y-5">
               <li className="flex gap-4">
@@ -192,21 +197,24 @@ function AProposPage() {
                 </div>
               </li>
             </ol>
-          </div>
-          <div className="rounded-xl border-hairline border-border p-6">
-            <p className="text-xs uppercase tracking-[0.22em] text-accent">
-              Zone d'intervention
-            </p>
-            <p className="mt-4 text-foreground">
-              Nous intervenons principalement autour de Royan et dans toute la
-              Charente-Maritime : Saint-Palais-sur-Mer, Vaux-sur-Mer, Saujon,
-              Meschers-sur-Gironde, La Tremblade et environs.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Un projet en dehors de cette zone ? Contactez-nous pour en
-              discuter.
-            </p>
-          </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="rounded-xl border-hairline border-border p-6">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent">
+                Zone d'intervention
+              </p>
+              <p className="mt-4 text-foreground">
+                Nous intervenons principalement autour de Royan et dans toute la
+                Charente-Maritime : Saint-Palais-sur-Mer, Vaux-sur-Mer, Saujon,
+                Meschers-sur-Gironde, La Tremblade et environs.
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Un projet en dehors de cette zone ? Contactez-nous pour en
+                discuter.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
@@ -231,14 +239,25 @@ function AProposPage() {
                 >
                   {item.question}
                   <span aria-hidden className="shrink-0 text-muted-foreground">
-                    {openFaq === i ? "–" : "+"}
+                {openFaq === i ? "–" : "+"}
                   </span>
                 </button>
-                {openFaq === i && (
-                  <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
-                    {item.answer}
-                  </p>
-                )}
+                <AnimatePresence initial={false}>
+                  {openFaq === i && (
+                    <motion.div
+                      key="reponse"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
+                        {item.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>

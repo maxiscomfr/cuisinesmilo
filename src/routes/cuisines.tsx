@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { CataloguePlaceholder } from "@/components/site/CataloguePlaceholder";
 import { ModelGallery, type ModelGroup } from "@/components/site/ModelGallery";
+import { Reveal } from "@/components/site/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/site/motion/Stagger";
 import yota1 from "@/assets/yota/system-yota-1.jpg.asset.json";
 import yota2 from "@/assets/yota/system-yota-2.jpg.asset.json";
 import yota3 from "@/assets/yota/system-yota-3.jpg.asset.json";
@@ -476,7 +478,7 @@ function CuisinesPage() {
           </select>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10" key={familleSelectionnee}>
           <ModelGallery groups={groupesAffiches} />
 
         </div>
@@ -493,31 +495,35 @@ function CuisinesPage() {
 
       <section className="border-hairline border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-20">
-          <div>
-            <SectionLabel>Cuisines sur mesure</SectionLabel>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Cuisines sur mesure à Royan, dessinées autour de votre quotidien.
-            </h1>
-            <p className="mt-5 max-w-lg text-muted-foreground">
-              Artisan cuisiniste en Charente-Maritime, nous concevons des
-              cuisines qui vieillissent bien : matériaux nobles, finitions
-              maîtrisées, agencements pensés pour durer.
-            </p>
-            <div className="mt-8">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-              >
-                Demander mon devis
-              </Link>
+          <Reveal>
+            <div>
+              <SectionLabel>Cuisines sur mesure</SectionLabel>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+                Cuisines sur mesure à Royan, dessinées autour de votre quotidien.
+              </h1>
+              <p className="mt-5 max-w-lg text-muted-foreground">
+                Artisan cuisiniste en Charente-Maritime, nous concevons des
+                cuisines qui vieillissent bien : matériaux nobles, finitions
+                maîtrisées, agencements pensés pour durer.
+              </p>
+              <div className="mt-8">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+                >
+                  Demander mon devis
+                </Link>
+              </div>
             </div>
-          </div>
-          <div>
-            <CataloguePlaceholder ratio="aspect-[16/10]" />
-            <p className="mt-3 text-xs text-muted-foreground">
-              Visuel provisoire — catalogue fabricant en cours d'intégration.
-            </p>
-          </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div>
+              <CataloguePlaceholder ratio="aspect-[16/10]" />
+              <p className="mt-3 text-xs text-muted-foreground">
+                Visuel provisoire — catalogue fabricant en cours d'intégration.
+              </p>
+            </div>
+          </Reveal>
 
         </div>
       </section>
@@ -525,21 +531,24 @@ function CuisinesPage() {
       <Section bordered>
         <SectionLabel>Notre méthode</SectionLabel>
         <SectionTitle>Quatre étapes, un interlocuteur</SectionTitle>
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {etapes.map((e) => (
-            <div key={e.n} className="rounded-xl border-hairline border-border p-6">
-              <p className="text-xs font-medium tracking-[0.2em] text-accent">{e.n}</p>
-              <h3 className="mt-3 text-lg font-medium text-foreground">{e.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{e.d}</p>
-            </div>
+            <StaggerItem key={e.n} className="h-full">
+              <div className="h-full rounded-xl border-hairline border-border p-6">
+                <p className="text-xs font-medium tracking-[0.2em] text-accent">{e.n}</p>
+                <h3 className="mt-3 text-lg font-medium text-foreground">{e.t}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{e.d}</p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </Section>
 
       <Section bordered>
         <SectionLabel>Cuisines sur mesure</SectionLabel>
         <SectionTitle>Des finitions et matériaux à votre goût</SectionTitle>
-        <div className="mt-8 rounded-xl border-hairline border-border p-8 md:p-12">
+        <Reveal className="mt-8">
+          <div className="rounded-xl border-hairline border-border p-8 md:p-12">
           <p className="text-base text-foreground">
             Chaque cuisine, comme chaque dressing sur mesure, est conçue autour
             de vos volumes et de vos envies.
@@ -563,7 +572,8 @@ function CuisinesPage() {
               Nous contacter
             </Link>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </Section>
 
 
