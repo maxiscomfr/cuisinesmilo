@@ -69,11 +69,6 @@ function MentionsPage() {
              contact@cuisinesmilo.com.
           </p>
         </div>
-
-        <div>
-          <h2 className="text-base font-medium text-foreground"></h2>
-          <p className="mt-2"></p>
-        </div>
       </div>
     </Section>
   );
