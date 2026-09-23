@@ -161,10 +161,14 @@ function Header() {
                   aria-expanded={dropdown}
                   aria-haspopup="true"
                   onClick={() => setDropdown(true)}
-                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors duration-200 hover:text-foreground"
                 >
                   {n.label}
-                  <span aria-hidden className="text-[10px]">
+                  <span
+                    aria-hidden
+                    className="text-[10px] transition-transform duration-200"
+                    style={{ transform: dropdown ? "rotate(180deg)" : "none" }}
+                  >
                     ▾
                   </span>
                 </button>
@@ -285,10 +289,10 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Informations</p>
-          <Link to="/mentions-legales" className="mt-2 block hover:text-foreground">
+          <Link to="/mentions-legales" className="story-link mt-2 block w-fit hover:text-foreground">
             Mentions légales
           </Link>
-          <Link to="/contact" className="block hover:text-foreground">
+          <Link to="/contact" className="story-link block w-fit hover:text-foreground">
             Demander un devis
           </Link>
         </div>
