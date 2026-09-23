@@ -262,8 +262,9 @@ function Header() {
               ),
             )}
           </nav>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
