@@ -69,8 +69,6 @@ function MentionsPage() {
              contact@cuisinesmilo.com.
           </p>
         </div>
-
-        </div>
       </div>
     </Section>
   );
