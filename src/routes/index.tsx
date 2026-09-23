@@ -4,6 +4,9 @@ import heroKitchenAsset from "@/assets/hero-cuisine.jpg.asset.json";
 const heroKitchen = heroKitchenAsset.url;
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { RealisationsGrid } from "@/components/site/RealisationsGrid";
+import { Reveal } from "@/components/site/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/site/motion/Stagger";
+import { ParallaxImage } from "@/components/site/motion/ParallaxImage";
 import { realisations, avisList } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
