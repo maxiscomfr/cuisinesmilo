@@ -6,13 +6,13 @@ import { realisations } from "@/lib/site-data";
 export const Route = createFileRoute("/realisations/dressings")({
   head: () => ({
     meta: [
-      { title: "Réalisations de dressings — Cuisines Milo" },
+      { title: "Dressings et placards sur mesure à Royan" },
       {
         name: "description",
         content:
           "Dressings et placards sur mesure réalisés par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
       },
-      { property: "og:title", content: "Réalisations de dressings — Cuisines Milo" },
+      { property: "og:title", content: "Dressings et placards sur mesure à Royan" },
       {
         property: "og:description",
         content:

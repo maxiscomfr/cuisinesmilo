@@ -9,13 +9,13 @@ import { submitContact } from "@/lib/contact.functions";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Cuisines Milo" },
+      { title: "Contactez Cuisines Milo — Cuisiniste à Royan, 17200" },
       {
         name: "description",
         content:
           "Contactez Cuisines Milo pour toute question sur une cuisine ou un dressing sur mesure à Royan et en Charente-Maritime.",
       },
-      { property: "og:title", content: "Contact — Cuisines Milo" },
+      { property: "og:title", content: "Contactez Cuisines Milo — Cuisiniste à Royan, 17200" },
       {
         property: "og:description",
         content:

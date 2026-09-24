@@ -29,13 +29,13 @@ import sys11 from "@/assets/system/system-11.jpg.asset.json";
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
     meta: [
-      { title: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
+      { title: "Cuisines sur mesure à Royan | Catalogue Armony Cucine" },
       {
         name: "description",
         content:
-          "Modèles de cuisines sur mesure de votre cuisiniste à Royan : finitions, matériaux et agencements posés partout en Charente-Maritime.",
+          "Cuisines sur mesure et haut de gamme à Royan : modèles du catalogue Armony Cucine, agencement et pose par votre cuisiniste en Charente-Maritime.",
       },
-      { property: "og:title", content: "Cuisines sur mesure à Royan — Modèles | Cuisines Milo" },
+      { property: "og:title", content: "Cuisines sur mesure à Royan | Catalogue Armony Cucine" },
       {
         property: "og:description",
         content:

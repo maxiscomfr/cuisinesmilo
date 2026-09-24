@@ -41,13 +41,13 @@ const faqItems = [
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos — Cuisines Milo" },
+      { title: "À propos — Cuisines Milo, cuisiniste à Royan" },
       {
         name: "description",
         content:
           "Cuisines Milo, artisan cuisiniste à Royan. Découvrez notre histoire, notre savoir-faire et notre méthode pour des cuisines et dressings sur mesure.",
       },
-      { property: "og:title", content: "À propos — Cuisines Milo" },
+      { property: "og:title", content: "À propos — Cuisines Milo, cuisiniste à Royan" },
       {
         property: "og:description",
         content:
