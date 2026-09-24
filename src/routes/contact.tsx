@@ -59,9 +59,57 @@ function ContactPage() {
       </Section>
 
       <Section bordered>
-        <Reveal className="mx-auto max-w-2xl">
-          <ContactSimpleForm />
-        </Reveal>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)] lg:items-start">
+          <Reveal>
+            <ContactSimpleForm />
+          </Reveal>
+          <Reveal className="grid gap-6">
+            <div className="rounded-xl border-hairline border-border p-6 md:p-8">
+              <p className={labelClass()}>Coordonnées</p>
+              <h2 className="mt-2 text-2xl font-semibold text-foreground">Cuisines Milo à Royan</h2>
+              <address className="mt-6 grid gap-4 text-sm not-italic text-muted-foreground">
+                <div>
+                  <p className="font-medium text-foreground">Adresse</p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=38+rue+des+Cerisiers%2C+17200+Royan"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="story-link mt-1 inline-block hover:text-foreground"
+                  >
+                    38 rue des Cerisiers<br />
+                    17200 Royan
+                  </a>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Téléphone</p>
+                  <a href="tel:+33786229949" className="story-link mt-1 inline-block hover:text-foreground">
+                    +33 7 86 22 99 49
+                  </a>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Email</p>
+                  <a
+                    href="mailto:contact@cuisinesmilo.com"
+                    className="story-link mt-1 inline-block hover:text-foreground"
+                  >
+                    contact@cuisinesmilo.com
+                  </a>
+                </div>
+              </address>
+            </div>
+
+            <div className="aspect-[4/3] overflow-hidden rounded-xl border-hairline border-border">
+              <iframe
+                title="Carte de Cuisines Milo, 38 rue des Cerisiers à Royan"
+                src="https://www.google.com/maps?q=38%20rue%20des%20Cerisiers%2C%2017200%20Royan&output=embed"
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </Reveal>
+        </div>
       </Section>
     </>
   );
