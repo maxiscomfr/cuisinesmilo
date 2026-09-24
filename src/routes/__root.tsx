@@ -284,8 +284,11 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-          <a href="tel:+33786229949" className="story-link mt-2 block w-fit hover:text-foreground">
-            +33 7 86 22 99 49
+          <a href="tel:+33786229949" className="story-link block w-fit hover:text-foreground">
+            Mobile : +33 7 86 22 99 49
+          </a>
+          <a href="tel:+33546384494" className="story-link block w-fit hover:text-foreground">
+            Fixe : +33 5 46 38 44 94
           </a>
           <a
             href="mailto:contact@cuisinesmilo.com"
