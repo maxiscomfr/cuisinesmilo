@@ -284,7 +284,23 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-          <p className="mt-2">contact@cuisinesmilo.com</p>
+          <a href="tel:+33786229949" className="story-link mt-2 block w-fit hover:text-foreground">
+            +33 7 86 22 99 49
+          </a>
+          <a
+            href="mailto:contact@cuisinesmilo.com"
+            className="story-link block w-fit hover:text-foreground"
+          >
+            contact@cuisinesmilo.com
+          </a>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=38+rue+des+Cerisiers%2C+17200+Royan"
+            target="_blank"
+            rel="noreferrer"
+            className="story-link block w-fit hover:text-foreground"
+          >
+            38 rue des Cerisiers, 17200 Royan
+          </a>
           <p>Du lundi au samedi, sur rendez-vous</p>
         </div>
         <div>

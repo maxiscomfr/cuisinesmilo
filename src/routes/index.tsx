@@ -60,6 +60,7 @@ export const Route = createFileRoute("/")({
             "Charente-Maritime",
           ].map((name) => ({ "@type": "Place", name })),
           email: "contact@cuisinesmilo.com",
+          telephone: "+33 7 86 22 99 49",
           priceRange: "€€",
           openingHoursSpecification: [
             {
