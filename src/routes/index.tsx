@@ -12,13 +12,13 @@ import { realisations, avisList } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cuisiniste à Royan — Cuisines et dressings sur mesure | Milo" },
+      { title: "Cuisines Milo — Cuisiniste à Royan | Cuisines & dressings sur mesure" },
       {
         name: "description",
         content:
-          "Cuisines Milo, cuisiniste à Royan : cuisines et dressings sur mesure conçus et posés en Charente-Maritime. Devis gratuit.",
+          "Cuisines Milo, cuisiniste à Royan (17200) : cuisines équipées, dressings et placards sur mesure conçus et posés en Charente-Maritime. Devis gratuit.",
       },
-      { property: "og:title", content: "Cuisiniste à Royan — Cuisines et dressings sur mesure" },
+      { property: "og:title", content: "Cuisines Milo — Cuisiniste à Royan | Cuisines & dressings sur mesure" },
       {
         property: "og:description",
         content:
@@ -45,15 +45,20 @@ export const Route = createFileRoute("/")({
             "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "38 rue des Cerisiers",
             addressLocality: "Royan",
             addressRegion: "Charente-Maritime",
             postalCode: "17200",
             addressCountry: "FR",
           },
-          areaServed: {
-            "@type": "AdministrativeArea",
-            name: "Charente-Maritime (17)",
-          },
+          areaServed: [
+            "Royan",
+            "Vaux-sur-Mer",
+            "Saint-Georges-de-Didonne",
+            "Saujon",
+            "La Tremblade",
+            "Charente-Maritime",
+          ].map((name) => ({ "@type": "Place", name })),
           email: "contact@cuisinesmilo.com",
           priceRange: "€€",
           openingHoursSpecification: [
@@ -99,7 +104,7 @@ function Home() {
         <ParallaxImage className="absolute inset-0" kenBurns speed={0.12}>
           <img
             src={heroKitchen}
-            alt="Cuisine sur mesure en bois — Cuisines Milo"
+            alt="Cuisine sur mesure en bois à Royan — Cuisines Milo, cuisiniste"
             width={1600}
             height={1000}
             className="h-full w-full object-cover"

@@ -92,7 +92,7 @@ export function ModelGallery({
                   {g.photos[0] ? (
                     <img
                       src={g.photos[0]}
-                      alt={`Modèle ${g.modele} — catalogue fabricant`}
+                      alt={`Cuisine ${g.modele} — catalogue Armony Cucine, Cuisines Milo Royan`}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

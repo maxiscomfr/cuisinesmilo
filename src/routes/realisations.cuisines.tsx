@@ -6,13 +6,13 @@ import { realisations } from "@/lib/site-data";
 export const Route = createFileRoute("/realisations/cuisines")({
   head: () => ({
     meta: [
-      { title: "Réalisations de cuisines — Cuisines Milo" },
+      { title: "Nos réalisations de cuisines à Royan et alentours" },
       {
         name: "description",
         content:
           "Cuisines sur mesure réalisées par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
       },
-      { property: "og:title", content: "Réalisations de cuisines — Cuisines Milo" },
+      { property: "og:title", content: "Nos réalisations de cuisines à Royan et alentours" },
       {
         property: "og:description",
         content:
