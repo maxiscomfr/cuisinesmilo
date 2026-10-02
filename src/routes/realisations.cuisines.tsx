@@ -6,17 +6,17 @@ import { realisations } from "@/lib/site-data";
 export const Route = createFileRoute("/realisations/cuisines")({
   head: () => ({
     meta: [
-      { title: "Nos réalisations de cuisines à Royan et alentours" },
+      { title: "Nos cuisines posées à Royan et alentours | Cuisines Milo" },
       {
         name: "description",
         content:
-          "Cuisines sur mesure réalisées par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
+          "Photos de cuisines sur mesure posées à Royan, Vaux-sur-Mer, Saint-Palais-sur-Mer et en Charente-Maritime : îlots, bois, laqué, marbre.",
       },
-      { property: "og:title", content: "Nos réalisations de cuisines à Royan et alentours" },
+      { property: "og:title", content: "Nos cuisines posées à Royan et alentours | Cuisines Milo" },
       {
         property: "og:description",
         content:
-          "Galerie de cuisines sur mesure réalisées par Cuisines Milo : chantiers livrés en Charente-Maritime, du croquis à la pose finale.",
+          "Photos de cuisines sur mesure posées à Royan, Vaux-sur-Mer, Saint-Palais-sur-Mer et en Charente-Maritime : îlots, bois, laqué, marbre.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://cuisinesmilo.com/realisations/cuisines" },
@@ -41,7 +41,7 @@ function RealisationsCuisinesPage() {
     <Section>
       <SectionLabel>Galerie</SectionLabel>
       <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-        Réalisations de cuisines
+        Nos réalisations de cuisines à Royan et alentours
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground">
         Chaque projet raconte une histoire. Voici quelques cuisines récemment

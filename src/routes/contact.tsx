@@ -9,17 +9,17 @@ import { submitContact } from "@/lib/contact.functions";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contactez Cuisines Milo — Cuisiniste à Royan, 17200" },
+      { title: "Devis cuisine sur mesure à Royan | Contact Cuisines Milo" },
       {
         name: "description",
         content:
-          "Contactez Cuisines Milo pour toute question sur une cuisine ou un dressing sur mesure à Royan et en Charente-Maritime.",
+          "Demandez votre devis gratuit de cuisine ou de dressing sur mesure à Royan : showroom 38 rue des Cerisiers, 05 46 38 44 94, du lundi au samedi.",
       },
-      { property: "og:title", content: "Contactez Cuisines Milo — Cuisiniste à Royan, 17200" },
+      { property: "og:title", content: "Devis cuisine sur mesure à Royan | Contact Cuisines Milo" },
       {
         property: "og:description",
         content:
-          "Contactez Cuisines Milo pour votre projet de cuisine ou de dressing sur mesure à Royan et en Charente-Maritime. Réponse rapide, devis gratuit.",
+          "Demandez votre devis gratuit de cuisine ou de dressing sur mesure à Royan : showroom 38 rue des Cerisiers, 05 46 38 44 94, du lundi au samedi.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://cuisinesmilo.com/contact" },
@@ -50,7 +50,7 @@ function ContactPage() {
       <Section>
         <SectionLabel>Contact</SectionLabel>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-          Parlons de votre projet
+          Demandez votre devis de cuisine à Royan
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           Envoyez-nous un message pour toute question ou demande d'information.

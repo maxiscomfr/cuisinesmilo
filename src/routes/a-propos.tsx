@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/motion/Reveal";
@@ -242,22 +241,16 @@ function AProposPage() {
                 {openFaq === i ? "–" : "+"}
                   </span>
                 </button>
-                <AnimatePresence initial={false}>
-                  {openFaq === i && (
-                    <motion.div
-                      key="reponse"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28, ease: "easeOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  aria-hidden={openFaq !== i}
+                  className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <p className="border-hairline border-t border-border px-5 py-4 text-sm text-muted-foreground">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
