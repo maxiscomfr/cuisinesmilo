@@ -6,17 +6,17 @@ import { realisations } from "@/lib/site-data";
 export const Route = createFileRoute("/realisations/dressings")({
   head: () => ({
     meta: [
-      { title: "Dressings et placards sur mesure à Royan" },
+      { title: "Dressing sur mesure à Royan | Réalisations Cuisines Milo" },
       {
         name: "description",
         content:
-          "Dressings et placards sur mesure réalisés par Cuisines Milo en Charente-Maritime : galerie de chantiers livrés.",
+          "Dressings, placards et rangements sur mesure posés à Royan et en Charente-Maritime : sous pente, sous escalier, en angle. Devis gratuit.",
       },
-      { property: "og:title", content: "Dressings et placards sur mesure à Royan" },
+      { property: "og:title", content: "Dressing sur mesure à Royan | Réalisations Cuisines Milo" },
       {
         property: "og:description",
         content:
-          "Galerie de dressings et placards sur mesure réalisés par Cuisines Milo : rangements optimisés livrés en Charente-Maritime.",
+          "Dressings, placards et rangements sur mesure posés à Royan et en Charente-Maritime : sous pente, sous escalier, en angle. Devis gratuit.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://cuisinesmilo.com/realisations/dressings" },
@@ -41,7 +41,7 @@ function RealisationsDressingsPage() {
     <Section>
       <SectionLabel>Galerie</SectionLabel>
       <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-        Réalisations de dressings
+        Dressings et placards sur mesure à Royan
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground">
         Dressings et placards sur mesure récemment livrés en Charente-Maritime.

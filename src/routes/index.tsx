@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroKitchenAsset from "@/assets/hero-cuisine.jpg.asset.json";
+import logoAsset from "@/assets/logo-cuisines-milo.png.asset.json";
 
 const heroKitchen = heroKitchenAsset.url;
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
@@ -12,17 +13,17 @@ import { realisations, avisList } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cuisines Milo — Cuisiniste à Royan | Cuisines & dressings sur mesure" },
+      { title: "Cuisiniste à Royan | Cuisines sur mesure – Cuisines Milo" },
       {
         name: "description",
         content:
-          "Cuisines Milo, cuisiniste à Royan (17200) : cuisines équipées, dressings et placards sur mesure conçus et posés en Charente-Maritime. Devis gratuit.",
+          "Cuisiniste à Royan (17200) : cuisines et dressings sur mesure conçus et posés en Charente-Maritime. Showroom rue des Cerisiers, devis gratuit.",
       },
-      { property: "og:title", content: "Cuisines Milo — Cuisiniste à Royan | Cuisines & dressings sur mesure" },
+      { property: "og:title", content: "Cuisiniste à Royan | Cuisines sur mesure – Cuisines Milo" },
       {
         property: "og:description",
         content:
-          "Artisan cuisiniste à Royan : cuisines et dressings sur mesure, conçus, fabriqués et posés en Charente-Maritime. Devis gratuit.",
+          "Cuisiniste à Royan (17200) : cuisines et dressings sur mesure conçus et posés en Charente-Maritime. Showroom rue des Cerisiers, devis gratuit.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://cuisinesmilo.com/" },
@@ -36,13 +37,18 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
+          "@type": "HomeAndConstructionBusiness",
+          "@id": "https://cuisinesmilo.com/#entreprise",
           name: "Cuisines Milo",
           description:
-            "Artisan cuisiniste à Royan : cuisines et dressings sur mesure, conçus, fabriqués et posés en Charente-Maritime.",
+            "Cuisiniste à Royan : cuisines et dressings sur mesure, conçus, fabriqués et posés en Charente-Maritime.",
           url: "https://cuisinesmilo.com/",
+          logo: `https://cuisinesmilo.com${logoAsset.url}`,
           image:
             "https://cuisinesmilo.com/__l5e/assets-v1/3d2ee279-c1a2-477b-a9ab-1057d5e4e2db/og-cuisines-milo.jpg",
+          telephone: "+33546384494",
+          email: "contact@cuisinesmilo.com",
+          priceRange: "€€",
           address: {
             "@type": "PostalAddress",
             streetAddress: "38 rue des Cerisiers",
@@ -54,21 +60,15 @@ export const Route = createFileRoute("/")({
           areaServed: [
             "Royan",
             "Vaux-sur-Mer",
+            "Saint-Palais-sur-Mer",
             "Saint-Georges-de-Didonne",
+            "Meschers-sur-Gironde",
             "Saujon",
             "La Tremblade",
             "Charente-Maritime",
           ].map((name) => ({ "@type": "Place", name })),
-          email: "contact@cuisinesmilo.com",
-          telephone: ["+33 7 86 22 99 49", "+33 5 46 38 44 94"],
-          priceRange: "€€",
-          openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-              description: "Du lundi au samedi, sur rendez-vous",
-            },
-          ],
+          knowsAbout: ["cuisine sur mesure", "cuisine équipée", "îlot central", "dressing sur mesure", "placard sur mesure"],
+          brand: { "@type": "Brand", name: "Armony Cucine" },
         }),
       },
     ],
@@ -124,7 +124,7 @@ function Home() {
             </StaggerItem>
             <StaggerItem y={20}>
               <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-primary-foreground md:text-5xl">
-                Cuisines et dressings sur mesure à Royan, pensés pour durer.
+                Cuisiniste à Royan : cuisines et dressings sur mesure
               </h1>
             </StaggerItem>
             <StaggerItem y={20}>
@@ -173,6 +173,39 @@ function Home() {
             </StaggerItem>
           ))}
         </Stagger>
+      </Section>
+
+      <Section bordered>
+        <div className="max-w-3xl text-muted-foreground">
+          <h2 className="text-3xl font-semibold text-foreground md:text-4xl">Votre cuisiniste à Royan, du premier croquis à la pose</h2>
+          <p className="mt-5">Cuisines Milo dessine et installe des cuisines sur mesure à Royan et dans les communes voisines. Notre showroom du 38 rue des Cerisiers vous accueille du lundi au samedi, sur rendez-vous, pour voir et toucher les façades, les plans de travail et les finitions avant de vous décider.</p>
+          <p className="mt-4">Choisir un cuisiniste local, c'est avoir un seul interlocuteur du début à la fin : la même personne prend vos mesures, dessine votre plan, suit la fabrication et coordonne la pose. Pas de sous-traitance anonyme, pas de mauvaise surprise le jour de l'installation.</p>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Une cuisine sur mesure à Royan, pensée pour votre maison</h3>
+          <p className="mt-4">Maison de ville dans le centre de Royan, villa à Vaux-sur-Mer ou résidence secondaire à Saint-Palais-sur-Mer : chaque intérieur a ses contraintes. Nous adaptons chaque cuisine à vos volumes, à vos habitudes et à votre budget, qu'il s'agisse d'une cuisine ouverte avec îlot central, d'une cuisine en L optimisée ou d'une rénovation complète.</p>
+          <p className="mt-4">Nous choisissons avec vous des matériaux qui vieillissent bien, y compris près de l'océan : façades laquées ou bois, plans de travail en céramique, quartz ou stratifié, quincaillerie de qualité et électroménager encastré.</p>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Des cuisines italiennes Armony Cucine</h3>
+          <p className="mt-4">Nos cuisines sont fabriquées en Italie par Armony Cucine, puis adaptées et posées par nos soins. Vous profitez du design et de la qualité d'une fabrication italienne, avec le suivi d'un artisan cuisiniste installé à Royan. Découvrez les 30 modèles de notre catalogue sur la page <Link to="/cuisines" className="font-medium text-foreground underline underline-offset-4">Cuisines sur mesure</Link>.</p>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Dressings et placards sur mesure</h3>
+          <p className="mt-4">Cuisines Milo conçoit aussi vos <Link to="/realisations/dressings" className="font-medium text-foreground underline underline-offset-4">dressings, placards et rangements sur mesure</Link> : sous pente, sous escalier, en angle ou en enfilade. Le même soin que pour une cuisine, pour gagner chaque centimètre.</p>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Comment se passe votre projet</h3>
+          <ol className="mt-4 list-decimal space-y-2 pl-6">
+            <li>Premier échange, au showroom ou par téléphone, pour comprendre votre projet.</li>
+            <li>Visite chez vous et prise de mesures précises.</li>
+            <li>Plan détaillé, choix des matériaux et devis clair, gratuit et sans engagement.</li>
+            <li>Fabrication sur mesure, puis pose soignée par nos équipes.</li>
+          </ol>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Où intervenons-nous ?</h3>
+          <p className="mt-4">Nous posons des cuisines à Royan et dans tout le pays royannais : Vaux-sur-Mer, Saint-Palais-sur-Mer, Saint-Georges-de-Didonne, Meschers-sur-Gironde, Saujon, La Tremblade, Breuillet, Médis, Arvert, et plus largement en Charente-Maritime. Un projet un peu plus loin ? Appelez-nous, nous étudions chaque demande.</p>
+
+          <h3 className="mt-9 text-xl font-semibold text-foreground">Combien coûte une cuisine sur mesure à Royan ?</h3>
+          <p className="mt-4">Le prix d'une cuisine sur mesure dépend de sa taille, des façades, du plan de travail et de l'électroménager choisis. Après la visite technique, nous vous remettons un devis détaillé poste par poste, pour savoir exactement ce que vous payez. L'étude et le devis sont gratuits.</p>
+          <p className="mt-4">Vous avez un projet de cuisine à Royan ? Appelez le <a href="tel:+33546384494" className="font-medium text-foreground underline underline-offset-4">05 46 38 44 94</a> ou <Link to="/contact" className="font-medium text-foreground underline underline-offset-4">demandez votre devis en ligne</Link>.</p>
+        </div>
       </Section>
 
       {/* APERÇU RÉALISATIONS */}

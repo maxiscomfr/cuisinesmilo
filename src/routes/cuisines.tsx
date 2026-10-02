@@ -29,17 +29,17 @@ import sys11 from "@/assets/system/system-11.jpg.asset.json";
 export const Route = createFileRoute("/cuisines")({
   head: () => ({
     meta: [
-      { title: "Cuisines sur mesure à Royan | Catalogue Armony Cucine" },
+      { title: "Cuisine sur mesure à Royan | Modèles Armony Cucine" },
       {
         name: "description",
         content:
-          "Cuisines sur mesure et haut de gamme à Royan : modèles du catalogue Armony Cucine, agencement et pose par votre cuisiniste en Charente-Maritime.",
+          "Cuisines sur mesure à Royan : 30 modèles italiens Armony Cucine, façades, plans de travail et îlots posés par votre cuisiniste en Charente-Maritime.",
       },
-      { property: "og:title", content: "Cuisines sur mesure à Royan | Catalogue Armony Cucine" },
+      { property: "og:title", content: "Cuisine sur mesure à Royan | Modèles Armony Cucine" },
       {
         property: "og:description",
         content:
-          "Cuisines sur mesure à Royan et en Charente-Maritime : conception personnalisée, matériaux durables et pose soignée par un artisan local.",
+          "Cuisines sur mesure à Royan : 30 modèles italiens Armony Cucine, façades, plans de travail et îlots posés par votre cuisiniste en Charente-Maritime.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://cuisinesmilo.com/cuisines" },
@@ -499,7 +499,7 @@ function CuisinesPage() {
             <div>
               <SectionLabel>Cuisines sur mesure</SectionLabel>
               <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-                Cuisines sur mesure à Royan, dessinées autour de votre quotidien.
+                Cuisines sur mesure à Royan : nos modèles Armony Cucine
               </h1>
               <p className="mt-5 max-w-lg text-muted-foreground">
                 Artisan cuisiniste en Charente-Maritime, nous concevons des
