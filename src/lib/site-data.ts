@@ -561,43 +561,26 @@ export const realisations: Realisation[] = [
 export type Avis = {
   id: string;
   name: string;
-  location: string;
   rating: number;
   text: string;
   date: string;
 };
 
+// Avis réels, repris mot pour mot depuis la fiche Google de Cuisines Milo (note 5,0/5).
+// À compléter au fil des nouveaux avis Google (et mettre à jour src/lib/reviews-config.ts).
 export const avisList: Avis[] = [
   {
-    id: "a1",
-    name: "Claire & Julien D.",
-    location: "Royan",
+    id: "g1",
+    name: "Kevin Brochon",
     rating: 5,
-    text: "Un accompagnement du premier croquis à la pose finale. Milo a su comprendre exactement ce qu'on cherchait. La qualité des finitions est irréprochable.",
-    date: "Mars 2026",
+    text: "Le choix de cuisines est vraiment très large, avec de nombreux styles, modèles et possibilités d’aménagement pour répondre à toutes les envies. Florent, grâce à son écoute, ses conseils et son professionnalisme, sait accompagner ses clients avec beaucoup d’attention et de sérieux. Une adresse que nous recommandons volontiers à celles et ceux qui souhaitent une cuisine à la fois esthétique, fonctionnelle et adaptée à leurs envies.",
+    date: "Septembre 2026",
   },
   {
-    id: "a2",
-    name: "Sophie L.",
-    location: "Saint-Palais-sur-Mer",
+    id: "g2",
+    name: "Alexandre et Marion",
     rating: 5,
-    text: "Notre dressing est parfait, dessiné au millimètre pour notre chambre en pente. Merci pour ce sérieux et cette écoute.",
-    date: "Janvier 2026",
-  },
-  {
-    id: "a3",
-    name: "Marc P.",
-    location: "Saujon",
-    rating: 5,
-    text: "Devis clair, délais respectés, pose soignée. On recommande sans hésiter pour une cuisine sur mesure.",
-    date: "Novembre 2025",
-  },
-  {
-    id: "a4",
-    name: "Isabelle & Thomas R.",
-    location: "Vaux-sur-Mer",
-    rating: 5,
-    text: "Merci à toute l'équipe pour cette cuisine qui a transformé notre maison. Les matériaux sont magnifiques.",
-    date: "Septembre 2025",
+    text: "Un grand merci à Florent, qui nous a accompagné avec beaucoup de professionnalisme tout au long de notre projet. Nous sommes pleinement satisfaits et recommandons Cuisines Milo sans hésitation.",
+    date: "Septembre 2026",
   },
 ];

@@ -57,13 +57,40 @@ export function AvisSection() {
                 « {a.text} »
               </blockquote>
               <figcaption className="mt-5 text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">{a.name}</span> — {a.location} ·{" "}
-                {a.date}
+                <span className="font-medium text-foreground">{a.name}</span> · {a.date} · Avis
+                Google
               </figcaption>
             </figure>
           </StaggerItem>
         ))}
       </Stagger>
+
+      <Reveal>
+        <div className="mt-8 rounded-xl border-hairline border-accent bg-accent/10 p-6 text-center md:p-8">
+          <p className="text-lg font-medium text-foreground">Vous avez fait appel à Cuisines Milo ?</p>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+            Votre avis aide les futurs clients à choisir, et il ne vous prend que deux minutes.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+            {GOOGLE_REVIEWS_URL ? (
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+              >
+                Laisser un avis sur Google
+              </a>
+            ) : null}
+            <Link
+              to="/avis"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent"
+            >
+              Comment faire ?
+            </Link>
+          </div>
+        </div>
+      </Reveal>
 
       <Reveal>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
@@ -77,12 +104,6 @@ export function AvisSection() {
               Voir notre fiche Google →
             </a>
           ) : null}
-          <Link
-            to="/avis"
-            className="story-link inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
-          >
-            Vous êtes client ? Laissez-nous un avis →
-          </Link>
         </div>
       </Reveal>
     </Section>
