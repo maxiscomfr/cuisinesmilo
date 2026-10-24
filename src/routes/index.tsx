@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroKitchenAsset from "@/assets/hero-cuisine.jpg.asset.json";
+import heroKitchen from "@/assets/hero-cuisine.webp";
 import logoAsset from "@/assets/logo-cuisines-milo.png.asset.json";
-
-const heroKitchen = heroKitchenAsset.url;
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { HomeGallery } from "@/components/site/HomeGallery";
 import { AvisSection } from "@/components/site/AvisSection";
@@ -106,11 +104,11 @@ function Home() {
         <ParallaxImage className="absolute inset-0" kenBurns speed={0.12}>
           <img
             src={heroKitchen}
-            alt="Cuisine sur mesure en bois à Royan — Cuisines Milo, cuisiniste"
+            alt="Cuisine italienne Armony avec îlot doré et colonnes bleu nuit — Cuisines Milo, cuisiniste à Royan"
             fetchPriority="high"
             decoding="async"
-            width={1600}
-            height={1000}
+            width={1920}
+            height={1280}
             className="h-full w-full object-cover"
           />
         </ParallaxImage>
