@@ -13,7 +13,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
-import logoAsset from "../assets/logo-cuisines-milo.png.asset.json";
+import logoSvg from "../assets/logo-cuisines-milo.svg";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -143,8 +143,10 @@ function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <img
-            src={logoAsset.url}
+            src={logoSvg}
             alt="Cuisines Milo"
+            width={1841}
+            height={177}
             className="h-8 w-auto object-contain sm:h-10"
           />
         </Link>
