@@ -4,11 +4,11 @@ import logoAsset from "@/assets/logo-cuisines-milo.png.asset.json";
 
 const heroKitchen = heroKitchenAsset.url;
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
-import { RealisationsGrid } from "@/components/site/RealisationsGrid";
+import { HomeGallery } from "@/components/site/HomeGallery";
+import { AvisSection } from "@/components/site/AvisSection";
 import { Reveal } from "@/components/site/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/site/motion/Stagger";
 import { ParallaxImage } from "@/components/site/motion/ParallaxImage";
-import { realisations, avisList } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,9 +95,6 @@ const reassurances = [
 ];
 
 function Home() {
-  const highlights = realisations.slice(0, 3);
-  const featuredAvis = avisList[0];
-
   return (
     <>
       {/* HERO */}
@@ -147,6 +144,12 @@ function Home() {
                   className="inline-flex items-center justify-center rounded-md border-hairline border-primary-foreground/60 px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/40"
                 >
                   Voir les réalisations
+                </Link>
+                <Link
+                  to="/rendez-vous"
+                  className="inline-flex items-center justify-center rounded-md border-hairline border-primary-foreground/60 px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/40"
+                >
+                  Prendre rendez-vous au showroom
                 </Link>
               </div>
             </StaggerItem>
@@ -209,48 +212,10 @@ function Home() {
       </Section>
 
       {/* APERÇU RÉALISATIONS */}
-      <Section bordered>
-        <div className="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
-          <div>
-            <SectionLabel>Réalisations récentes</SectionLabel>
-            <SectionTitle>
-              Cuisines et dressings posés à Royan et en Charente-Maritime
-            </SectionTitle>
-          </div>
-          <Link
-            to="/realisations/cuisines"
-            className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
-          >
-            Voir toute la galerie →
-          </Link>
-        </div>
-        <div className="mt-10">
-          <RealisationsGrid items={highlights} columns={3} />
-        </div>
-      </Section>
+      <HomeGallery />
 
       {/* AVIS */}
-      <Section bordered>
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel>Ils nous ont fait confiance</SectionLabel>
-          <Reveal>
-            <blockquote className="mt-6 text-xl font-medium leading-relaxed text-foreground md:text-2xl">
-              « {featuredAvis.text} »
-            </blockquote>
-            <p className="mt-6 text-sm text-muted-foreground">
-              {featuredAvis.name} — {featuredAvis.location}
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <Link
-              to="/a-propos"
-              className="story-link text-sm font-medium text-foreground underline-offset-4 hover:underline"
-            >
-              En savoir plus sur Cuisines Milo →
-            </Link>
-          </div>
-        </div>
-      </Section>
+      <AvisSection />
 
       {/* CTA final */}
       <Section bordered>
@@ -264,12 +229,18 @@ function Home() {
               vous rappelle pour affiner votre devis sur mesure, partout en
               Charente-Maritime.
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
               >
                 Demander mon devis gratuit
+              </Link>
+              <Link
+                to="/rendez-vous"
+                className="inline-flex items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-all duration-200 hover:border-accent"
+              >
+                Prendre rendez-vous au showroom
               </Link>
             </div>
           </div>

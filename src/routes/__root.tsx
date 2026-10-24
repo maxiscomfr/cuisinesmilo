@@ -129,6 +129,7 @@ const navItems = [
   { to: "/cuisines", label: "Cuisines" },
   { to: "/realisations", label: "Réalisations", children: realisationsItems },
   { to: "/a-propos", label: "À propos" },
+  { to: "/rendez-vous", label: "Rendez-vous" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -313,6 +314,9 @@ function Footer() {
           </Link>
           <Link to="/contact" className="story-link block w-fit hover:text-foreground">
             Demander un devis
+          </Link>
+          <Link to="/rendez-vous" className="story-link block w-fit hover:text-foreground">
+            Rendez-vous showroom
           </Link>
         </div>
       </div>

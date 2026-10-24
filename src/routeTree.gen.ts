@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RendezVousRouteImport } from './routes/rendez-vous'
 import { Route as RealisationsRouteImport } from './routes/realisations'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as DressingsRouteImport } from './routes/dressings'
@@ -30,6 +31,11 @@ import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/l
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RendezVousRoute = RendezVousRouteImport.update({
+  id: '/rendez-vous',
+  path: '/rendez-vous',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RealisationsRoute = RealisationsRouteImport.update({
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/realisations': typeof RealisationsRouteWithChildren
+  '/rendez-vous': typeof RendezVousRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/cuisines': typeof CuisinesRoute
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/rendez-vous': typeof RendezVousRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
@@ -162,6 +170,7 @@ export interface FileRoutesById {
   '/dressings': typeof DressingsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/realisations': typeof RealisationsRouteWithChildren
+  '/rendez-vous': typeof RendezVousRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/realisations/cuisines': typeof RealisationsCuisinesRoute
   '/realisations/dressings': typeof RealisationsDressingsRoute
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/dressings'
     | '/mentions-legales'
     | '/realisations'
+    | '/rendez-vous'
     | '/sitemap.xml'
     | '/realisations/cuisines'
     | '/realisations/dressings'
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/cuisines'
     | '/dressings'
     | '/mentions-legales'
+    | '/rendez-vous'
     | '/sitemap.xml'
     | '/realisations/cuisines'
     | '/realisations/dressings'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/dressings'
     | '/mentions-legales'
     | '/realisations'
+    | '/rendez-vous'
     | '/sitemap.xml'
     | '/realisations/cuisines'
     | '/realisations/dressings'
@@ -238,6 +250,7 @@ export interface RootRouteChildren {
   DressingsRoute: typeof DressingsRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   RealisationsRoute: typeof RealisationsRouteWithChildren
+  RendezVousRoute: typeof RendezVousRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
@@ -249,6 +262,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rendez-vous': {
+      id: '/rendez-vous'
+      path: '/rendez-vous'
+      fullPath: '/rendez-vous'
+      preLoaderRoute: typeof RendezVousRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/realisations': {
@@ -405,6 +425,7 @@ const rootRouteChildren: RootRouteChildren = {
   DressingsRoute: DressingsRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   RealisationsRoute: RealisationsRouteWithChildren,
+  RendezVousRoute: RendezVousRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
