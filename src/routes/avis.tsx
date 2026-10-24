@@ -53,7 +53,7 @@ function AvisPage() {
     <>
       <Section>
         <SectionLabel>Votre avis compte</SectionLabel>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
           Vous avez fait appel à Cuisines Milo ? Dites-nous ce que vous en avez pensé
         </h1>
         <p className="mt-5 max-w-2xl text-muted-foreground">
@@ -65,7 +65,7 @@ function AvisPage() {
             href={GOOGLE_PROFILE_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+            className="inline-flex min-h-11 eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors duration-200 hover:bg-walnut"
           >
             Ouvrir la fiche Google et laisser un avis
           </a>
@@ -76,9 +76,9 @@ function AvisPage() {
         <div className="grid gap-5 md:grid-cols-3">
           {etapes.map((e, i) => (
             <Reveal key={e.titre} delay={i * 0.08}>
-              <div className="h-full rounded-xl border-hairline border-border p-6">
+              <div className="h-full border border-sand bg-card p-8">
                 <p className="text-xs uppercase tracking-[0.22em] text-accent">Étape {i + 1}</p>
-                <h2 className="mt-3 text-lg font-medium text-foreground">{e.titre}</h2>
+                <h2 className="font-serif mt-3 text-2xl leading-tight text-foreground">{e.titre}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{e.texte}</p>
               </div>
             </Reveal>

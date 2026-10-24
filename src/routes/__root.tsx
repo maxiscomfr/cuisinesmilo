@@ -13,7 +13,9 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
-import logoSvg from "../assets/logo-cuisines-milo.svg";
+import logoMarron from "../assets/da/logo-marron.svg";
+import logoCreme from "../assets/da/logo-creme.svg";
+import monoCreme from "../assets/da/m-creme.svg";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -96,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap",
       },
     ],
   }),
@@ -137,20 +139,40 @@ function Header() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const reduce = useReducedMotion();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [scrolled, setScrolled] = useState(false);
+  const overHero = pathname === "/" && !scrolled && !open;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const linkTone = overHero
+    ? "text-cream/85 hover:text-cream"
+    : "text-brown/80 hover:text-brown";
 
   return (
-    <header className="sticky top-0 z-40 border-hairline border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+    <header
+      className={`${pathname === "/" ? "fixed inset-x-0" : "sticky"} top-0 z-40 transition-colors duration-300 ${
+        overHero
+          ? "border-b border-transparent bg-transparent"
+          : "border-b border-sand bg-cream/95 backdrop-blur"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)} aria-label="Cuisines Milo, accueil">
           <img
-            src={logoSvg}
+            src={overHero ? logoCreme : logoMarron}
             alt="Cuisines Milo"
             width={1841}
             height={177}
-            className="h-8 w-auto object-contain sm:h-10"
+            className="h-6 w-auto object-contain sm:h-7"
           />
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Navigation principale">
           {navItems.map((n) =>
             "children" in n ? (
               <div
@@ -163,52 +185,62 @@ function Header() {
                   type="button"
                   aria-expanded={dropdown}
                   aria-haspopup="true"
-                  onClick={() => setDropdown(true)}
-                  className="flex items-center gap-1 text-sm text-foreground/80 transition-colors duration-200 hover:text-foreground"
+                  onClick={() => setDropdown((v) => !v)}
+                  className={`eyebrow flex items-center gap-2 transition-colors duration-200 ${linkTone}`}
                 >
                   {n.label}
                   <span
                     aria-hidden
-                    className="text-[10px] transition-transform duration-200"
-                    style={{ transform: dropdown ? "rotate(180deg)" : "none" }}
-                  >
-                    ▾
-                  </span>
+                    className="block h-1.5 w-1.5 rotate-45 border-b border-r border-current transition-transform duration-200"
+                    style={{ transform: dropdown ? "rotate(225deg)" : "rotate(45deg)" }}
+                  />
                 </button>
-                {dropdown ? (
-                  <AnimatePresence>
+                <AnimatePresence>
+                  {dropdown ? (
                     <motion.div
                       key="dropdown"
                       initial={reduce ? false : { opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.18, ease: "easeOut" }}
-                      className="absolute left-0 top-full min-w-40 rounded-lg border-hairline border-border bg-background p-1"
+                      className="absolute left-0 top-full min-w-48 border border-sand bg-cream pt-0"
                     >
                       {n.children.map((c) => (
                         <Link
                           key={c.to}
                           to={c.to}
                           onClick={() => setDropdown(false)}
-                          className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                          className="eyebrow block px-5 py-4 text-brown/80 transition-colors hover:bg-cream-deep hover:text-brown"
                           activeProps={{
                             className:
-                              "block rounded-md px-3 py-2 text-sm font-medium text-foreground bg-muted",
+                              "eyebrow block bg-cream-deep px-5 py-4 text-brown",
                           }}
                         >
                           {c.label}
                         </Link>
                       ))}
                     </motion.div>
-                  </AnimatePresence>
-                ) : null}
+                  ) : null}
+                </AnimatePresence>
               </div>
+            ) : n.to === "/rendez-vous" ? (
+              <Link
+                key={n.to}
+                to={n.to}
+                className={`eyebrow border px-5 py-3 transition-colors duration-200 ${
+                  overHero
+                    ? "border-cream/70 text-cream hover:bg-cream hover:text-brown"
+                    : "border-brown text-brown hover:bg-brown hover:text-cream"
+                }`}
+              >
+                {n.label}
+              </Link>
             ) : (
               <Link
                 key={n.to}
                 to={n.to}
-                className="text-sm text-foreground/80 transition-colors hover:text-foreground"
-                activeProps={{ className: "text-sm text-foreground font-medium" }}
+                className={`eyebrow transition-colors duration-200 ${linkTone}`}
+                activeProps={{ className: `eyebrow ${overHero ? "text-cream" : "text-brown"} underline decoration-tan decoration-2 underline-offset-8` }}
               >
                 {n.label}
               </Link>
@@ -218,14 +250,14 @@ function Header() {
         <button
           type="button"
           aria-label="Menu"
-          className="ml-3 inline-flex h-11 w-11 items-center justify-center rounded-md border-hairline border-border md:hidden"
+          aria-expanded={open}
+          className={`inline-flex h-11 w-11 items-center justify-center md:hidden ${overHero ? "text-cream" : "text-brown"}`}
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Menu</span>
-          <div className="flex flex-col gap-1">
-            <span className="h-px w-4 bg-foreground" />
-            <span className="h-px w-4 bg-foreground" />
-            <span className="h-px w-4 bg-foreground" />
+          <div className="flex flex-col gap-1.5">
+            <span className={`h-px w-6 bg-current transition-transform duration-200 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-6 bg-current transition-transform duration-200 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
           </div>
         </button>
       </div>
@@ -237,38 +269,36 @@ function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden border-hairline border-t border-border md:hidden"
+            className="overflow-hidden border-t border-sand bg-cream md:hidden"
           >
-            <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3">
-            {navItems.map((n) =>
-              "children" in n ? (
-                <div key={n.to} className="py-2">
-                  <p className="text-xs uppercase tracking-[0.18em] text-accent">
+            <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4" aria-label="Navigation mobile">
+              {navItems.map((n) =>
+                "children" in n ? (
+                  <div key={n.to} className="py-3">
+                    <p className="eyebrow text-walnut">{n.label}</p>
+                    {n.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        className="font-serif block py-3 pl-4 text-2xl text-brown"
+                        onClick={() => setOpen(false)}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <Link
+                    key={n.to}
+                    to={n.to}
+                    className="font-serif border-t border-sand py-4 text-3xl text-brown"
+                    onClick={() => setOpen(false)}
+                  >
                     {n.label}
-                  </p>
-                  {n.children.map((c) => (
-                    <Link
-                      key={c.to}
-                      to={c.to}
-                      className="block py-3 pl-3 text-sm text-foreground/80"
-                      onClick={() => setOpen(false)}
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <Link
-                  key={n.to}
-                  to={n.to}
-                  className="py-3 text-sm text-foreground/80"
-                  onClick={() => setOpen(false)}
-                >
-                  {n.label}
-                </Link>
-              ),
-            )}
-          </nav>
+                  </Link>
+                ),
+              )}
+            </nav>
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -277,58 +307,54 @@ function Header() {
 }
 
 function Footer() {
+  const linkCls = "block w-fit py-1.5 text-cream/80 transition-colors hover:text-cream";
   return (
-    <footer className="border-hairline border-t border-border pb-20 md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 text-sm text-muted-foreground md:grid-cols-3">
-        <div>
-          <p className="text-foreground font-medium">Cuisines Milo</p>
-          <p className="mt-2">Artisan cuisiniste — cuisines et dressings sur mesure.</p>
-          <p className="mt-1">Zone d'intervention : Royan et Charente-Maritime.</p>
+    <footer className="bg-brown pb-20 text-cream md:pb-0">
+      <div className="mx-auto max-w-7xl px-6 pt-16 md:px-10 md:pt-24">
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <img src={logoCreme} alt="Cuisines Milo" width={1841} height={177} className="h-7 w-auto" />
+            <p className="font-serif mt-8 max-w-sm text-3xl leading-tight text-cream">
+              Des cuisines et des dressings faits pour la vie qu’on y mène.
+            </p>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-sand">
+              Cuisiniste à Royan. Cuisines italiennes Armony Cucine, conçues, adaptées et posées en Charente-Maritime.
+            </p>
+          </div>
+          <div className="text-sm md:col-span-4">
+            <p className="eyebrow text-tan">Showroom</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=38+rue+des+Cerisiers%2C+17200+Royan"
+              target="_blank"
+              rel="noreferrer"
+              className={`${linkCls} mt-3`}
+            >
+              38 rue des Cerisiers
+              <br />
+              17200 Royan
+            </a>
+            <p className="py-1.5 text-sand">Du lundi au samedi, sur rendez-vous</p>
+            <a href="tel:+33546384494" className={linkCls}>+33 5 46 38 44 94</a>
+            <a href="tel:+33786229949" className={linkCls}>+33 7 86 22 99 49</a>
+            <a href="mailto:contact@cuisinesmilo.com" className={linkCls}>contact@cuisinesmilo.com</a>
+          </div>
+          <div className="text-sm md:col-span-3">
+            <p className="eyebrow text-tan">Explorer</p>
+            <Link to="/cuisines" className={`${linkCls} mt-3`}>Cuisines</Link>
+            <Link to="/realisations" className={linkCls}>Réalisations</Link>
+            <Link to="/a-propos" className={linkCls}>À propos</Link>
+            <Link to="/rendez-vous" className={linkCls}>Rendez-vous showroom</Link>
+            <Link to="/contact" className={linkCls}>Demander un devis</Link>
+            <Link to="/avis" className={linkCls}>Laisser un avis</Link>
+          </div>
         </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-          <a href="tel:+33786229949" className="story-link block w-fit py-1.5 hover:text-foreground">
-            Mobile : +33 7 86 22 99 49
-          </a>
-          <a href="tel:+33546384494" className="story-link block w-fit py-1.5 hover:text-foreground">
-            Fixe : +33 5 46 38 44 94
-          </a>
-          <a
-            href="mailto:contact@cuisinesmilo.com"
-            className="story-link block w-fit py-1.5 hover:text-foreground"
-          >
-            contact@cuisinesmilo.com
-          </a>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=38+rue+des+Cerisiers%2C+17200+Royan"
-            target="_blank"
-            rel="noreferrer"
-            className="story-link block w-fit py-1.5 hover:text-foreground"
-          >
-            38 rue des Cerisiers, 17200 Royan
-          </a>
-          <p>Du lundi au samedi, sur rendez-vous</p>
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-walnut py-6 text-xs text-sand md:flex-row md:items-center">
+          <p>© {new Date().getFullYear()} Cuisines Milo. Tous droits réservés.</p>
+          <div className="flex items-center gap-6">
+            <Link to="/mentions-legales" className="transition-colors hover:text-cream">Mentions légales</Link>
+            <img src={monoCreme} alt="" aria-hidden width={64} height={64} className="h-6 w-auto opacity-80" />
+          </div>
         </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-accent">Informations</p>
-          <Link to="/mentions-legales" className="story-link mt-2 block w-fit hover:text-foreground">
-            Mentions légales
-          </Link>
-          <Link to="/contact" className="story-link block w-fit py-1.5 hover:text-foreground">
-            Demander un devis
-          </Link>
-          <Link to="/rendez-vous" className="story-link block w-fit py-1.5 hover:text-foreground">
-            Rendez-vous showroom
-          </Link>
-          <Link to="/avis" className="story-link block w-fit py-1.5 hover:text-foreground">
-            Laisser un avis
-          </Link>
-        </div>
-      </div>
-      <div className="border-hairline border-t border-border">
-        <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Cuisines Milo. Tous droits réservés.
-        </p>
       </div>
     </footer>
   );
@@ -339,19 +365,19 @@ function MobileActionBar() {
   if (pathname === "/rendez-vous" || pathname === "/contact") return null;
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-hairline border-t border-border bg-background/95 backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-sand bg-cream/95 backdrop-blur md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 px-4 py-3">
         <a
           href="tel:+33546384494"
-          className="inline-flex min-h-11 items-center justify-center rounded-md border-hairline border-border text-sm font-medium text-foreground"
+          className="eyebrow inline-flex min-h-11 items-center justify-center border border-brown text-brown"
         >
           Appeler
         </a>
         <Link
           to="/rendez-vous"
-          className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary text-sm font-medium text-primary-foreground"
+          className="eyebrow inline-flex min-h-11 items-center justify-center bg-brown text-cream"
         >
           Rendez-vous
         </Link>

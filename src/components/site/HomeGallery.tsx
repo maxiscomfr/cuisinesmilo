@@ -35,7 +35,7 @@ export function HomeGallery() {
         </div>
         <Link
           to="/realisations/cuisines"
-          className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          className="eyebrow border-b border-brown pb-1 text-brown transition-colors hover:border-tan hover:text-walnut"
         >
           Voir toute la galerie →
         </Link>
@@ -49,10 +49,10 @@ export function HomeGallery() {
             role="tab"
             aria-selected={filter === f.value}
             onClick={() => setFilter(f.value)}
-            className={`min-h-11 rounded-full border-hairline px-4 py-2 text-sm transition-colors ${
+            className={`eyebrow min-h-11 border px-6 py-3 transition-colors ${
               filter === f.value
-                ? "border-foreground bg-foreground text-background"
-                : "border-border text-foreground/80 hover:border-accent hover:text-foreground"
+                ? "border-brown bg-brown text-cream"
+                : "border-sand text-brown/80 hover:border-brown hover:text-brown"
             }`}
           >
             {f.label}
@@ -68,13 +68,13 @@ export function HomeGallery() {
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
         <Link
           to="/realisations/cuisines"
-          className="inline-flex items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent"
+          className="eyebrow inline-flex min-h-12 items-center justify-center border border-brown px-8 py-4 text-brown transition-colors hover:bg-brown hover:text-cream"
         >
           Toutes nos cuisines ({realisations.filter((r) => r.category === "Cuisine").length})
         </Link>
         <Link
           to="/realisations/dressings"
-          className="inline-flex items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent"
+          className="eyebrow inline-flex min-h-12 items-center justify-center border border-brown px-8 py-4 text-brown transition-colors hover:bg-brown hover:text-cream"
         >
           Tous nos dressings ({realisations.filter((r) => r.category === "Dressing").length})
         </Link>

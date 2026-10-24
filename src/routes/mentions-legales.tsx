@@ -32,27 +32,27 @@ function MentionsPage() {
   return (
     <Section>
       <SectionLabel>Informations légales</SectionLabel>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+      <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
         Mentions légales
       </h1>
 
       <div className="mt-10 space-y-8 text-sm text-muted-foreground">
         <div>
-          <h2 className="text-base font-medium text-foreground">Éditeur du site</h2>
+          <h2 className="font-serif text-2xl text-foreground">Éditeur du site</h2>
           <p className="mt-2">MAXIScom</p>
           <p>Zone d'activité : France</p>
           <p>Email : contact@cuisinesmilo.com</p>
         </div>
 
         <div>
-          <h2 className="text-base font-medium text-foreground">Hébergement</h2>
+          <h2 className="font-serif text-2xl text-foreground">Hébergement</h2>
           <p className="mt-2">
             Ce site est hébergé sur une infrastructure Cloud sécurisée.
           </p>
         </div>
 
         <div>
-          <h2 className="text-base font-medium text-foreground">Propriété intellectuelle</h2>
+          <h2 className="font-serif text-2xl text-foreground">Propriété intellectuelle</h2>
           <p className="mt-2">
             L'ensemble des contenus présents sur ce site (textes, images,
             visuels de réalisations) est protégé par le droit d'auteur. Toute
@@ -61,7 +61,7 @@ function MentionsPage() {
         </div>
 
         <div>
-          <h2 className="text-base font-medium text-foreground">Données personnelles</h2>
+          <h2 className="font-serif text-2xl text-foreground">Données personnelles</h2>
           <p className="mt-2">
             Les données transmises via les formulaires de contact sont utilisées
             uniquement pour répondre à votre demande. Vous disposez d'un droit

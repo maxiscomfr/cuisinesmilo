@@ -40,7 +40,7 @@ function RealisationsCuisinesPage() {
   return (
     <Section>
       <SectionLabel>Galerie</SectionLabel>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+      <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
         Nos réalisations de cuisines à Royan et alentours
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground">

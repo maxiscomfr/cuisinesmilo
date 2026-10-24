@@ -48,7 +48,7 @@ function labelClass() {
 }
 
 function inputClass(error?: string) {
-  return `mt-2 w-full rounded-md border-hairline bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-ring ${
+  return `mt-2 w-full border border-sand bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-ring ${
     error ? "border-destructive" : "border-border"
   }`;
 }
@@ -69,7 +69,7 @@ function RendezVousPage() {
     <>
       <Section>
         <SectionLabel>Showroom</SectionLabel>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
           Prenez rendez-vous au showroom de Royan
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -85,9 +85,9 @@ function RendezVousPage() {
             <RendezVousForm />
           </Reveal>
           <Reveal className="grid gap-6">
-            <div className="rounded-xl border-hairline border-border p-6 md:p-8">
+            <div className="border border-sand bg-card p-8 md:p-8">
               <p className={labelClass()}>Le showroom</p>
-              <h2 className="mt-2 text-2xl font-semibold text-foreground">Cuisines Milo</h2>
+              <h2 className="font-serif mt-2 text-3xl leading-tight text-foreground md:text-4xl">Cuisines Milo</h2>
               <address className="mt-6 grid gap-4 text-sm not-italic text-muted-foreground">
                 <div>
                   <p className="font-medium text-foreground">Adresse</p>
@@ -187,7 +187,7 @@ function RendezVousForm() {
     return (
       <div className="rounded-xl border-hairline border-accent bg-accent/10 p-6 md:p-8">
         <p className={labelClass()}>Demande envoyée</p>
-        <h2 className="mt-2 text-2xl font-semibold text-foreground">Merci, c'est bien reçu</h2>
+        <h2 className="font-serif mt-2 text-3xl leading-tight text-foreground md:text-4xl">Merci, c'est bien reçu</h2>
         <p className="mt-3 text-sm text-muted-foreground">
           Nous vous rappelons rapidement pour confirmer votre créneau au showroom. Un empêchement
           ou une question ? Appelez-nous au{" "}
@@ -208,12 +208,12 @@ function RendezVousForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-xl border-hairline border-border p-6 md:p-8" noValidate>
+    <form onSubmit={onSubmit} className="border border-sand bg-card p-8 md:p-8" noValidate>
       <p className={labelClass()}>Réserver</p>
-      <h2 className="mt-2 text-2xl font-semibold text-foreground">Choisissez votre créneau</h2>
+      <h2 className="font-serif mt-2 text-3xl leading-tight text-foreground md:text-4xl">Choisissez votre créneau</h2>
 
       {serverError && (
-        <div className="mt-6 rounded-md border-hairline border-destructive bg-destructive/10 p-4 text-sm text-destructive">
+        <div className="mt-6 border border-sand border-destructive bg-destructive/10 p-4 text-sm text-destructive">
           {serverError}
         </div>
       )}
@@ -275,7 +275,7 @@ function RendezVousForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90 disabled:opacity-60 disabled:hover:scale-100"
+        className="mt-8 eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors duration-200 hover:bg-walnut disabled:opacity-60 disabled:hover:scale-100"
       >
         {loading ? "Envoi en cours..." : "Demander ce rendez-vous"}
       </button>

@@ -48,13 +48,13 @@ export function RealisationsGrid({
 
   return (
     <>
-      <Stagger className={`grid grid-cols-1 gap-5 ${colClass}`} stagger={0.06}>
+      <Stagger className={`grid grid-cols-1 gap-4 ${colClass}`} stagger={0.06}>
         {items.map((r, i) => (
           <StaggerItem key={r.id} className="h-full" y={24}>
             <button
               type="button"
               onClick={() => setOpenIndex(i)}
-              className="group h-full w-full overflow-hidden rounded-xl border-hairline border-border bg-card text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group h-full w-full overflow-hidden bg-card text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={`Voir la réalisation ${r.title}`}
             >
               <div className="aspect-[4/3] w-full overflow-hidden bg-muted">
@@ -64,7 +64,7 @@ export function RealisationsGrid({
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
               </div>
             </button>
@@ -91,7 +91,7 @@ export function RealisationsGrid({
                 type="button"
                 onClick={close}
                 aria-label="Fermer la visionneuse"
-                className="rounded-md border-hairline border-background/40 p-2 hover:bg-background/10"
+                className="border border-sand border-background/40 p-2 hover:bg-background/10"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -105,7 +105,7 @@ export function RealisationsGrid({
                 type="button"
                 onClick={prev}
                 aria-label="Réalisation précédente"
-                className="shrink-0 rounded-md border-hairline border-background/40 p-2 text-background hover:bg-background/10"
+                className="shrink-0 border border-sand border-background/40 p-2 text-background hover:bg-background/10"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
@@ -134,7 +134,7 @@ export function RealisationsGrid({
                 type="button"
                 onClick={next}
                 aria-label="Réalisation suivante"
-                className="shrink-0 rounded-md border-hairline border-background/40 p-2 text-background hover:bg-background/10"
+                className="shrink-0 border border-sand border-background/40 p-2 text-background hover:bg-background/10"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>

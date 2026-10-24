@@ -5,18 +5,19 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Cuisines Milo — sobre, sans-serif, accent bois/brun.
- * Boutons: #3C2A1E, Labels: #8C6A45.
- * Bordures fines, coins arrondis 8-12px, aucun dégradé ni ombre.
+ * Cuisines Milo — direction artistique « haut de gamme chaleureux ».
+ * Palette : marron #392417, crème #F3EDE4, marron clair #B48A68, noir #161110, blanc.
+ * Titres : Cormorant Garamond. Texte : Jost. Angles droits, aucune ombre, aucun dégradé de couleur.
  */
 
 @theme inline {
-  --font-sans: "Work Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 10px;
-  --radius-xl: 12px;
-  --radius-2xl: 14px;
+  --font-sans: "Jost", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -38,42 +39,48 @@
   --color-ring: var(--ring);
   --color-wood: var(--wood);
   --color-wood-light: var(--wood-light);
+  --color-cream: #F3EDE4;
+  --color-cream-deep: #E9DFD0;
+  --color-sand: #D9CBB6;
+  --color-walnut: #7A5238;
+  --color-ink: #161110;
+  --color-brown: #392417;
+  --color-tan: #B48A68;
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0rem;
 
-  --background: oklch(0.985 0.005 80);      /* off-white warm */
-  --foreground: oklch(0.22 0.015 60);       /* dark neutral */
+  --background: #F3EDE4;
+  --foreground: #161110;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.015 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.015 60);
+  --card: #FBF8F3;
+  --card-foreground: #161110;
+  --popover: #FBF8F3;
+  --popover-foreground: #161110;
 
-  /* Boutons: #3C2A1E */
-  --primary: oklch(0.28 0.03 50);
-  --primary-foreground: oklch(0.985 0.005 80);
+  --primary: #392417;
+  --primary-foreground: #F3EDE4;
 
-  --secondary: oklch(0.96 0.008 80);
-  --secondary-foreground: oklch(0.22 0.015 60);
+  --secondary: #E9DFD0;
+  --secondary-foreground: #392417;
 
-  --muted: oklch(0.955 0.008 80);
-  --muted-foreground: oklch(0.48 0.02 60);
+  --muted: #E9DFD0;
+  --muted-foreground: #5A3D2A;
 
-  /* Labels bois clair: #8C6A45 */
-  --accent: oklch(0.55 0.06 60);
-  --accent-foreground: oklch(0.985 0.005 80);
+  /* Texte d'accent sur fond clair : noyer (contraste 5,8:1 sur crème) */
+  --accent: #7A5238;
+  --accent-foreground: #F3EDE4;
 
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.985 0.005 80);
+  --destructive: oklch(0.5 0.17 28);
+  --destructive-foreground: #F3EDE4;
 
-  --border: oklch(0.85 0.01 70);
-  --input: oklch(0.88 0.01 70);
-  --ring: oklch(0.55 0.06 60);
+  --border: #D9CBB6;
+  --input: #D9CBB6;
+  --ring: #B48A68;
 
-  --wood: oklch(0.28 0.03 50);           /* #3C2A1E */
-  --wood-light: oklch(0.55 0.06 60);     /* #8C6A45 */
+  --wood: #392417;
+  --wood-light: #B48A68;
 }
 
 @layer base {
@@ -89,8 +96,13 @@
     color: var(--color-foreground);
   }
   h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
     letter-spacing: -0.01em;
+    line-height: 1.05;
   }
+  ::selection { background: #B48A68; color: #161110; }
+  :focus-visible { outline: 2px solid #B48A68; outline-offset: 3px; }
 }
 
 /* Fine 0.5px border utility (fallback 1px) */
@@ -99,4 +111,21 @@
   @media (min-resolution: 2dppx) {
     border-width: 0.5px;
   }
+}
+
+/* Surtitre en capitales espacées */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* Filet court de 3 px, signature de la charte */
+@utility rule-short {
+  display: block;
+  height: 3px;
+  width: 48px;
+  background: var(--color-brown);
 }

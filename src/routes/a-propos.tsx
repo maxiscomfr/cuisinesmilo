@@ -101,7 +101,7 @@ function AProposPage() {
     <>
       <Section>
         <SectionLabel>À propos</SectionLabel>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
           Cuisines Milo, cuisiniste artisan à Royan
         </h1>
         <p className="mt-5 max-w-3xl text-muted-foreground">
@@ -122,12 +122,12 @@ function AProposPage() {
           {valeurs.map((v) => (
             <StaggerItem key={v.label} className="h-full">
               <div
-                className="h-full rounded-xl border-hairline border-border p-6"
+                className="h-full border border-sand bg-card p-8"
               >
                 <p className="text-xs uppercase tracking-[0.22em] text-accent">
                   {v.label}
                 </p>
-                <h3 className="mt-3 text-lg font-medium text-foreground">
+                <h3 className="font-serif mt-3 text-2xl leading-tight text-foreground">
                   {v.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">{v.text}</p>
@@ -199,7 +199,7 @@ function AProposPage() {
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="rounded-xl border-hairline border-border p-6">
+            <div className="border border-sand bg-card p-8">
               <p className="text-xs uppercase tracking-[0.22em] text-accent">
                 Zone d'intervention
               </p>
@@ -228,7 +228,7 @@ function AProposPage() {
             {faqItems.map((item, i) => (
               <div
                 key={item.question}
-                className="rounded-xl border-hairline border-border"
+                className="border border-sand bg-card"
               >
                 <button
                   type="button"
@@ -258,8 +258,8 @@ function AProposPage() {
       </Section>
 
       <Section bordered>
-        <div className="rounded-xl border-hairline border-border p-8 text-center md:p-12">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
+        <div className="border border-sand bg-card p-8 text-center md:p-12">
+          <h2 className="font-serif text-3xl leading-tight text-foreground md:text-4xl">
             Parlons de votre projet
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
@@ -269,7 +269,7 @@ function AProposPage() {
           <div className="mt-6">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              className="eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-walnut"
             >
               Nous contacter
             </Link>

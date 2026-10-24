@@ -46,7 +46,7 @@ function AuthPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-200px)] items-center justify-center px-4">
-      <div className="w-full max-w-sm rounded-xl border-hairline border-border p-6 md:p-8">
+      <div className="w-full max-w-sm border border-sand bg-card p-8 md:p-8">
         <Link to="/" className="text-sm text-muted-foreground hover:text-foreground">
           ← Retour au site
         </Link>
@@ -58,7 +58,7 @@ function AuthPage() {
         </p>
 
         {error && (
-          <div className="mt-4 rounded-md border-hairline border-destructive bg-destructive/10 p-3 text-sm text-destructive">
+          <div className="mt-4 border border-sand border-destructive bg-destructive/10 p-3 text-sm text-destructive">
             {error}
           </div>
         )}
@@ -74,7 +74,7 @@ function AuthPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-2 w-full rounded-md border-hairline border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
+              className="mt-2 w-full border border-sand border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <div>
@@ -87,13 +87,13 @@ function AuthPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-2 w-full rounded-md border-hairline border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
+              className="mt-2 w-full border border-sand border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
+            className="mt-2 eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-walnut disabled:opacity-60"
           >
             {loading ? "Connexion..." : "Se connecter"}
           </button>

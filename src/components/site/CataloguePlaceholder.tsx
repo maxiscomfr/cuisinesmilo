@@ -8,7 +8,7 @@ export function CataloguePlaceholder({
   ratio?: string;
 }) {
   return (
-    <figure className="overflow-hidden rounded-xl border-hairline border-border bg-card">
+    <figure className="overflow-hidden border border-sand bg-card bg-card">
       <div
         className={`${ratio} flex w-full items-center justify-center bg-muted p-6 text-center`}
       >

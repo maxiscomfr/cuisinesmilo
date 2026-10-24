@@ -39,7 +39,7 @@ function labelClass() {
 }
 
 function inputClass(error?: string) {
-  return `mt-2 w-full rounded-md border-hairline bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-ring ${
+  return `mt-2 w-full border border-sand bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-ring ${
     error ? "border-destructive" : "border-border"
   }`;
 }
@@ -49,7 +49,7 @@ function ContactPage() {
     <>
       <Section>
         <SectionLabel>Contact</SectionLabel>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+        <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
           Demandez votre devis de cuisine à Royan
         </h1>
         <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -64,9 +64,9 @@ function ContactPage() {
             <ContactSimpleForm />
           </Reveal>
           <Reveal className="grid gap-6">
-            <div className="rounded-xl border-hairline border-border p-6 md:p-8">
+            <div className="border border-sand bg-card p-8 md:p-8">
               <p className={labelClass()}>Coordonnées</p>
-              <h2 className="mt-2 text-2xl font-semibold text-foreground">Cuisines Milo à Royan</h2>
+              <h2 className="font-serif mt-2 text-3xl leading-tight text-foreground md:text-4xl">Cuisines Milo à Royan</h2>
               <address className="mt-6 grid gap-4 text-sm not-italic text-muted-foreground">
                 <div>
                   <p className="font-medium text-foreground">Adresse</p>
@@ -101,7 +101,7 @@ function ContactPage() {
               </address>
             </div>
 
-            <div className="aspect-[4/3] overflow-hidden rounded-xl border-hairline border-border">
+            <div className="aspect-[4/3] overflow-hidden border border-sand bg-card">
               <iframe
                 title="Carte de Cuisines Milo, 38 rue des Cerisiers à Royan"
                 src="https://www.google.com/maps?q=38%20rue%20des%20Cerisiers%2C%2017200%20Royan&output=embed"
@@ -160,20 +160,20 @@ function ContactSimpleForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-xl border-hairline border-border p-6 md:p-8"
+      className="border border-sand bg-card p-8 md:p-8"
       noValidate
     >
       <p className={labelClass()}>Formulaire simple</p>
-      <h2 className="mt-2 text-2xl font-semibold text-foreground">Nous écrire</h2>
+      <h2 className="font-serif mt-2 text-3xl leading-tight text-foreground md:text-4xl">Nous écrire</h2>
 
       {submitted && (
-        <div className="mt-6 rounded-md border-hairline border-accent bg-accent/10 p-4 text-sm text-foreground">
+        <div className="mt-6 border border-sand border-accent bg-accent/10 p-4 text-sm text-foreground">
           Merci pour votre message, nous vous répondons au plus vite.
         </div>
       )}
 
       {serverError && (
-        <div className="mt-6 rounded-md border-hairline border-destructive bg-destructive/10 p-4 text-sm text-destructive">
+        <div className="mt-6 border border-sand border-destructive bg-destructive/10 p-4 text-sm text-destructive">
           {serverError}
         </div>
       )}
@@ -196,7 +196,7 @@ function ContactSimpleForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90 disabled:opacity-60 disabled:hover:scale-100"
+        className="mt-8 eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors duration-200 hover:bg-walnut disabled:opacity-60 disabled:hover:scale-100"
       >
         {loading ? "Envoi en cours..." : "Envoyer"}
       </button>

@@ -467,7 +467,7 @@ function CuisinesPage() {
             id="filtre-modele"
             value={familleSelectionnee}
             onChange={(e) => setFamilleSelectionnee(e.target.value)}
-            className="rounded-md border-hairline border-border bg-background px-3 py-2 text-sm text-foreground"
+            className="border border-sand border-border bg-background px-3 py-2 text-sm text-foreground"
           >
             <option value="Tous">Toutes les familles ({modelesTries.length})</option>
             {familles.map((f) => (
@@ -498,7 +498,7 @@ function CuisinesPage() {
           <Reveal>
             <div>
               <SectionLabel>Cuisines sur mesure</SectionLabel>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+              <h1 className="font-serif mt-4 max-w-4xl text-5xl leading-[1] text-foreground md:text-7xl">
                 Cuisines sur mesure à Royan : nos modèles Armony Cucine
               </h1>
               <p className="mt-5 max-w-lg text-muted-foreground">
@@ -509,7 +509,7 @@ function CuisinesPage() {
               <div className="mt-8">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+                  className="eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors duration-200 hover:bg-walnut"
                 >
                   Demander mon devis
                 </Link>
@@ -534,9 +534,9 @@ function CuisinesPage() {
         <Stagger className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {etapes.map((e) => (
             <StaggerItem key={e.n} className="h-full">
-              <div className="h-full rounded-xl border-hairline border-border p-6">
+              <div className="h-full border border-sand bg-card p-8">
                 <p className="text-xs font-medium tracking-[0.2em] text-accent">{e.n}</p>
-                <h3 className="mt-3 text-lg font-medium text-foreground">{e.t}</h3>
+                <h3 className="font-serif mt-3 text-2xl leading-tight text-foreground">{e.t}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{e.d}</p>
               </div>
             </StaggerItem>
@@ -548,7 +548,7 @@ function CuisinesPage() {
         <SectionLabel>Cuisines sur mesure</SectionLabel>
         <SectionTitle>Des finitions et matériaux à votre goût</SectionTitle>
         <Reveal className="mt-8">
-          <div className="rounded-xl border-hairline border-border p-8 md:p-12">
+          <div className="border border-sand bg-card p-8 md:p-12">
           <p className="text-base text-foreground">
             Chaque cuisine, comme chaque dressing sur mesure, est conçue autour
             de vos volumes et de vos envies.
@@ -561,13 +561,13 @@ function CuisinesPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/realisations/cuisines"
-              className="inline-flex items-center justify-center rounded-md border-hairline border-border px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
+              className="inline-flex items-center justify-center border border-sand border-border px-4 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
             >
               Voir les réalisations
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              className="eyebrow inline-flex min-h-12 items-center justify-center bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-walnut"
             >
               Nous contacter
             </Link>

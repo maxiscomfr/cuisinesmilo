@@ -85,7 +85,7 @@ export function ModelGallery({
                   setOpenIndex(i);
                   setPhotoIndex(0);
                 }}
-                className="group h-full w-full overflow-hidden rounded-xl border-hairline border-border bg-card text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="group h-full w-full overflow-hidden border border-sand bg-card bg-card text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 aria-label={`Ouvrir la galerie du modèle ${g.modele}`}
               >
                 <div className="aspect-[4/3] w-full overflow-hidden">
@@ -137,7 +137,7 @@ export function ModelGallery({
                 type="button"
                 onClick={close}
                 aria-label="Fermer la galerie"
-                className="rounded-md border-hairline border-background/40 p-2 hover:bg-background/10"
+                className="border border-sand border-background/40 p-2 hover:bg-background/10"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -151,7 +151,7 @@ export function ModelGallery({
                 type="button"
                 onClick={prev}
                 aria-label="Photo précédente"
-                className="shrink-0 rounded-md border-hairline border-background/40 p-2 text-background hover:bg-background/10"
+                className="shrink-0 border border-sand border-background/40 p-2 text-background hover:bg-background/10"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
@@ -197,7 +197,7 @@ export function ModelGallery({
                 type="button"
                 onClick={next}
                 aria-label="Photo suivante"
-                className="shrink-0 rounded-md border-hairline border-background/40 p-2 text-background hover:bg-background/10"
+                className="shrink-0 border border-sand border-background/40 p-2 text-background hover:bg-background/10"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>

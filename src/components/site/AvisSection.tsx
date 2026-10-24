@@ -13,7 +13,7 @@ function Stars({ value }: { value: number }) {
         <Star
           key={i}
           aria-hidden
-          className={`h-4 w-4 ${i < Math.round(value) ? "fill-accent text-accent" : "text-border"}`}
+          className={`h-4 w-4 ${i < Math.round(value) ? "fill-tan text-tan" : "text-sand"}`}
         />
       ))}
     </div>
@@ -32,10 +32,10 @@ export function AvisSection() {
           <SectionTitle>Ce que disent nos clients</SectionTitle>
         </div>
         {hasGoogle ? (
-          <div className="flex items-center gap-3 rounded-xl border-hairline border-border px-4 py-3">
-            <p className="text-3xl font-semibold tabular-nums text-foreground">
+          <div className="flex items-center gap-4 border border-sand px-6 py-4">
+            <p className="font-serif text-5xl tabular-nums text-foreground">
               {GOOGLE_RATING!.toFixed(1).replace(".", ",")}
-              <span className="text-base font-normal text-muted-foreground">/5</span>
+              <span className="font-sans text-base text-muted-foreground">/5</span>
             </p>
             <div>
               <Stars value={GOOGLE_RATING!} />
@@ -51,12 +51,12 @@ export function AvisSection() {
       <Stagger className="mt-10 grid gap-5 md:grid-cols-2" stagger={0.1}>
         {avis.map((a) => (
           <StaggerItem key={a.id} className="h-full">
-            <figure className="flex h-full flex-col rounded-xl border-hairline border-border p-6">
+            <figure className="flex h-full flex-col border border-sand bg-card p-8 md:p-10">
               <Stars value={a.rating} />
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground md:text-base">
+              <blockquote className="font-serif mt-6 flex-1 text-2xl italic leading-snug text-foreground md:text-3xl">
                 « {a.text} »
               </blockquote>
-              <figcaption className="mt-5 text-sm text-muted-foreground">
+              <figcaption className="mt-8 border-t border-sand pt-4 text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">{a.name}</span> · {a.date} · Avis
                 Google
               </figcaption>
@@ -66,9 +66,9 @@ export function AvisSection() {
       </Stagger>
 
       <Reveal>
-        <div className="mt-8 rounded-xl border-hairline border-accent bg-accent/10 p-6 text-center md:p-8">
-          <p className="text-lg font-medium text-foreground">Vous avez fait appel à Cuisines Milo ?</p>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+        <div className="mt-10 bg-brown p-10 text-center text-cream md:p-14">
+          <p className="font-serif text-4xl text-cream">Vous avez fait appel à Cuisines Milo ?</p>
+          <p className="mx-auto mt-3 max-w-xl text-base text-sand">
             Votre avis aide les futurs clients à choisir, et il ne vous prend que deux minutes.
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
@@ -77,14 +77,14 @@ export function AvisSection() {
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.03] hover:bg-primary/90"
+                className="eyebrow inline-flex min-h-12 items-center justify-center bg-cream px-8 py-4 text-brown transition-colors hover:bg-tan"
               >
                 Laisser un avis sur Google
               </a>
             ) : null}
             <Link
               to="/avis"
-              className="inline-flex min-h-11 items-center justify-center rounded-md border-hairline border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent"
+              className="eyebrow inline-flex min-h-12 items-center justify-center border border-cream/70 px-8 py-4 text-cream transition-colors hover:bg-cream hover:text-brown"
             >
               Comment faire ?
             </Link>
@@ -99,7 +99,7 @@ export function AvisSection() {
               href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noreferrer"
-              className="story-link inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              className="eyebrow inline-flex min-h-11 items-center border-b border-brown text-brown transition-colors hover:border-tan"
             >
               Voir notre fiche Google →
             </a>
