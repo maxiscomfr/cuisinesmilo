@@ -69,6 +69,10 @@ export const Route = createFileRoute("/")({
           ].map((name) => ({ "@type": "Place", name })),
           knowsAbout: ["cuisine sur mesure", "cuisine équipée", "îlot central", "dressing sur mesure", "placard sur mesure"],
           brand: { "@type": "Brand", name: "Armony Cucine" },
+          sameAs: [
+            "https://www.google.com/maps?cid=14765701620118334988",
+            "https://www.instagram.com/cuisinesmilo/",
+          ],
         }),
       },
     ],
@@ -103,6 +107,8 @@ function Home() {
           <img
             src={heroKitchen}
             alt="Cuisine sur mesure en bois à Royan — Cuisines Milo, cuisiniste"
+            fetchPriority="high"
+            decoding="async"
             width={1600}
             height={1000}
             className="h-full w-full object-cover"

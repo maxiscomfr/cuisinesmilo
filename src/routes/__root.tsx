@@ -216,7 +216,7 @@ function Header() {
         <button
           type="button"
           aria-label="Menu"
-          className="ml-3 inline-flex h-9 w-9 items-center justify-center rounded-md border-hairline border-border md:hidden"
+          className="ml-3 inline-flex h-11 w-11 items-center justify-center rounded-md border-hairline border-border md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Menu</span>
@@ -248,7 +248,7 @@ function Header() {
                     <Link
                       key={c.to}
                       to={c.to}
-                      className="block py-2 pl-3 text-sm text-foreground/80"
+                      className="block py-3 pl-3 text-sm text-foreground/80"
                       onClick={() => setOpen(false)}
                     >
                       {c.label}
@@ -259,7 +259,7 @@ function Header() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className="py-2 text-sm text-foreground/80"
+                  className="py-3 text-sm text-foreground/80"
                   onClick={() => setOpen(false)}
                 >
                   {n.label}
@@ -276,7 +276,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-hairline border-t border-border">
+    <footer className="border-hairline border-t border-border pb-20 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-10 text-sm text-muted-foreground md:grid-cols-3">
         <div>
           <p className="text-foreground font-medium">Cuisines Milo</p>
@@ -285,15 +285,15 @@ function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-          <a href="tel:+33786229949" className="story-link block w-fit hover:text-foreground">
+          <a href="tel:+33786229949" className="story-link block w-fit py-1.5 hover:text-foreground">
             Mobile : +33 7 86 22 99 49
           </a>
-          <a href="tel:+33546384494" className="story-link block w-fit hover:text-foreground">
+          <a href="tel:+33546384494" className="story-link block w-fit py-1.5 hover:text-foreground">
             Fixe : +33 5 46 38 44 94
           </a>
           <a
             href="mailto:contact@cuisinesmilo.com"
-            className="story-link block w-fit hover:text-foreground"
+            className="story-link block w-fit py-1.5 hover:text-foreground"
           >
             contact@cuisinesmilo.com
           </a>
@@ -301,7 +301,7 @@ function Footer() {
             href="https://www.google.com/maps/search/?api=1&query=38+rue+des+Cerisiers%2C+17200+Royan"
             target="_blank"
             rel="noreferrer"
-            className="story-link block w-fit hover:text-foreground"
+            className="story-link block w-fit py-1.5 hover:text-foreground"
           >
             38 rue des Cerisiers, 17200 Royan
           </a>
@@ -312,11 +312,14 @@ function Footer() {
           <Link to="/mentions-legales" className="story-link mt-2 block w-fit hover:text-foreground">
             Mentions légales
           </Link>
-          <Link to="/contact" className="story-link block w-fit hover:text-foreground">
+          <Link to="/contact" className="story-link block w-fit py-1.5 hover:text-foreground">
             Demander un devis
           </Link>
-          <Link to="/rendez-vous" className="story-link block w-fit hover:text-foreground">
+          <Link to="/rendez-vous" className="story-link block w-fit py-1.5 hover:text-foreground">
             Rendez-vous showroom
+          </Link>
+          <Link to="/avis" className="story-link block w-fit py-1.5 hover:text-foreground">
+            Laisser un avis
           </Link>
         </div>
       </div>
@@ -326,6 +329,32 @@ function Footer() {
         </p>
       </div>
     </footer>
+  );
+}
+
+function MobileActionBar() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  if (pathname === "/rendez-vous" || pathname === "/contact") return null;
+  return (
+    <div
+      className="fixed inset-x-0 bottom-0 z-40 border-hairline border-t border-border bg-background/95 backdrop-blur md:hidden"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 px-4 py-3">
+        <a
+          href="tel:+33546384494"
+          className="inline-flex min-h-11 items-center justify-center rounded-md border-hairline border-border text-sm font-medium text-foreground"
+        >
+          Appeler
+        </a>
+        <Link
+          to="/rendez-vous"
+          className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary text-sm font-medium text-primary-foreground"
+        >
+          Rendez-vous
+        </Link>
+      </div>
+    </div>
   );
 }
 
@@ -351,8 +380,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <a
+          href="#contenu"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
+        >
+          Aller au contenu
+        </a>
         <Header />
-        <main className="flex-1">
+        <main id="contenu" className="flex-1">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={pathname}
@@ -366,6 +401,7 @@ function RootComponent() {
           </AnimatePresence>
         </main>
         <Footer />
+        <MobileActionBar />
       </div>
       <Toaster position="bottom-right" />
     </QueryClientProvider>

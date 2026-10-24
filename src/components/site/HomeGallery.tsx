@@ -49,7 +49,7 @@ export function HomeGallery() {
             role="tab"
             aria-selected={filter === f.value}
             onClick={() => setFilter(f.value)}
-            className={`rounded-full border-hairline px-4 py-1.5 text-sm transition-colors ${
+            className={`min-h-11 rounded-full border-hairline px-4 py-2 text-sm transition-colors ${
               filter === f.value
                 ? "border-foreground bg-foreground text-background"
                 : "border-border text-foreground/80 hover:border-accent hover:text-foreground"

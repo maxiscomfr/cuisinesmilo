@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Star } from "lucide-react";
 import { Section, SectionLabel, SectionTitle } from "@/components/site/Section";
 import { Stagger, StaggerItem } from "@/components/site/motion/Stagger";
@@ -64,20 +65,26 @@ export function AvisSection() {
         ))}
       </Stagger>
 
-      {GOOGLE_REVIEWS_URL ? (
-        <Reveal>
-          <div className="mt-8 text-center">
+      <Reveal>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
+          {GOOGLE_REVIEWS_URL ? (
             <a
               href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noreferrer"
-              className="story-link text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              className="story-link inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
-              Voir tous nos avis sur Google →
+              Voir notre fiche Google →
             </a>
-          </div>
-        </Reveal>
-      ) : null}
+          ) : null}
+          <Link
+            to="/avis"
+            className="story-link inline-flex min-h-11 items-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Vous êtes client ? Laissez-nous un avis →
+          </Link>
+        </div>
+      </Reveal>
     </Section>
   );
 }
