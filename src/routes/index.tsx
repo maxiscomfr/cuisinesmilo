@@ -68,7 +68,7 @@ export const Route = createFileRoute("/")({
           knowsAbout: ["cuisine sur mesure", "cuisine équipée", "îlot central", "dressing sur mesure", "placard sur mesure"],
           brand: { "@type": "Brand", name: "Armony Cucine" },
           sameAs: [
-            "https://www.google.com/maps?cid=14765701620118334988",
+            "https://share.google/kXkOk2kBJXgKlXBuW",
             "https://www.instagram.com/cuisinesmilo/",
           ],
         }),
