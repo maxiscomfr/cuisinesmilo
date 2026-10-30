@@ -67,6 +67,11 @@ import cuisine66 from "@/assets/cuisines/66.jpg.asset.json";
 import cuisine67 from "@/assets/cuisines/67.jpg.asset.json";
 import cuisine68 from "@/assets/cuisines/68.jpg.asset.json";
 import cuisine69 from "@/assets/cuisines/69.jpg.asset.json";
+import cuisine70 from "@/assets/cuisines/70.jpg.asset.json";
+import cuisine71 from "@/assets/cuisines/71.jpg.asset.json";
+import cuisine72 from "@/assets/cuisines/72.jpg.asset.json";
+import cuisine73 from "@/assets/cuisines/73.jpg.asset.json";
+import cuisine74 from "@/assets/cuisines/74.jpg.asset.json";
 import dressing01 from "@/assets/dressings/1.jpg.asset.json";
 import dressing02 from "@/assets/dressings/2.jpg.asset.json";
 import dressing03 from "@/assets/dressings/3.jpg.asset.json";
@@ -128,6 +133,11 @@ export type Realisation = {
 };
 
 export const realisations: Realisation[] = [
+  { id: "c70", title: "Grande cuisine noire mate et îlot bois, pièce de vie ouverte", location: "Charente-Maritime", category: "Cuisine", image: cuisine70.url },
+  { id: "c71", title: "Linéaire noir mat sans poignées, crédence bois et fours encastrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine71.url },
+  { id: "c72", title: "Îlot noir mat avec plan granit noir, évier et plaque intégrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine72.url },
+  { id: "c73", title: "Plaque induction avec hotte aspirante intégrée sur plan noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine73.url },
+  { id: "c74", title: "Évier noir sous plan avec égouttoir rainuré dans le plan", location: "Charente-Maritime", category: "Cuisine", image: cuisine74.url },
   { id: "c1", title: "Cuisine noire, plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine01.url },
   { id: "c2", title: "Îlot noir et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine02.url },
   { id: "c3", title: "Grande table plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine03.url },
