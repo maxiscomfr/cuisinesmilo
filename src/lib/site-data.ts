@@ -128,6 +128,11 @@ export type Realisation = {
 };
 
 export const realisations: Realisation[] = [
+  { id: "c70", title: "Grande cuisine noire mate et îlot bois, pièce de vie ouverte", location: "Charente-Maritime", category: "Cuisine", image: cuisine70.url },
+  { id: "c71", title: "Linéaire noir mat sans poignées, crédence bois et fours encastrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine71.url },
+  { id: "c72", title: "Îlot noir mat avec plan granit noir, évier et plaque intégrés", location: "Charente-Maritime", category: "Cuisine", image: cuisine72.url },
+  { id: "c73", title: "Plaque induction avec hotte aspirante intégrée sur plan noir", location: "Charente-Maritime", category: "Cuisine", image: cuisine73.url },
+  { id: "c74", title: "Évier noir sous plan avec égouttoir rainuré dans le plan", location: "Charente-Maritime", category: "Cuisine", image: cuisine74.url },
   { id: "c1", title: "Cuisine noire, plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine01.url },
   { id: "c2", title: "Îlot noir et plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine02.url },
   { id: "c3", title: "Grande table plan bois", location: "Charente-Maritime", category: "Cuisine", image: cuisine03.url },
